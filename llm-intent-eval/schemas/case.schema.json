@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Voice agent SOP decision evaluation case v0.1",
+  "type": "object",
+  "required": ["case_id", "group_id", "source_ref", "input", "expected", "metadata"],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "group_id": {"type": "string", "minLength": 1},
+    "source_ref": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "input": {
+      "type": "object",
+      "required": ["dialogue_state", "history", "user_text", "candidate_sops"],
+      "properties": {
+        "dialogue_state": {
+          "type": "object",
+          "required": ["current_stage", "active_sidepath", "collected_facts", "pending_items", "last_system_action"],
+          "properties": {
+            "current_stage": {"type": "string"},
+            "active_sidepath": {"type": ["string", "null"]},
+            "collected_facts": {"type": "object"},
+            "pending_items": {"type": "array", "items": {"type": "string"}},
+            "last_system_action": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["role", "text"],
+            "properties": {
+              "role": {"enum": ["assistant", "user"]},
+              "text": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "user_text": {"type": "string"},
+        "candidate_sops": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "definition"],
+            "properties": {
+              "id": {"type": "string"},
+              "name": {"type": "string"},
+              "definition": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "expected": {
+      "type": "object",
+      "required": ["acceptable_sop_ids", "forbidden_sop_ids", "expected_state_updates", "facts_still_missing", "expected_next_action", "skip_actions", "response_requirements", "reference_detail"],
+      "properties": {
+        "acceptable_sop_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "forbidden_sop_ids": {"type": "array", "items": {"type": "string"}},
+        "expected_state_updates": {"type": "object"},
+        "facts_still_missing": {"type": "array", "items": {"type": "string"}},
+        "expected_next_action": {"type": "string"},
+        "skip_actions": {"type": "array", "items": {"type": "string"}},
+        "response_requirements": {
+          "type": "object",
+          "required": ["must_include", "must_not_include", "resume_goal"],
+          "properties": {
+            "must_include": {"type": "array", "items": {"type": "string"}},
+            "must_not_include": {"type": "array", "items": {"type": "string"}},
+            "resume_goal": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "reference_detail": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["case_type", "difficulty", "risk_level", "tags", "status"],
+      "properties": {
+        "case_type": {"enum": ["local", "global_interrupt", "jump_ahead", "multi_intent", "ambiguous", "asr_noise"]},
+        "difficulty": {"enum": ["easy", "medium", "hard"]},
+        "risk_level": {"enum": ["low", "medium", "high"]},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "status": {"enum": ["draft", "needs_review", "approved"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Voice agent SOP controller output v0.1",
+  "type": "object",
+  "required": ["sop_id", "detail"],
+  "properties": {
+    "sop_id": {"type": "string", "minLength": 1},
+    "detail": {"type": "string", "minLength": 1, "maxLength": 50}
+  },
+  "additionalProperties": false
+}
+

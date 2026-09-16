@@ -1,0 +1,1323 @@
+schema_version: 1
+product_sha256: 539ecdfb9a14c874973400b6c5b650eb6c88c952d1bef0538f0ffd71c51dee3e
+intents:
+- id: 7-1
+  name: 静默不发言
+  description: 接通后不出声，两次提示（30s/15s）仍无回应
+  input_kind: silence_event
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 9
+    section: 表7 / 7-A
+    intent_id: 7-1
+  workflow_branches: 3-2-a、4-2-d-4
+  script_refs: 静默提示（未入表5）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples: []
+  original_examples: []
+  derived_examples: []
+- id: 7-2
+  name: 打错/人不在
+  description: 称打错号码或本人不在（家人代接口径）
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 10
+    section: 表7 / 7-A
+    intent_id: 7-2
+  workflow_branches: 3-2-b-1、3-2-d-2、b3-2-b
+  script_refs: —（转b3非本人流程）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 你打错了
+  - 他不在家/出去了
+  - 这个号码不是您要找的人
+  original_examples:
+  - 你打错了
+  - 他不在家/出去了
+  derived_examples:
+  - 这个号码不是您要找的人
+- id: 7-3
+  name: 身份质疑
+  description: 质问来电者身份/机构/来意（细分见7-9~7-14）
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 11
+    section: 表7 / 7-A
+    intent_id: 7-3
+  workflow_branches: 3-2-b-2、3-2-g→a1
+  script_refs: 按a1子分支
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 你是谁？
+  - 什么背调？
+  - 请问您是哪家公司的
+  original_examples:
+  - 你是谁？
+  - 什么背调？
+  derived_examples:
+  - 请问您是哪家公司的
+- id: 7-4
+  name: 语音助手代接
+  description: 语音助手/小助理代接，播报留言引导
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 12
+    section: 表7 / 7-A
+    intent_id: 7-4
+  workflow_branches: 3-2-c→b2
+  script_refs: 5-1（转接话术）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 请留下姓名和来电原因
+  - 我是机主的电话助理，请说明来电事由
+  original_examples:
+  - 请留下姓名和来电原因
+  derived_examples:
+  - 我是机主的电话助理，请说明来电事由
+- id: 7-5
+  name: 非本人接听
+  description: 家人/同事代接电话，本人无法接听
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 13
+    section: 表7 / 7-A
+    intent_id: 7-5
+  workflow_branches: 3-2-d→b3
+  script_refs: —（b3只问方便🚫透露详情）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 我是他妈妈，他上班去了
+  - 我是他的同事，我帮他接的
+  original_examples:
+  - 我是他妈妈，他上班去了
+  derived_examples:
+  - 我是他的同事，我帮他接的
+- id: 7-6
+  name: 表示方便
+  description: 确认当下可以沟通
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 14
+    section: 表7 / 7-A
+    intent_id: 7-6
+  workflow_branches: 3-2-e
+  script_refs: —（按3-3分流）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 方便
+  - 你说吧
+  - 现在可以聊，您讲
+  original_examples:
+  - 方便
+  - 你说吧
+  derived_examples:
+  - 现在可以聊，您讲
+- id: 7-7
+  name: 表示不方便
+  description: 当下不便沟通（细分见7-18/7-20）
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 15
+    section: 表7 / 7-A
+    intent_id: 7-7
+  workflow_branches: 3-2-f→a2
+  script_refs: 5-8+a2子分支
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 现在不方便
+  - 我在开会
+  - 现在没法接着聊
+  original_examples:
+  - 现在不方便
+  - 我在开会
+  derived_examples:
+  - 现在没法接着聊
+- id: 7-8
+  name: 直接报进展
+  description: 跳过确认直接告知已填/已办
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 16
+    section: 表7 / 7-A
+    intent_id: 7-8
+  workflow_branches: 3-2-h→b15
+  script_refs: —（进入5-2后台核对）
+  example_context:
+  - role: assistant
+    content: 现在方便吗？
+  context_source: 话术5-2
+  examples:
+  - 我已经填完了啊
+  - 我已经把授权办好了
+  original_examples:
+  - 我已经填完了啊
+  derived_examples:
+  - 我已经把授权办好了
+- id: 7-9
+  name: 要求身份核验
+  description: 要求证明身份与通话真实性
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 22
+    section: 表7 / 7-B
+    intent_id: 7-9
+  workflow_branches: a1-1
+  script_refs: 5-4
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 你怎么证明你是官方的？
+  - 有什么办法验证您的身份
+  original_examples:
+  - 你怎么证明你是官方的？
+  derived_examples:
+  - 有什么办法验证您的身份
+- id: 7-10
+  name: 信息来源质疑
+  description: 质疑为何掌握其个人信息
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 23
+    section: 表7 / 7-B
+    intent_id: 7-10
+  workflow_branches: a1-2-a
+  script_refs: 5-5
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 你们怎么会有我的信息？
+  - 我的号码是谁给你们的
+  original_examples:
+  - 你们怎么会有我的信息？
+  derived_examples:
+  - 我的号码是谁给你们的
+- id: 7-11
+  name: 诈骗怀疑
+  description: 怀疑是诈骗/钓鱼电话
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 24
+    section: 表7 / 7-B
+    intent_id: 7-11
+  workflow_branches: a1-2-b
+  script_refs: 5-6
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 现在诈骗这么多，我怎么信你
+  - 我担心这是骗人的电话
+  original_examples:
+  - 现在诈骗这么多，我怎么信你
+  derived_examples:
+  - 我担心这是骗人的电话
+- id: 7-12
+  name: 号码可疑
+  description: 质疑外呼号码形态异常
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 25
+    section: 表7 / 7-B
+    intent_id: 7-12
+  workflow_branches: a1-2-c
+  script_refs: 5-13
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 你这号码怎么奇奇怪怪的
+  - 为什么来电显示不是正常的公司号码
+  original_examples:
+  - 你这号码怎么奇奇怪怪的
+  derived_examples:
+  - 为什么来电显示不是正常的公司号码
+- id: 7-13
+  name: 多渠道混淆
+  description: 收到多条相似通知分不清哪条是本件事
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 26
+    section: 表7 / 7-B
+    intent_id: 7-13
+  workflow_branches: a1-3（a1-3-a鉴别、a1-3-b澄清）
+  script_refs: 5-14（鉴别）+5-15（澄清）
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 我收到好几条短信/邮件，不知道哪个是你们
+  - 好几封通知我分不清哪封要填
+  original_examples:
+  - 我收到好几条短信/邮件，不知道哪个是你们
+  derived_examples:
+  - 好几封通知我分不清哪封要填
+- id: 7-14
+  name: 抱怨频繁来电
+  description: 不满被多次拨打
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 27
+    section: 表7 / 7-B
+    intent_id: 7-14
+  workflow_branches: a1-4
+  script_refs: 5-16
+  example_context:
+  - role: assistant
+    content: 您可以核实我们的身份。
+  context_source: a1/话术5-4（节选改写）
+  examples:
+  - 你们都打第三次了！烦不烦
+  - 怎么一天给我打这么多次
+  original_examples:
+  - 你们都打第三次了！烦不烦
+  derived_examples:
+  - 怎么一天给我打这么多次
+- id: 7-15
+  name: 信任恢复
+  description: 质疑被解答后接受继续沟通
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 28
+    section: 表7 / 7-B
+    intent_id: 7-15
+  workflow_branches: a1-5-a、3-2-b-2-1、3-2-g-1
+  script_refs: —（回主线断点）
+  example_context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  context_source: 话术5-4（节选改写）
+  examples:
+  - 哦，好的，明白了
+  - 听您解释以后我相信了
+  original_examples:
+  - 哦，好的，明白了
+  derived_examples:
+  - 听您解释以后我相信了
+- id: 7-16
+  name: 挂起确认
+  description: 要求先向HR/官方求证再继续
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 29
+    section: 表7 / 7-B
+    intent_id: 7-16
+  workflow_branches: a1-5-b、3-2-b-2-2、3-2-g-2
+  script_refs: 5-17
+  example_context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  context_source: 话术5-4（节选改写）
+  examples:
+  - 我先跟HR确认下再说
+  - 我要先找官方确认这通电话是真的
+  original_examples:
+  - 我先跟HR确认下再说
+  derived_examples:
+  - 我要先找官方确认这通电话是真的
+- id: 7-17
+  name: 仍不信任
+  description: 处置后仍拒绝沟通，要求不再联系
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 30
+    section: 表7 / 7-B
+    intent_id: 7-17
+  workflow_branches: a1-5-c
+  script_refs: 5-7/5-37
+  example_context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  context_source: 话术5-4（节选改写）
+  examples:
+  - 别再打了，我不信
+  - 解释了我也不信，别再联系我
+  original_examples:
+  - 别再打了，我不信
+  derived_examples:
+  - 解释了我也不信，别再联系我
+- id: 7-18
+  name: 硬中断-开车
+  description: 正在驾驶无法分心，零追问立即收线
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 36
+    section: 表7 / 7-C
+    intent_id: 7-18
+  workflow_branches: a2-1（开车）
+  script_refs: 5-18
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 我在开车
+  - 我正在方向盘前开车
+  original_examples:
+  - 我在开车
+  derived_examples:
+  - 我正在方向盘前开车
+- id: 7-19
+  name: 硬中断-急事
+  description: 就医/突发紧急事务
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 37
+    section: 表7 / 7-C
+    intent_id: 7-19
+  workflow_branches: a2-1（医院急事）
+  script_refs: 5-19
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 我在医院，有急事
+  - 家里有急事我在急诊
+  original_examples:
+  - 我在医院，有急事
+  derived_examples:
+  - 家里有急事我在急诊
+- id: 7-20
+  name: 软改约-在忙
+  description: 会议/忙碌中，可尝试压缩或改约
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 38
+    section: 表7 / 7-C
+    intent_id: 7-20
+  workflow_branches: a2-2
+  script_refs: 5-20（压缩尝试）
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 我在开会，回头吧
+  - 正忙着开会，稍后联系
+  original_examples:
+  - 我在开会，回头吧
+  derived_examples:
+  - 正忙着开会，稍后联系
+- id: 7-21
+  name: 条件不具备
+  description: 当前设备/环境无法完成填写
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+  workflow_branches: a2-3、a4-2、5-1-b-2-d
+  script_refs: 5-26
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 我没在电脑旁，手机填不了
+  - 电脑不在身边，现在设备没法填
+  original_examples:
+  - 我没在电脑旁，手机填不了
+  derived_examples:
+  - 电脑不在身边，现在设备没法填
+- id: 7-22
+  name: 信号差
+  description: 通话质量差、断续听不清
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 40
+    section: 表7 / 7-C
+    intent_id: 7-22
+  workflow_branches: a2-4
+  script_refs: 5-22
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 喂？你说什么？听不清
+  - 这边声音断断续续听不到
+  original_examples:
+  - 喂？你说什么？听不清
+  derived_examples:
+  - 这边声音断断续续听不到
+- id: 7-23
+  name: 排斥电话转异步
+  description: 拒绝电话渠道但办事意愿还在，指定短信/邮件
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+  workflow_branches: a2-5、3-2-f-4、5-4-c-2-d
+  script_refs: —（走b16-2-e补发）
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 别打电话了，发短信给我
+  - 电话先别聊了，把通知发到短信
+  original_examples:
+  - 别打电话了，发短信给我
+  derived_examples:
+  - 电话先别聊了，把通知发到短信
+- id: 7-24
+  name: 压缩同意
+  description: 同意"只说一件事"的压缩请求
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 42
+    section: 表7 / 7-C
+    intent_id: 7-24
+  workflow_branches: a2-6-a、a2-7-5、3-2-f-1、5-4-c-2-a
+  script_refs: 5-21
+  example_context:
+  - role: assistant
+    content: 如果您现在方便听一分钟，我只说一件事。
+  context_source: 话术5-21（节选）
+  examples:
+  - 那你说吧，就一分钟
+  - 可以，您就简短说一分钟
+  original_examples:
+  - 那你说吧，就一分钟
+  derived_examples:
+  - 可以，您就简短说一分钟
+- id: 7-25
+  name: 给具体时间
+  description: 直接给出可回拨的明确时点
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 43
+    section: 表7 / 7-C
+    intent_id: 7-25
+  workflow_branches: a2-7-1
+  script_refs: 5-23
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 明天下午3点吧
+  - 今天下午四点整再打给我
+  original_examples:
+  - 明天下午3点吧
+  derived_examples:
+  - 今天下午四点整再打给我
+- id: 7-26
+  name: 给相对时间
+  description: 给出需换算的相对时间
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 44
+    section: 表7 / 7-C
+    intent_id: 7-26
+  workflow_branches: a2-7-2
+  script_refs: 5-24
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 明天上午
+  - 后天下午
+  - 过两个小时再联系吧
+  original_examples:
+  - 明天上午
+  - 后天下午
+  derived_examples:
+  - 过两个小时再联系吧
+- id: 7-27
+  name: 模糊晚点/弱承诺
+  description: 不给明确时间，敷衍应付（weak_commitment）
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+  workflow_branches: a2-7-3、a2-7-4、a2-8-b、3-2-f-3、5-4-c-2-c
+  script_refs: 5-25（收窄）+5-12（低压收线）
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 晚点再说
+  - 回头再说
+  - 我尽量
+  - 回头有空我再说吧
+  original_examples:
+  - 晚点再说
+  - 回头再说
+  - 我尽量
+  derived_examples:
+  - 回头有空我再说吧
+- id: 7-28
+  name: 明确拒绝
+  description: 拒绝继续沟通或办理，要求不再联系
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 46
+    section: 表7 / 7-C
+    intent_id: 7-28
+  workflow_branches: a2-8-c、3-2-f-5、5-4-c-2-e、3-2-d-3、b3-2-c
+  script_refs: 5-37（终态话术）
+  example_context:
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  context_source: a2-7（改写）
+  examples:
+  - 不用了，别打了
+  - 我不办了，也不要再联系
+  original_examples:
+  - 不用了，别打了
+  derived_examples:
+  - 我不办了，也不要再联系
+- id: 7-29
+  name: 在职顾虑
+  description: 怕现单位知晓求职动向
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 52
+    section: 表7 / 7-D
+    intent_id: 7-29
+  workflow_branches: a3-1
+  script_refs: —（冒烟期轻收线反馈）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 我还在职，别打我公司电话
+  - 我还没离职，不能让单位知道
+  original_examples:
+  - 我还在职，别打我公司电话
+  derived_examples:
+  - 我还没离职，不能让单位知道
+- id: 7-30
+  name: 证明人阻力
+  description: 不愿提供上级/同事联系方式
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 53
+    section: 表7 / 7-D
+    intent_id: 7-30
+  workflow_branches: a3-2
+  script_refs: —（同上）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 我不想给我领导电话
+  - 上司的联系方式我不方便给
+  original_examples:
+  - 我不想给我领导电话
+  derived_examples:
+  - 上司的联系方式我不方便给
+- id: 7-31
+  name: 隐私顾虑
+  description: 担心个人信息泄露范围
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 54
+    section: 表7 / 7-D
+    intent_id: 7-31
+  workflow_branches: a3-3
+  script_refs: —（同上）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 背调会查我什么？会不会泄露隐私
+  - 我担心授权后资料会外泄
+  original_examples:
+  - 背调会查我什么？会不会泄露隐私
+  derived_examples:
+  - 我担心授权后资料会外泄
+- id: 7-32
+  name: 放弃offer
+  description: 已放弃该职位，背调无需继续
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+  workflow_branches: a3-4、4-2-d-3、4-2-e、b12-4-c
+  script_refs: —（🚫终态防再呼）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 我不去这家公司了
+  - 这个岗位我已经决定不去了
+  original_examples:
+  - 我不去这家公司了
+  derived_examples:
+  - 这个岗位我已经决定不去了
+- id: 7-33
+  name: 要先问HR
+  description: 需先与HR确认背调必要性
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 56
+    section: 表7 / 7-D
+    intent_id: 7-33
+  workflow_branches: a3-5
+  script_refs: —（轻收线反馈）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 我问问HR这个是不是必须的
+  - 我要问HR是不是非做这个背调不可
+  original_examples:
+  - 我问问HR这个是不是必须的
+  derived_examples:
+  - 我要问HR是不是非做这个背调不可
+- id: 7-34
+  name: 强烈情绪/投诉
+  description: 情绪激动、威胁投诉
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 57
+    section: 表7 / 7-D
+    intent_id: 7-34
+  workflow_branches: a6-3
+  script_refs: —（工单终态）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 你们这是骚扰！我要投诉！
+  - 再骚扰我就去投诉你们
+  original_examples:
+  - 你们这是骚扰！我要投诉！
+  derived_examples:
+  - 再骚扰我就去投诉你们
+- id: 7-35
+  name: 要求真人
+  description: 拒绝与AI沟通，坚持人工
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 58
+    section: 表7 / 7-D
+    intent_id: 7-35
+  workflow_branches: a6-4
+  script_refs: —（工单终态）
+  example_context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  context_source: 5-1-b-3（改写）
+  examples:
+  - 让你们真人给我打电话
+  - 请换人工来沟通
+  original_examples:
+  - 让你们真人给我打电话
+  derived_examples:
+  - 请换人工来沟通
+- id: 7-36
+  name: 收到未填
+  description: 确认收到通知但尚未完成填写
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 64
+    section: 表7 / 7-E
+    intent_id: 7-36
+  workflow_branches: 4-2-a→b14
+  script_refs: —（进入5-1归因软催）
+  example_context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  context_source: 话术5-36（节选改写）
+  examples:
+  - 收到了，还没填
+  - 通知我看到了，但表还没填
+  original_examples:
+  - 收到了，还没填
+  derived_examples:
+  - 通知我看到了，但表还没填
+- id: 7-37
+  name: 收到已填
+  description: 确认收到且已完成填写
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 65
+    section: 表7 / 7-E
+    intent_id: 7-37
+  workflow_branches: 4-2-b→b15
+  script_refs: —（进入5-2后台核对）
+  example_context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  context_source: 话术5-36（节选改写）
+  examples:
+  - 收到了，我填完了
+  - 通知收到后我就提交好了
+  original_examples:
+  - 收到了，我填完了
+  derived_examples:
+  - 通知收到后我就提交好了
+- id: 7-38
+  name: 没收到
+  description: 否认收到任何授权通知
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+  workflow_branches: 4-2-c、b16-2-c-2
+  script_refs: —（进入5-3渠道排查）
+  example_context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  context_source: 话术5-36（节选改写）
+  examples:
+  - 我没收到什么短信啊
+  - 短信邮箱都没收到通知
+  original_examples:
+  - 我没收到什么短信啊
+  derived_examples:
+  - 短信邮箱都没收到通知
+- id: 7-39
+  name: 不确定待找
+  description: 不确定是否收到，需查找确认
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 67
+    section: 表7 / 7-E
+    intent_id: 7-39
+  workflow_branches: 4-2-d→b12
+  script_refs: 5-27（静默等待）+5-28（15s提示）
+  example_context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  context_source: 话术5-36（节选改写）
+  examples:
+  - 我看看啊……等我找找
+  - 不记得有没有收到，我先翻一下
+  original_examples:
+  - 我看看啊……等我找找
+  derived_examples:
+  - 不记得有没有收到，我先翻一下
+- id: 7-40
+  name: 查找后找到
+  description: 查找后在拦截/垃圾箱/兜底渠道找到
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+  workflow_branches: b12-4-a、4-2-d-1、b16-2-a-1、b16-2-b-1、b16-2-c-1、5-3-a
+  script_refs: —（指引完成拿承诺）
+  example_context:
+  - role: assistant
+    content: 您看下骚扰拦截或垃圾邮件箱里有吗？
+  context_source: 话术5-28/5-43（改写）
+  examples:
+  - 哦，找到了，在骚扰拦截里
+  - 翻垃圾邮件时找到那封了
+  original_examples:
+  - 哦，找到了，在骚扰拦截里
+  derived_examples:
+  - 翻垃圾邮件时找到那封了
+- id: 7-41
+  name: 查找后没有
+  description: 查找后确认确实没有
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+  workflow_branches: b12-4-b、4-2-d-2、b16-2-a-2、b16-2-b-2
+  script_refs: —（级联下一Step）
+  example_context:
+  - role: assistant
+    content: 您看下骚扰拦截或垃圾邮件箱里有吗？
+  context_source: 话术5-28/5-43（改写）
+  examples:
+  - 没有，哪都没有
+  - 垃圾箱和拦截都查了还是没有
+  original_examples:
+  - 没有，哪都没有
+  derived_examples:
+  - 垃圾箱和拦截都查了还是没有
+- id: 7-42
+  name: 忙碌遗忘
+  description: 因忙未及时处理，无对抗情绪
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 75
+    section: 表7 / 7-F
+    intent_id: 7-42
+  workflow_branches: b14-2-a、5-1-b-1
+  script_refs: —（→5-4时限阶梯）
+  example_context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  context_source: b14-1
+  examples:
+  - 最近太忙了，忘了这事
+  - 事情太多把填写给忘记了
+  original_examples:
+  - 最近太忙了，忘了这事
+  derived_examples:
+  - 事情太多把填写给忘记了
+- id: 7-43
+  name: 操作有困难
+  description: 不会操作/链接问题/页面异常
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 76
+    section: 表7 / 7-F
+    intent_id: 7-43
+  workflow_branches: b14-2-b、5-1-b-2
+  script_refs: —（→a4/a5子分支）
+  example_context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  context_source: b14-1
+  examples:
+  - 那个链接我打不开
+  - 我不太会操作那个授权表
+  original_examples:
+  - 那个链接我打不开
+  derived_examples:
+  - 我不太会操作那个授权表
+- id: 7-44
+  name: 不想填/有顾虑
+  description: 主观不愿填或对授权本身有顾虑
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 77
+    section: 表7 / 7-F
+    intent_id: 7-44
+  workflow_branches: b14-2-c、5-1-b-3
+  script_refs: —（→a3意愿阻力）
+  example_context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  context_source: b14-1
+  examples:
+  - 我不想填
+  - 要授权的信息太多了吧
+  - 授权要填的东西太多，我有顾虑
+  original_examples:
+  - 我不想填
+  - 要授权的信息太多了吧
+  derived_examples:
+  - 授权要填的东西太多，我有顾虑
+- id: 7-45
+  name: 有步骤没做
+  description: 完成主体填写但遗漏电子签/人脸
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 83
+    section: 表7 / 7-G
+    intent_id: 7-45
+  workflow_branches: 5-2-b-2-a
+  script_refs: 5-30
+  example_context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  context_source: 话术5-29（节选改写）
+  examples:
+  - 电子签名？没做啊
+  - 我只填了资料，还没有签名刷脸
+  original_examples:
+  - 电子签名？没做啊
+  derived_examples:
+  - 我只填了资料，还没有签名刷脸
+- id: 7-46
+  name: 自称已完成
+  description: 坚称全部完成但后台无记录
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 84
+    section: 表7 / 7-G
+    intent_id: 7-46
+  workflow_branches: 5-2-b-2-b
+  script_refs: 5-31
+  example_context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  context_source: 话术5-29（节选改写）
+  examples:
+  - 我都弄完了，你们系统问题吧
+  - 签字刷脸提交都做了，是后台没同步
+  original_examples:
+  - 我都弄完了，你们系统问题吧
+  derived_examples:
+  - 签字刷脸提交都做了，是后台没同步
+- id: 7-47
+  name: 疑似未提交
+  description: 操作完成但可能未点最终提交
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 85
+    section: 表7 / 7-G
+    intent_id: 7-47
+  workflow_branches: 5-2-b-2-c
+  script_refs: 5-32
+  example_context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  context_source: 话术5-29（节选改写）
+  examples:
+  - 填完了啊，最后一步没注意
+  - 最后的提交按钮我可能忘记点了
+  original_examples:
+  - 填完了啊，最后一步没注意
+  derived_examples:
+  - 最后的提交按钮我可能忘记点了
+- id: 7-48
+  name: 接受时限承诺
+  description: 同意按档位时间完成
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 91
+    section: 表7 / 7-H
+    intent_id: 7-48
+  workflow_branches: 5-4-c-1、b17-3-a
+  script_refs: —（进入6收尾）
+  example_context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  context_source: b17-1-a
+  examples:
+  - 好的，今天下班前搞定
+  - 可以，我会在明天上午前办完
+  original_examples:
+  - 好的，今天下班前搞定
+  derived_examples:
+  - 可以，我会在明天上午前办完
+- id: 7-49
+  name: 拒绝/犹豫时限
+  description: 嫌档位时间太赶，想改时间
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 92
+    section: 表7 / 7-H
+    intent_id: 7-49
+  workflow_branches: 5-4-c-2、b17-3-b
+  script_refs: —（→a2改约横切）
+  example_context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  context_source: b17-1-a
+  examples:
+  - 今天不行，太赶了
+  - 再看看吧
+  - 这个期限太紧我做不到
+  original_examples:
+  - 今天不行，太赶了
+  - 再看看吧
+  derived_examples:
+  - 这个期限太紧我做不到
+- id: 7-50
+  name: 超时限承诺
+  description: 给出超出闭环时限的时间
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 93
+    section: 表7 / 7-H
+    intent_id: 7-50
+  workflow_branches: 5-4-c-3
+  script_refs: —（接受+收窄+反馈客户）
+  example_context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  context_source: b17-1-a
+  examples:
+  - 下周吧，我下周才有空
+  - 这几天没空，要到下周才能填
+  original_examples:
+  - 下周吧，我下周才有空
+  derived_examples:
+  - 这几天没空，要到下周才能填
+- id: 7-51
+  name: 人脸识别失败
+  description: 人脸核验步骤无法通过
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 99
+    section: 表7 / 7-I
+    intent_id: 7-51
+  workflow_branches: a4-1、5-1-b-2-b
+  script_refs: 指导话术（a4-1内嵌）
+  example_context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  context_source: a4/a5（改写）
+  examples:
+  - 到人脸这步总说识别失败
+  - 刷脸认证怎么都通过不了
+  original_examples:
+  - 到人脸这步总说识别失败
+  derived_examples:
+  - 刷脸认证怎么都通过不了
+- id: 7-52
+  name: 要求修改已提交
+  description: 提交后发现错误要求修改
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 100
+    section: 表7 / 7-I
+    intent_id: 7-52
+  workflow_branches: a4-3、5-1-b-2-c、a6-2
+  script_refs: —（按a4-3-a/b分流）
+  example_context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  context_source: a4/a5（改写）
+  examples:
+  - 我名字填错了，能改吗？
+  - 表已经交了，填错的信息可以修改吗
+  original_examples:
+  - 我名字填错了，能改吗？
+  derived_examples:
+  - 表已经交了，填错的信息可以修改吗
+- id: 7-53
+  name: 报告技术故障
+  description: 页面报错/系统异常/链接失效
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 101
+    section: 表7 / 7-I
+    intent_id: 7-53
+  workflow_branches: a4-4、a6-1
+  script_refs: —（技术工单终态）
+  example_context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  context_source: a4/a5（改写）
+  examples:
+  - 页面一直报错
+  - 链接打不开
+  - 授权网页出现系统错误
+  original_examples:
+  - 页面一直报错
+  - 链接打不开
+  derived_examples:
+  - 授权网页出现系统错误
+- id: 7-54
+  name: 填写口径询问
+  description: 询问填写规则与判定标准
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 102
+    section: 表7 / 7-I
+    intent_id: 7-54
+  workflow_branches: a5
+  script_refs: —（冒烟期记录反馈）
+  example_context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  context_source: a4/a5（改写）
+  examples:
+  - 工作经历怎么算一段？
+  - 填工作经历时一段怎么划分
+  original_examples:
+  - 工作经历怎么算一段？
+  derived_examples:
+  - 填工作经历时一段怎么划分
+- id: 7-55
+  name: 无邮箱/拒绝提供
+  description: 无法提供邮箱或不愿提供
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 103
+    section: 表7 / 7-I
+    intent_id: 7-55
+  workflow_branches: b16-2-e-2-b/c、5-3-d
+  script_refs: —（人工工单终态）
+  example_context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  context_source: 话术5-49（节选）
+  examples:
+  - 我没有邮箱
+  - 我不想给邮箱
+  - 我不用邮箱，不想提供邮箱地址
+  original_examples:
+  - 我没有邮箱
+  - 我不想给邮箱
+  derived_examples:
+  - 我不用邮箱，不想提供邮箱地址
+- id: 7-56
+  name: 提供邮箱登记
+  description: 配合提供邮箱接收补发
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 104
+    section: 表7 / 7-I
+    intent_id: 7-56
+  workflow_branches: b16-2-e-2-a、5-3-c
+  script_refs: —（拿承诺→5-4）
+  example_context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  context_source: 话术5-49（节选）
+  examples:
+  - 发我邮箱吧，xxx@xx.com
+  - 用我的邮箱candidate@example.com接收吧
+  original_examples:
+  - 发我邮箱吧，xxx@xx.com
+  derived_examples:
+  - 用我的邮箱candidate@example.com接收吧
+- id: 7-57
+  name: 同意自主寻访
+  description: informed模式下，同意平台通过公司官方渠道联系其他在职同事核实
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 105
+    section: 表7 / 7-I
+    intent_id: 7-57
+  workflow_branches: a3-6-a-1
+  script_refs: ​
+  example_context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  context_source: 话术5-38（改写）
+  examples:
+  - 可以没问题
+  - 你们随意
+  - 同意你们找其他同事核实
+  original_examples:
+  - 可以没问题
+  - 你们随意
+  derived_examples:
+  - 同意你们找其他同事核实
+- id: 7-58
+  name: 自主寻访顾虑（怕在职暴露）
+  description: 同意办背调，但担心自主寻访让在职同事知道自己在外面看机会
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 106
+    section: 表7 / 7-I
+    intent_id: 7-58
+  workflow_branches: a3-6-a-2
+  script_refs: （同a3-1在职顾虑链路）
+  example_context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  context_source: 话术5-38（改写）
+  examples:
+  - 那别人不就知道我要走了吗
+  - 别联系我们公司的人
+  - 你们这么找同事会暴露我准备离职
+  original_examples:
+  - 那别人不就知道我要走了吗
+  - 别联系我们公司的人
+  derived_examples:
+  - 你们这么找同事会暴露我准备离职
+- id: 7-59
+  name: 拒绝自主寻访
+  description: 明确拒绝平台主动寻访，只接受已提供的证明人
+  input_kind: text
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 107
+    section: 表7 / 7-I
+    intent_id: 7-59
+  workflow_branches: a3-6-a-3
+  script_refs: 5-40
+  example_context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  context_source: 话术5-38（改写）
+  examples:
+  - 不用找我同事，就用我给的那几个
+  - 只联系我提供的人，不允许另外找
+  original_examples:
+  - 不用找我同事，就用我给的那几个
+  derived_examples:
+  - 只联系我提供的人，不允许另外找

@@ -1,0 +1,98 @@
+schema_version: 1
+cases:
+- id: contrast-25-in-conversation
+  text: 明天北京天气怎么样
+  expected: &id001 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id001
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-26-in-conversation
+  text: 帮我订一张去上海的机票
+  expected: &id002 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id002
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-27-in-conversation
+  text: 来一首周杰伦的歌
+  expected: &id003 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id003
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-28-in-conversation
+  text: 这份外卖怎么退款
+  expected: &id004 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id004
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-29-in-conversation
+  text: 帮我写一个排序程序
+  expected: &id005 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id005
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-30-in-conversation
+  text: 设置早上七点的闹钟
+  expected: &id006 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id006
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-31-in-conversation
+  text: 我想查银行卡余额
+  expected: &id007 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id007
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参
+- id: contrast-32-in-conversation
+  text: 晚饭吃什么比较好
+  expected: &id008 []
+  category: ood
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权通知，您收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id008
+  derivation: 原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参

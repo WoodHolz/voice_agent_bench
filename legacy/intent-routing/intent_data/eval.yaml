@@ -1,0 +1,2411 @@
+schema_version: 1
+notes: expected=[] 要求拒识；多标签仅用于歧义集合命中率，不计单标签准确率。source_overlap 不计泛化。
+cases:
+- id: 7-2-heldout-0
+  text: 您拨错号码啦，这里没有这个人
+  expected:
+  - 7-2
+  category: paraphrase
+  split: heldout
+  context: &id001
+  - role: assistant
+    content: 现在方便吗？
+  source: &id002
+    file: 催授权流程 v1.1 - 意图.md
+    line: 10
+    section: 表7 / 7-A
+    intent_id: 7-2
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-2-heldout-1
+  text: 打错电话啦
+  expected:
+  - 7-2
+  category: short_spoken
+  split: heldout
+  context: *id001
+  source: *id002
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-2-source-0
+  text: 你打错了
+  expected:
+  - 7-2
+  category: source_example
+  split: source_overlap
+  context: *id001
+  source: *id002
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-2-source-1
+  text: 他不在家/出去了
+  expected:
+  - 7-2
+  category: source_example
+  split: source_overlap
+  context: *id001
+  source: *id002
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-3-heldout-0
+  text: 您刚说您是谁来着
+  expected:
+  - 7-3
+  category: paraphrase
+  split: heldout
+  context: &id003
+  - role: assistant
+    content: 现在方便吗？
+  source: &id004
+    file: 催授权流程 v1.1 - 意图.md
+    line: 11
+    section: 表7 / 7-A
+    intent_id: 7-3
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-3-heldout-1
+  text: 哪位呀
+  expected:
+  - 7-3
+  category: short_spoken
+  split: heldout
+  context: *id003
+  source: *id004
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-3-source-0
+  text: 你是谁？
+  expected:
+  - 7-3
+  category: source_example
+  split: source_overlap
+  context: *id003
+  source: *id004
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-3-source-1
+  text: 什么背调？
+  expected:
+  - 7-3
+  category: source_example
+  split: source_overlap
+  context: *id003
+  source: *id004
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-4-heldout-0
+  text: 您好，智能接听中，请报上您的姓名和联系原因
+  expected:
+  - 7-4
+  category: paraphrase
+  split: heldout
+  context: &id005
+  - role: assistant
+    content: 现在方便吗？
+  source: &id006
+    file: 催授权流程 v1.1 - 意图.md
+    line: 12
+    section: 表7 / 7-A
+    intent_id: 7-4
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-4-heldout-1
+  text: 请说来电事由
+  expected:
+  - 7-4
+  category: short_spoken
+  split: heldout
+  context: *id005
+  source: *id006
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-4-source-0
+  text: 请留下姓名和来电原因
+  expected:
+  - 7-4
+  category: source_example
+  split: source_overlap
+  context: *id005
+  source: *id006
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-5-heldout-0
+  text: 他手机在我这里，我是他爱人
+  expected:
+  - 7-5
+  category: paraphrase
+  split: heldout
+  context: &id007
+  - role: assistant
+    content: 现在方便吗？
+  source: &id008
+    file: 催授权流程 v1.1 - 意图.md
+    line: 13
+    section: 表7 / 7-A
+    intent_id: 7-5
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-5-heldout-1
+  text: 我是他家属
+  expected:
+  - 7-5
+  category: short_spoken
+  split: heldout
+  context: *id007
+  source: *id008
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-5-source-0
+  text: 我是他妈妈，他上班去了
+  expected:
+  - 7-5
+  category: source_example
+  split: source_overlap
+  context: *id007
+  source: *id008
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-6-heldout-0
+  text: 这会儿有空，可以跟您说
+  expected:
+  - 7-6
+  category: paraphrase
+  split: heldout
+  context: &id009
+  - role: assistant
+    content: 现在方便吗？
+  source: &id010
+    file: 催授权流程 v1.1 - 意图.md
+    line: 14
+    section: 表7 / 7-A
+    intent_id: 7-6
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-6-heldout-1
+  text: 有空您讲
+  expected:
+  - 7-6
+  category: short_spoken
+  split: heldout
+  context: *id009
+  source: *id010
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-6-source-0
+  text: 方便
+  expected:
+  - 7-6
+  category: source_example
+  split: source_overlap
+  context: *id009
+  source: *id010
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-6-source-1
+  text: 你说吧
+  expected:
+  - 7-6
+  category: source_example
+  split: source_overlap
+  context: *id009
+  source: *id010
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-7-heldout-0
+  text: 这会儿实在不便通话
+  expected:
+  - 7-7
+  category: paraphrase
+  split: heldout
+  context: &id011
+  - role: assistant
+    content: 现在方便吗？
+  source: &id012
+    file: 催授权流程 v1.1 - 意图.md
+    line: 15
+    section: 表7 / 7-A
+    intent_id: 7-7
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-7-heldout-1
+  text: 眼下不便
+  expected:
+  - 7-7
+  category: short_spoken
+  split: heldout
+  context: *id011
+  source: *id012
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-7-source-0
+  text: 现在不方便
+  expected:
+  - 7-7
+  category: source_example
+  split: source_overlap
+  context: *id011
+  source: *id012
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-7-source-1
+  text: 我在开会
+  expected:
+  - 7-7
+  category: source_example
+  split: source_overlap
+  context: *id011
+  source: *id012
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-8-heldout-0
+  text: 你一打来我就想说，授权早弄好了
+  expected:
+  - 7-8
+  category: paraphrase
+  split: heldout
+  context: &id013
+  - role: assistant
+    content: 现在方便吗？
+  source: &id014
+    file: 催授权流程 v1.1 - 意图.md
+    line: 16
+    section: 表7 / 7-A
+    intent_id: 7-8
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-8-heldout-1
+  text: 早就办完啦
+  expected:
+  - 7-8
+  category: short_spoken
+  split: heldout
+  context: *id013
+  source: *id014
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-8-source-0
+  text: 我已经填完了啊
+  expected:
+  - 7-8
+  category: source_example
+  split: source_overlap
+  context: *id013
+  source: *id014
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-9-heldout-0
+  text: 能提供一个渠道让我查证您是不是官方吗
+  expected:
+  - 7-9
+  category: paraphrase
+  split: heldout
+  context: &id015
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id016
+    file: 催授权流程 v1.1 - 意图.md
+    line: 22
+    section: 表7 / 7-B
+    intent_id: 7-9
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-9-heldout-1
+  text: 怎么验真伪
+  expected:
+  - 7-9
+  category: short_spoken
+  split: heldout
+  context: *id015
+  source: *id016
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-9-source-0
+  text: 你怎么证明你是官方的？
+  expected:
+  - 7-9
+  category: source_example
+  split: source_overlap
+  context: *id015
+  source: *id016
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-10-heldout-0
+  text: 我没联系过你们，你们从哪儿拿到我的资料的
+  expected:
+  - 7-10
+  category: paraphrase
+  split: heldout
+  context: &id017
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id018
+    file: 催授权流程 v1.1 - 意图.md
+    line: 23
+    section: 表7 / 7-B
+    intent_id: 7-10
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-10-heldout-1
+  text: 资料哪来的
+  expected:
+  - 7-10
+  category: short_spoken
+  split: heldout
+  context: *id017
+  source: *id018
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-10-source-0
+  text: 你们怎么会有我的信息？
+  expected:
+  - 7-10
+  category: source_example
+  split: source_overlap
+  context: *id017
+  source: *id018
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-11-heldout-0
+  text: 这会不会是冒充招聘的骗局呀
+  expected:
+  - 7-11
+  category: paraphrase
+  split: heldout
+  context: &id019
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id020
+    file: 催授权流程 v1.1 - 意图.md
+    line: 24
+    section: 表7 / 7-B
+    intent_id: 7-11
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-11-heldout-1
+  text: 怕是骗子
+  expected:
+  - 7-11
+  category: short_spoken
+  split: heldout
+  context: *id019
+  source: *id020
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-11-source-0
+  text: 现在诈骗这么多，我怎么信你
+  expected:
+  - 7-11
+  category: source_example
+  split: source_overlap
+  context: *id019
+  source: *id020
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-12-heldout-0
+  text: 这个来电号码看着不像正规座机
+  expected:
+  - 7-12
+  category: paraphrase
+  split: heldout
+  context: &id021
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id022
+    file: 催授权流程 v1.1 - 意图.md
+    line: 25
+    section: 表7 / 7-B
+    intent_id: 7-12
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-12-heldout-1
+  text: 号码好怪啊
+  expected:
+  - 7-12
+  category: short_spoken
+  split: heldout
+  context: *id021
+  source: *id022
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-12-source-0
+  text: 你这号码怎么奇奇怪怪的
+  expected:
+  - 7-12
+  category: source_example
+  split: source_overlap
+  context: *id021
+  source: *id022
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-13-heldout-0
+  text: 手机里背调通知有好几条，我不知道该认哪一条
+  expected:
+  - 7-13
+  category: paraphrase
+  split: heldout
+  context: &id023
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id024
+    file: 催授权流程 v1.1 - 意图.md
+    line: 26
+    section: 表7 / 7-B
+    intent_id: 7-13
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-13-heldout-1
+  text: 到底是哪封
+  expected:
+  - 7-13
+  category: short_spoken
+  split: heldout
+  context: *id023
+  source: *id024
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-13-source-0
+  text: 我收到好几条短信/邮件，不知道哪个是你们
+  expected:
+  - 7-13
+  category: source_example
+  split: source_overlap
+  context: *id023
+  source: *id024
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-14-heldout-0
+  text: 你们今天已经联系好几遍了，太频繁了吧
+  expected:
+  - 7-14
+  category: paraphrase
+  split: heldout
+  context: &id025
+  - role: assistant
+    content: 您可以核实我们的身份。
+  source: &id026
+    file: 催授权流程 v1.1 - 意图.md
+    line: 27
+    section: 表7 / 7-B
+    intent_id: 7-14
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-14-heldout-1
+  text: 又打过来了
+  expected:
+  - 7-14
+  category: short_spoken
+  split: heldout
+  context: *id025
+  source: *id026
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-14-source-0
+  text: 你们都打第三次了！烦不烦
+  expected:
+  - 7-14
+  category: source_example
+  split: source_overlap
+  context: *id025
+  source: *id026
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-15-heldout-0
+  text: 这样解释我就放心了，可以继续
+  expected:
+  - 7-15
+  category: paraphrase
+  split: heldout
+  context: &id027
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: &id028
+    file: 催授权流程 v1.1 - 意图.md
+    line: 28
+    section: 表7 / 7-B
+    intent_id: 7-15
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-15-heldout-1
+  text: 这下放心啦
+  expected:
+  - 7-15
+  category: short_spoken
+  split: heldout
+  context: *id027
+  source: *id028
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-15-source-0
+  text: 哦，好的，明白了
+  expected:
+  - 7-15
+  category: source_example
+  split: source_overlap
+  context: *id027
+  source: *id028
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-16-heldout-0
+  text: 等我核实过你们的身份，再接着谈
+  expected:
+  - 7-16
+  category: paraphrase
+  split: heldout
+  context: &id029
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: &id030
+    file: 催授权流程 v1.1 - 意图.md
+    line: 29
+    section: 表7 / 7-B
+    intent_id: 7-16
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-16-heldout-1
+  text: 先核实真假
+  expected:
+  - 7-16
+  category: short_spoken
+  split: heldout
+  context: *id029
+  source: *id030
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-16-source-0
+  text: 我先跟HR确认下再说
+  expected:
+  - 7-16
+  category: source_example
+  split: source_overlap
+  context: *id029
+  source: *id030
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-17-heldout-0
+  text: 我还是认定你们不可信，以后不要来电了
+  expected:
+  - 7-17
+  category: paraphrase
+  split: heldout
+  context: &id031
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: &id032
+    file: 催授权流程 v1.1 - 意图.md
+    line: 30
+    section: 表7 / 7-B
+    intent_id: 7-17
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-17-heldout-1
+  text: 不信别打了
+  expected:
+  - 7-17
+  category: short_spoken
+  split: heldout
+  context: *id031
+  source: *id032
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-17-source-0
+  text: 别再打了，我不信
+  expected:
+  - 7-17
+  category: source_example
+  split: source_overlap
+  context: *id031
+  source: *id032
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-18-heldout-0
+  text: 车还在路上开着，没办法分心听
+  expected:
+  - 7-18
+  category: paraphrase
+  split: heldout
+  context: &id033
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id034
+    file: 催授权流程 v1.1 - 意图.md
+    line: 36
+    section: 表7 / 7-C
+    intent_id: 7-18
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-18-heldout-1
+  text: 正开着车呢
+  expected:
+  - 7-18
+  category: short_spoken
+  split: heldout
+  context: *id033
+  source: *id034
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-18-source-0
+  text: 我在开车
+  expected:
+  - 7-18
+  category: source_example
+  split: source_overlap
+  context: *id033
+  source: *id034
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-19-heldout-0
+  text: 我正在医院处理突发情况，现在顾不上
+  expected:
+  - 7-19
+  category: paraphrase
+  split: heldout
+  context: &id035
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id036
+    file: 催授权流程 v1.1 - 意图.md
+    line: 37
+    section: 表7 / 7-C
+    intent_id: 7-19
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-19-heldout-1
+  text: 急诊有事
+  expected:
+  - 7-19
+  category: short_spoken
+  split: heldout
+  context: *id035
+  source: *id036
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-19-source-0
+  text: 我在医院，有急事
+  expected:
+  - 7-19
+  category: source_example
+  split: source_overlap
+  context: *id035
+  source: *id036
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-20-heldout-0
+  text: 领导正在给我们开会，现在没法聊
+  expected:
+  - 7-20
+  category: paraphrase
+  split: heldout
+  context: &id037
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id038
+    file: 催授权流程 v1.1 - 意图.md
+    line: 38
+    section: 表7 / 7-C
+    intent_id: 7-20
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-20-heldout-1
+  text: 会议还没完
+  expected:
+  - 7-20
+  category: short_spoken
+  split: heldout
+  context: *id037
+  source: *id038
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-20-source-0
+  text: 我在开会，回头吧
+  expected:
+  - 7-20
+  category: source_example
+  split: source_overlap
+  context: *id037
+  source: *id038
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-21-heldout-0
+  text: 手机上操作不了，得等我回去拿电脑
+  expected:
+  - 7-21
+  category: paraphrase
+  split: heldout
+  context: &id039
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id040
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-21-heldout-1
+  text: 得用电脑填
+  expected:
+  - 7-21
+  category: short_spoken
+  split: heldout
+  context: *id039
+  source: *id040
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-21-source-0
+  text: 我没在电脑旁，手机填不了
+  expected:
+  - 7-21
+  category: source_example
+  split: source_overlap
+  context: *id039
+  source: *id040
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-22-heldout-0
+  text: 您那头说话一截一截的，我听不清楚
+  expected:
+  - 7-22
+  category: paraphrase
+  split: heldout
+  context: &id041
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id042
+    file: 催授权流程 v1.1 - 意图.md
+    line: 40
+    section: 表7 / 7-C
+    intent_id: 7-22
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-22-heldout-1
+  text: 声音断了
+  expected:
+  - 7-22
+  category: short_spoken
+  split: heldout
+  context: *id041
+  source: *id042
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-22-source-0
+  text: 喂？你说什么？听不清
+  expected:
+  - 7-22
+  category: source_example
+  split: source_overlap
+  context: *id041
+  source: *id042
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-23-heldout-0
+  text: 我可以办，但不要电话讲了，用邮件告诉我
+  expected:
+  - 7-23
+  category: paraphrase
+  split: heldout
+  context: &id043
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id044
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-23-heldout-1
+  text: 短信通知我吧
+  expected:
+  - 7-23
+  category: short_spoken
+  split: heldout
+  context: *id043
+  source: *id044
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-23-source-0
+  text: 别打电话了，发短信给我
+  expected:
+  - 7-23
+  category: source_example
+  split: source_overlap
+  context: *id043
+  source: *id044
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-24-heldout-0
+  text: 那我挤一分钟，您只讲最要紧的一件
+  expected:
+  - 7-24
+  category: paraphrase
+  split: heldout
+  context: &id045
+  - role: assistant
+    content: 如果您现在方便听一分钟，我只说一件事。
+  source: &id046
+    file: 催授权流程 v1.1 - 意图.md
+    line: 42
+    section: 表7 / 7-C
+    intent_id: 7-24
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-24-heldout-1
+  text: 只讲一分钟啊
+  expected:
+  - 7-24
+  category: short_spoken
+  split: heldout
+  context: *id045
+  source: *id046
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-24-source-0
+  text: 那你说吧，就一分钟
+  expected:
+  - 7-24
+  category: source_example
+  split: source_overlap
+  context: *id045
+  source: *id046
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-25-heldout-0
+  text: 请在明天下午两点半给我回电
+  expected:
+  - 7-25
+  category: paraphrase
+  split: heldout
+  context: &id047
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id048
+    file: 催授权流程 v1.1 - 意图.md
+    line: 43
+    section: 表7 / 7-C
+    intent_id: 7-25
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-25-heldout-1
+  text: 明日十五点打
+  expected:
+  - 7-25
+  category: short_spoken
+  split: heldout
+  context: *id047
+  source: *id048
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-25-source-0
+  text: 明天下午3点吧
+  expected:
+  - 7-25
+  category: source_example
+  split: source_overlap
+  context: *id047
+  source: *id048
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-26-heldout-0
+  text: 等到后天早上再聊行不行
+  expected:
+  - 7-26
+  category: paraphrase
+  split: heldout
+  context: &id049
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id050
+    file: 催授权流程 v1.1 - 意图.md
+    line: 44
+    section: 表7 / 7-C
+    intent_id: 7-26
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-26-heldout-1
+  text: 隔天上午吧
+  expected:
+  - 7-26
+  category: short_spoken
+  split: heldout
+  context: *id049
+  source: *id050
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-26-source-0
+  text: 明天上午
+  expected:
+  - 7-26
+  category: source_example
+  split: source_overlap
+  context: *id049
+  source: *id050
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-26-source-1
+  text: 后天下午
+  expected:
+  - 7-26
+  category: source_example
+  split: source_overlap
+  context: *id049
+  source: *id050
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-27-heldout-0
+  text: 我也说不好什么时候，之后再看看
+  expected:
+  - 7-27
+  category: paraphrase
+  split: heldout
+  context: &id051
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id052
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-27-heldout-1
+  text: 到时候再说
+  expected:
+  - 7-27
+  category: short_spoken
+  split: heldout
+  context: *id051
+  source: *id052
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-27-source-0
+  text: 晚点再说
+  expected:
+  - 7-27
+  category: source_example
+  split: source_overlap
+  context: *id051
+  source: *id052
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-27-source-1
+  text: 回头再说
+  expected:
+  - 7-27
+  category: source_example
+  split: source_overlap
+  context: *id051
+  source: *id052
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-27-source-2
+  text: 我尽量
+  expected:
+  - 7-27
+  category: source_example
+  split: source_overlap
+  context: *id051
+  source: *id052
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-28-heldout-0
+  text: 这件事我拒绝继续，请停止打电话
+  expected:
+  - 7-28
+  category: paraphrase
+  split: heldout
+  context: &id053
+  - role: assistant
+    content: 您看什么时候方便再联系？
+  source: &id054
+    file: 催授权流程 v1.1 - 意图.md
+    line: 46
+    section: 表7 / 7-C
+    intent_id: 7-28
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-28-heldout-1
+  text: 别联系了
+  expected:
+  - 7-28
+  category: short_spoken
+  split: heldout
+  context: *id053
+  source: *id054
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-28-source-0
+  text: 不用了，别打了
+  expected:
+  - 7-28
+  category: source_example
+  split: source_overlap
+  context: *id053
+  source: *id054
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-29-heldout-0
+  text: 我还在原公司工作，不想被发现正在找新工作
+  expected:
+  - 7-29
+  category: paraphrase
+  split: heldout
+  context: &id055
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id056
+    file: 催授权流程 v1.1 - 意图.md
+    line: 52
+    section: 表7 / 7-D
+    intent_id: 7-29
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-29-heldout-1
+  text: 现单位别知道
+  expected:
+  - 7-29
+  category: short_spoken
+  split: heldout
+  context: *id055
+  source: *id056
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-29-source-0
+  text: 我还在职，别打我公司电话
+  expected:
+  - 7-29
+  category: source_example
+  split: source_overlap
+  context: *id055
+  source: *id056
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-30-heldout-0
+  text: 能不能别让我交领导电话号码，我不愿意提供
+  expected:
+  - 7-30
+  category: paraphrase
+  split: heldout
+  context: &id057
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id058
+    file: 催授权流程 v1.1 - 意图.md
+    line: 53
+    section: 表7 / 7-D
+    intent_id: 7-30
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-30-heldout-1
+  text: 领导号码不给
+  expected:
+  - 7-30
+  category: short_spoken
+  split: heldout
+  context: *id057
+  source: *id058
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-30-source-0
+  text: 我不想给我领导电话
+  expected:
+  - 7-30
+  category: source_example
+  split: source_overlap
+  context: *id057
+  source: *id058
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-31-heldout-0
+  text: 你们拿到个人信息会不会传给无关的人
+  expected:
+  - 7-31
+  category: paraphrase
+  split: heldout
+  context: &id059
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id060
+    file: 催授权流程 v1.1 - 意图.md
+    line: 54
+    section: 表7 / 7-D
+    intent_id: 7-31
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-31-heldout-1
+  text: 隐私怎么保护
+  expected:
+  - 7-31
+  category: short_spoken
+  split: heldout
+  context: *id059
+  source: *id060
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-31-source-0
+  text: 背调会查我什么？会不会泄露隐私
+  expected:
+  - 7-31
+  category: source_example
+  split: source_overlap
+  context: *id059
+  source: *id060
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-32-heldout-0
+  text: 我已经拒掉这份录用，不入职了
+  expected:
+  - 7-32
+  category: paraphrase
+  split: heldout
+  context: &id061
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id062
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-32-heldout-1
+  text: 录用我放弃了
+  expected:
+  - 7-32
+  category: short_spoken
+  split: heldout
+  context: *id061
+  source: *id062
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-32-source-0
+  text: 我不去这家公司了
+  expected:
+  - 7-32
+  category: source_example
+  split: source_overlap
+  context: *id061
+  source: *id062
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-33-heldout-0
+  text: 我得跟招聘那边问清楚，入职到底需不需要做这项调查
+  expected:
+  - 7-33
+  category: paraphrase
+  split: heldout
+  context: &id063
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id064
+    file: 催授权流程 v1.1 - 意图.md
+    line: 56
+    section: 表7 / 7-D
+    intent_id: 7-33
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-33-heldout-1
+  text: 问问是否必做
+  expected:
+  - 7-33
+  category: short_spoken
+  split: heldout
+  context: *id063
+  source: *id064
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-33-source-0
+  text: 我问问HR这个是不是必须的
+  expected:
+  - 7-33
+  category: source_example
+  split: source_overlap
+  context: *id063
+  source: *id064
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-34-heldout-0
+  text: 你们把我惹火了，我要正式投诉这种骚扰
+  expected:
+  - 7-34
+  category: paraphrase
+  split: heldout
+  context: &id065
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id066
+    file: 催授权流程 v1.1 - 意图.md
+    line: 57
+    section: 表7 / 7-D
+    intent_id: 7-34
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-34-heldout-1
+  text: 我要举报投诉
+  expected:
+  - 7-34
+  category: short_spoken
+  split: heldout
+  context: *id065
+  source: *id066
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-34-source-0
+  text: 你们这是骚扰！我要投诉！
+  expected:
+  - 7-34
+  category: source_example
+  split: source_overlap
+  context: *id065
+  source: *id066
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-35-heldout-0
+  text: 我不要机器人回答，叫工作人员接电话
+  expected:
+  - 7-35
+  category: paraphrase
+  split: heldout
+  context: &id067
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id068
+    file: 催授权流程 v1.1 - 意图.md
+    line: 58
+    section: 表7 / 7-D
+    intent_id: 7-35
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-35-heldout-1
+  text: 转给真人
+  expected:
+  - 7-35
+  category: short_spoken
+  split: heldout
+  context: *id067
+  source: *id068
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-35-source-0
+  text: 让你们真人给我打电话
+  expected:
+  - 7-35
+  category: source_example
+  split: source_overlap
+  context: *id067
+  source: *id068
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-36-heldout-0
+  text: 短信已经收到了，我还没有开始填写
+  expected:
+  - 7-36
+  category: paraphrase
+  split: heldout
+  context: &id069
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id070
+    file: 催授权流程 v1.1 - 意图.md
+    line: 64
+    section: 表7 / 7-E
+    intent_id: 7-36
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-36-heldout-1
+  text: 收到尚未填
+  expected:
+  - 7-36
+  category: short_spoken
+  split: heldout
+  context: *id069
+  source: *id070
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-36-source-0
+  text: 收到了，还没填
+  expected:
+  - 7-36
+  category: source_example
+  split: source_overlap
+  context: *id069
+  source: *id070
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-37-heldout-0
+  text: 那封邮件我收到就处理了，授权也已经提交了
+  expected:
+  - 7-37
+  category: paraphrase
+  split: heldout
+  context: &id071
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id072
+    file: 催授权流程 v1.1 - 意图.md
+    line: 65
+    section: 表7 / 7-E
+    intent_id: 7-37
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-37-heldout-1
+  text: 收到并办妥了
+  expected:
+  - 7-37
+  category: short_spoken
+  split: heldout
+  context: *id071
+  source: *id072
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-37-source-0
+  text: 收到了，我填完了
+  expected:
+  - 7-37
+  category: source_example
+  split: source_overlap
+  context: *id071
+  source: *id072
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-38-heldout-0
+  text: 我压根没见过你们发的授权通知
+  expected:
+  - 7-38
+  category: paraphrase
+  split: heldout
+  context: &id073
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id074
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-38-heldout-1
+  text: 没见到通知
+  expected:
+  - 7-38
+  category: short_spoken
+  split: heldout
+  context: *id073
+  source: *id074
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-38-source-0
+  text: 我没收到什么短信啊
+  expected:
+  - 7-38
+  category: source_example
+  split: source_overlap
+  context: *id073
+  source: *id074
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-39-heldout-0
+  text: 我不确定，您等我打开消息查查看
+  expected:
+  - 7-39
+  category: paraphrase
+  split: heldout
+  context: &id075
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id076
+    file: 催授权流程 v1.1 - 意图.md
+    line: 67
+    section: 表7 / 7-E
+    intent_id: 7-39
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-39-heldout-1
+  text: 让我翻翻看
+  expected:
+  - 7-39
+  category: short_spoken
+  split: heldout
+  context: *id075
+  source: *id076
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-39-source-0
+  text: 我看看啊……等我找找
+  expected:
+  - 7-39
+  category: source_example
+  split: source_overlap
+  context: *id075
+  source: *id076
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-40-heldout-0
+  text: 刚查了一圈，在被拦截的短信里面发现了
+  expected:
+  - 7-40
+  category: paraphrase
+  split: heldout
+  context: &id077
+  - role: assistant
+    content: 您看下骚扰拦截或垃圾邮件箱里有吗？
+  source: &id078
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-40-heldout-1
+  text: 拦截里找着了
+  expected:
+  - 7-40
+  category: short_spoken
+  split: heldout
+  context: *id077
+  source: *id078
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-40-source-0
+  text: 哦，找到了，在骚扰拦截里
+  expected:
+  - 7-40
+  category: source_example
+  split: source_overlap
+  context: *id077
+  source: *id078
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-41-heldout-0
+  text: 我刚把几个文件夹都翻遍了，确实没找着
+  expected:
+  - 7-41
+  category: paraphrase
+  split: heldout
+  context: &id079
+  - role: assistant
+    content: 您看下骚扰拦截或垃圾邮件箱里有吗？
+  source: &id080
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-41-heldout-1
+  text: 翻遍也没找到
+  expected:
+  - 7-41
+  category: short_spoken
+  split: heldout
+  context: *id079
+  source: *id080
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-41-source-0
+  text: 没有，哪都没有
+  expected:
+  - 7-41
+  category: source_example
+  split: source_overlap
+  context: *id079
+  source: *id080
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-42-heldout-0
+  text: 前几天一直忙工作，就把授权这事落下了
+  expected:
+  - 7-42
+  category: paraphrase
+  split: heldout
+  context: &id081
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: &id082
+    file: 催授权流程 v1.1 - 意图.md
+    line: 75
+    section: 表7 / 7-F
+    intent_id: 7-42
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-42-heldout-1
+  text: 忙忘这事了
+  expected:
+  - 7-42
+  category: short_spoken
+  split: heldout
+  context: *id081
+  source: *id082
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-42-source-0
+  text: 最近太忙了，忘了这事
+  expected:
+  - 7-42
+  category: source_example
+  split: source_overlap
+  context: *id081
+  source: *id082
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-43-heldout-0
+  text: 我卡在填写操作上，不知道下一步怎么做
+  expected:
+  - 7-43
+  category: paraphrase
+  split: heldout
+  context: &id083
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: &id084
+    file: 催授权流程 v1.1 - 意图.md
+    line: 76
+    section: 表7 / 7-F
+    intent_id: 7-43
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-43-heldout-1
+  text: 操作不会弄
+  expected:
+  - 7-43
+  category: short_spoken
+  split: heldout
+  context: *id083
+  source: *id084
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-43-source-0
+  text: 那个链接我打不开
+  expected:
+  - 7-43
+  category: source_example
+  split: source_overlap
+  context: *id083
+  source: *id084
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-44-heldout-0
+  text: 我对要交这么多信息不太愿意，心里有顾虑
+  expected:
+  - 7-44
+  category: paraphrase
+  split: heldout
+  context: &id085
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: &id086
+    file: 催授权流程 v1.1 - 意图.md
+    line: 77
+    section: 表7 / 7-F
+    intent_id: 7-44
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-44-heldout-1
+  text: 不太想授权
+  expected:
+  - 7-44
+  category: short_spoken
+  split: heldout
+  context: *id085
+  source: *id086
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-44-source-0
+  text: 我不想填
+  expected:
+  - 7-44
+  category: source_example
+  split: source_overlap
+  context: *id085
+  source: *id086
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-44-source-1
+  text: 要授权的信息太多了吧
+  expected:
+  - 7-44
+  category: source_example
+  split: source_overlap
+  context: *id085
+  source: *id086
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-45-heldout-0
+  text: 信息是写了，电子签和人脸那两项我都没做
+  expected:
+  - 7-45
+  category: paraphrase
+  split: heldout
+  context: &id087
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: &id088
+    file: 催授权流程 v1.1 - 意图.md
+    line: 83
+    section: 表7 / 7-G
+    intent_id: 7-45
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-45-heldout-1
+  text: 电子签没做
+  expected:
+  - 7-45
+  category: short_spoken
+  split: heldout
+  context: *id087
+  source: *id088
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-45-source-0
+  text: 电子签名？没做啊
+  expected:
+  - 7-45
+  category: source_example
+  split: source_overlap
+  context: *id087
+  source: *id088
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-46-heldout-0
+  text: 您说没完成可我每一步都办妥了，应该是你们系统没更新
+  expected:
+  - 7-46
+  category: paraphrase
+  split: heldout
+  context: &id089
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: &id090
+    file: 催授权流程 v1.1 - 意图.md
+    line: 84
+    section: 表7 / 7-G
+    intent_id: 7-46
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-46-heldout-1
+  text: 全做了查系统
+  expected:
+  - 7-46
+  category: short_spoken
+  split: heldout
+  context: *id089
+  source: *id090
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-46-source-0
+  text: 我都弄完了，你们系统问题吧
+  expected:
+  - 7-46
+  category: source_example
+  split: source_overlap
+  context: *id089
+  source: *id090
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-47-heldout-0
+  text: 我不记得末尾有没有按确认提交，也许漏掉了
+  expected:
+  - 7-47
+  category: paraphrase
+  split: heldout
+  context: &id091
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: &id092
+    file: 催授权流程 v1.1 - 意图.md
+    line: 85
+    section: 表7 / 7-G
+    intent_id: 7-47
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-47-heldout-1
+  text: 提交好像漏了
+  expected:
+  - 7-47
+  category: short_spoken
+  split: heldout
+  context: *id091
+  source: *id092
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-47-source-0
+  text: 填完了啊，最后一步没注意
+  expected:
+  - 7-47
+  category: source_example
+  split: source_overlap
+  context: *id091
+  source: *id092
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-48-heldout-0
+  text: 您说的截止时间可以，我保证那之前填好
+  expected:
+  - 7-48
+  category: paraphrase
+  split: heldout
+  context: &id093
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id094
+    file: 催授权流程 v1.1 - 意图.md
+    line: 91
+    section: 表7 / 7-H
+    intent_id: 7-48
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-48-heldout-1
+  text: 按您说的办完
+  expected:
+  - 7-48
+  category: short_spoken
+  split: heldout
+  context: *id093
+  source: *id094
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-48-source-0
+  text: 好的，今天下班前搞定
+  expected:
+  - 7-48
+  category: source_example
+  split: source_overlap
+  context: *id093
+  source: *id094
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-49-heldout-0
+  text: 要我今天就交实在来不及，能不能往后延
+  expected:
+  - 7-49
+  category: paraphrase
+  split: heldout
+  context: &id095
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id096
+    file: 催授权流程 v1.1 - 意图.md
+    line: 92
+    section: 表7 / 7-H
+    intent_id: 7-49
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-49-heldout-1
+  text: 这期限太赶
+  expected:
+  - 7-49
+  category: short_spoken
+  split: heldout
+  context: *id095
+  source: *id096
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-49-source-0
+  text: 今天不行，太赶了
+  expected:
+  - 7-49
+  category: source_example
+  split: source_overlap
+  context: *id095
+  source: *id096
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-49-source-1
+  text: 再看看吧
+  expected:
+  - 7-49
+  category: source_example
+  split: source_overlap
+  context: *id095
+  source: *id096
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-50-heldout-0
+  text: 近期都排满了，得等下礼拜我才有时间完成
+  expected:
+  - 7-50
+  category: paraphrase
+  split: heldout
+  context: &id097
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id098
+    file: 催授权流程 v1.1 - 意图.md
+    line: 93
+    section: 表7 / 7-H
+    intent_id: 7-50
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-50-heldout-1
+  text: 下星期再完成
+  expected:
+  - 7-50
+  category: short_spoken
+  split: heldout
+  context: *id097
+  source: *id098
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-50-source-0
+  text: 下周吧，我下周才有空
+  expected:
+  - 7-50
+  category: source_example
+  split: source_overlap
+  context: *id097
+  source: *id098
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-51-heldout-0
+  text: 刷脸一直过不了
+  expected:
+  - 7-51
+  category: paraphrase
+  split: heldout
+  context: &id099
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: &id100
+    file: 催授权流程 v1.1 - 意图.md
+    line: 99
+    section: 表7 / 7-I
+    intent_id: 7-51
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-51-heldout-1
+  text: 人脸又失败了
+  expected:
+  - 7-51
+  category: short_spoken
+  split: heldout
+  context: *id099
+  source: *id100
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-51-source-0
+  text: 到人脸这步总说识别失败
+  expected:
+  - 7-51
+  category: source_example
+  split: source_overlap
+  context: *id099
+  source: *id100
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-52-heldout-0
+  text: 我刚才填错了能不能改
+  expected:
+  - 7-52
+  category: paraphrase
+  split: heldout
+  context: &id101
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: &id102
+    file: 催授权流程 v1.1 - 意图.md
+    line: 100
+    section: 表7 / 7-I
+    intent_id: 7-52
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-52-heldout-1
+  text: 写错能改不
+  expected:
+  - 7-52
+  category: short_spoken
+  split: heldout
+  context: *id101
+  source: *id102
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-52-source-0
+  text: 我名字填错了，能改吗？
+  expected:
+  - 7-52
+  category: source_example
+  split: source_overlap
+  context: *id101
+  source: *id102
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-53-heldout-0
+  text: 这个页面打不开
+  expected:
+  - 7-53
+  category: paraphrase
+  split: heldout
+  context: &id103
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: &id104
+    file: 催授权流程 v1.1 - 意图.md
+    line: 101
+    section: 表7 / 7-I
+    intent_id: 7-53
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-53-heldout-1
+  text: 网页报错啦
+  expected:
+  - 7-53
+  category: short_spoken
+  split: heldout
+  context: *id103
+  source: *id104
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-53-source-0
+  text: 页面一直报错
+  expected:
+  - 7-53
+  category: source_example
+  split: source_overlap
+  context: *id103
+  source: *id104
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-53-source-1
+  text: 链接打不开
+  expected:
+  - 7-53
+  category: source_example
+  split: source_overlap
+  context: *id103
+  source: *id104
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-54-heldout-0
+  text: 同一家公司换过岗位，这算一段还是两段经历
+  expected:
+  - 7-54
+  category: paraphrase
+  split: heldout
+  context: &id105
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: &id106
+    file: 催授权流程 v1.1 - 意图.md
+    line: 102
+    section: 表7 / 7-I
+    intent_id: 7-54
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-54-heldout-1
+  text: 经历按啥算
+  expected:
+  - 7-54
+  category: short_spoken
+  split: heldout
+  context: *id105
+  source: *id106
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-54-source-0
+  text: 工作经历怎么算一段？
+  expected:
+  - 7-54
+  category: source_example
+  split: source_overlap
+  context: *id105
+  source: *id106
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-55-heldout-0
+  text: 没有可以给你们用的电子邮箱
+  expected:
+  - 7-55
+  category: paraphrase
+  split: heldout
+  context: &id107
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: &id108
+    file: 催授权流程 v1.1 - 意图.md
+    line: 103
+    section: 表7 / 7-I
+    intent_id: 7-55
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-55-heldout-1
+  text: 邮箱不想给
+  expected:
+  - 7-55
+  category: short_spoken
+  split: heldout
+  context: *id107
+  source: *id108
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-55-source-0
+  text: 我没有邮箱
+  expected:
+  - 7-55
+  category: source_example
+  split: source_overlap
+  context: *id107
+  source: *id108
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-55-source-1
+  text: 我不想给邮箱
+  expected:
+  - 7-55
+  category: source_example
+  split: source_overlap
+  context: *id107
+  source: *id108
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-56-heldout-0
+  text: 可以登记我的邮箱demo@example.org，通知发那里
+  expected:
+  - 7-56
+  category: paraphrase
+  split: heldout
+  context: &id109
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: &id110
+    file: 催授权流程 v1.1 - 意图.md
+    line: 104
+    section: 表7 / 7-I
+    intent_id: 7-56
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-56-heldout-1
+  text: 邮箱demo@example.net
+  expected:
+  - 7-56
+  category: short_spoken
+  split: heldout
+  context: *id109
+  source: *id110
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-56-source-0
+  text: 发我邮箱吧，xxx@xx.com
+  expected:
+  - 7-56
+  category: source_example
+  split: source_overlap
+  context: *id109
+  source: *id110
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-57-heldout-0
+  text: 可以通过公司官方渠道另找在职同事了解情况
+  expected:
+  - 7-57
+  category: paraphrase
+  split: heldout
+  context: &id111
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: &id112
+    file: 催授权流程 v1.1 - 意图.md
+    line: 105
+    section: 表7 / 7-I
+    intent_id: 7-57
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-57-heldout-1
+  text: 找其他同事可以
+  expected:
+  - 7-57
+  category: short_spoken
+  split: heldout
+  context: *id111
+  source: *id112
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-57-source-0
+  text: 可以没问题
+  expected:
+  - 7-57
+  category: source_example
+  split: source_overlap
+  context: *id111
+  source: *id112
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-57-source-1
+  text: 你们随意
+  expected:
+  - 7-57
+  category: source_example
+  split: source_overlap
+  context: *id111
+  source: *id112
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-58-heldout-0
+  text: 去问在职同事，他们会发现我在外面面试，我很担心
+  expected:
+  - 7-58
+  category: paraphrase
+  split: heldout
+  context: &id113
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: &id114
+    file: 催授权流程 v1.1 - 意图.md
+    line: 106
+    section: 表7 / 7-I
+    intent_id: 7-58
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-58-heldout-1
+  text: 同事会发现啊
+  expected:
+  - 7-58
+  category: short_spoken
+  split: heldout
+  context: *id113
+  source: *id114
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-58-source-0
+  text: 那别人不就知道我要走了吗
+  expected:
+  - 7-58
+  category: source_example
+  split: source_overlap
+  context: *id113
+  source: *id114
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-58-source-1
+  text: 别联系我们公司的人
+  expected:
+  - 7-58
+  category: source_example
+  split: source_overlap
+  context: *id113
+  source: *id114
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: 7-59-heldout-0
+  text: 请只用我列的证明人名单，别自行寻访其他员工
+  expected:
+  - 7-59
+  category: paraphrase
+  split: heldout
+  context: &id115
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: &id116
+    file: 催授权流程 v1.1 - 意图.md
+    line: 107
+    section: 表7 / 7-I
+    intent_id: 7-59
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-59-heldout-1
+  text: 仅用我给的人
+  expected:
+  - 7-59
+  category: short_spoken
+  split: heldout
+  context: *id115
+  source: *id116
+  derivation: 人工依据该产品意图改写；不是产品原话
+- id: 7-59-source-0
+  text: 不用找我同事，就用我给的那几个
+  expected:
+  - 7-59
+  category: source_example
+  split: source_overlap
+  context: *id115
+  source: *id116
+  derivation: 产品原话；也在索引中，仅作接线/记忆诊断
+- id: contrast-00
+  text: 好啊
+  expected: &id117
+  - 7-6
+  - 7-15
+  - 7-24
+  - 7-48
+  - 7-57
+  category: ambiguous
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id117
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-01
+  text: 已经填好了
+  expected: &id118
+  - 7-8
+  - 7-37
+  - 7-46
+  category: ambiguous
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id118
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-02
+  text: 那个链接我打不开
+  expected: &id119
+  - 7-43
+  - 7-53
+  category: ambiguous
+  split: challenge_overlap
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id119
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-03
+  text: 我在开会
+  expected: &id120
+  - 7-7
+  - 7-20
+  category: ambiguous
+  split: challenge_overlap
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id120
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-04
+  text: 我先问问HR
+  expected: &id121
+  - 7-16
+  - 7-33
+  category: ambiguous
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id121
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-05
+  text: 你们别再打了我不信
+  expected: &id122
+  - 7-17
+  - 7-28
+  category: ambiguous
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id122
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-06
+  text: 我还在公司别找我同事
+  expected: &id123
+  - 7-29
+  - 7-58
+  category: ambiguous
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id123
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-07
+  text: 好啊
+  expected: &id124
+  - 7-6
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 现在方便说两分钟吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id124
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-08
+  text: 好啊
+  expected: &id125
+  - 7-48
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 明天下班前完成授权可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id125
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-09
+  text: 好啊
+  expected: &id126
+  - 7-57
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 可以通过公司官方渠道联系其他在职同事核实吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id126
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-10
+  text: 已经填好了
+  expected: &id127
+  - 7-8
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 您好，我是协助办理入职背调的AI助手，现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id127
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-11
+  text: 已经填好了
+  expected: &id128
+  - 7-37
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 您收到授权通知了吗，填了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id128
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-12
+  text: 已经填好了
+  expected: &id129
+  - 7-46
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 后台还没完成，确认一下签名人脸和提交都做了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id129
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-13
+  text: 没看到
+  expected: &id130
+  - 7-38
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 此前发送的背调授权短信收到了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id130
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-14
+  text: 没看到
+  expected: &id131
+  - 7-41
+  category: context_pair
+  split: challenge
+  context:
+  - role: assistant
+    content: 刚才让您查的拦截和垃圾箱都找过了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id131
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-15
+  text: 我这边人连识别一直失 bai
+  expected: &id132
+  - 7-51
+  category: asr_imperfect
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id132
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-16
+  text: 刚刚填错啦那个能改不
+  expected: &id133
+  - 7-52
+  category: asr_imperfect
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id133
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-17
+  text: 链接打不 开一直报错
+  expected: &id134
+  - 7-53
+  category: asr_imperfect
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id134
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-18
+  text: 我在开 车呢
+  expected: &id135
+  - 7-18
+  category: asr_imperfect
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id135
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-19
+  text: 不不用再再打电话了
+  expected: &id136
+  - 7-28
+  category: asr_imperfect
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id136
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-20
+  text: 我
+  expected: &id137 []
+  category: partial_insufficient
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id137
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-21
+  text: 我刚
+  expected: &id138 []
+  category: partial_insufficient
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id138
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-22
+  text: 嗯呃
+  expected: &id139 []
+  category: noise
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id139
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-23
+  text: ''
+  expected: &id140 []
+  category: empty
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id140
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-24
+  text: '   '
+  expected: &id141 []
+  category: empty
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id141
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-25
+  text: 明天北京天气怎么样
+  expected: &id142 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id142
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-26
+  text: 帮我订一张去上海的机票
+  expected: &id143 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id143
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-27
+  text: 来一首周杰伦的歌
+  expected: &id144 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id144
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-28
+  text: 这份外卖怎么退款
+  expected: &id145 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id145
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-29
+  text: 帮我写一个排序程序
+  expected: &id146 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id146
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-30
+  text: 设置早上七点的闹钟
+  expected: &id147 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id147
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-31
+  text: 我想查银行卡余额
+  expected: &id148 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id148
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本
+- id: contrast-32
+  text: 晚饭吃什么比较好
+  expected: &id149 []
+  category: ood
+  split: challenge
+  context: []
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    intent_ids: *id149
+  derivation: 人工对照产品意图构造的歧义/上下文/噪声/OOD样本

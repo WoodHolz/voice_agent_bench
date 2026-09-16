@@ -1,0 +1,441 @@
+{
+  "version": "0.1",
+  "status": "draft",
+  "source": "/home/WoodHolz/Desktop/voice-agent-docs/催授权流程 v1.1 - 意图.md",
+  "intents": [
+    {
+      "id": "7-1",
+      "name": "静默不发言",
+      "definition": "接通后不出声，两次提示（30s/15s）仍无回应",
+      "example": "您还在吗",
+      "family": "A"
+    },
+    {
+      "id": "7-2",
+      "name": "打错/人不在",
+      "definition": "称打错号码或本人不在（家人代接口径）",
+      "example": "你打错了",
+      "family": "A"
+    },
+    {
+      "id": "7-3",
+      "name": "身份质疑",
+      "definition": "质问来电者身份/机构/来意（细分见7-9\\~7-14）",
+      "example": "你是谁？",
+      "family": "A"
+    },
+    {
+      "id": "7-4",
+      "name": "语音助手代接",
+      "definition": "语音助手/小助理代接，播报留言引导",
+      "example": "请留下姓名和来电原因",
+      "family": "A"
+    },
+    {
+      "id": "7-5",
+      "name": "非本人接听",
+      "definition": "家人/同事代接电话，本人无法接听",
+      "example": "我是他妈妈，他上班去了",
+      "family": "A"
+    },
+    {
+      "id": "7-6",
+      "name": "表示方便",
+      "definition": "确认当下可以沟通",
+      "example": "方便",
+      "family": "A"
+    },
+    {
+      "id": "7-7",
+      "name": "表示不方便",
+      "definition": "当下不便沟通（细分见7-18/7-20）",
+      "example": "现在不方便",
+      "family": "A"
+    },
+    {
+      "id": "7-8",
+      "name": "直接报进展",
+      "definition": "跳过确认直接告知已填/已办",
+      "example": "我已经填完了啊",
+      "family": "A"
+    },
+    {
+      "id": "7-9",
+      "name": "要求身份核验",
+      "definition": "要求证明身份与通话真实性",
+      "example": "你怎么证明你是官方的？",
+      "family": "B"
+    },
+    {
+      "id": "7-10",
+      "name": "信息来源质疑",
+      "definition": "质疑为何掌握其个人信息",
+      "example": "你们怎么会有我的信息？",
+      "family": "B"
+    },
+    {
+      "id": "7-11",
+      "name": "诈骗怀疑",
+      "definition": "怀疑是诈骗/钓鱼电话",
+      "example": "现在诈骗这么多，我怎么信你",
+      "family": "B"
+    },
+    {
+      "id": "7-12",
+      "name": "号码可疑",
+      "definition": "质疑外呼号码形态异常",
+      "example": "你这号码怎么奇奇怪怪的",
+      "family": "B"
+    },
+    {
+      "id": "7-13",
+      "name": "多渠道混淆",
+      "definition": "收到多条相似通知分不清哪条是本件事",
+      "example": "我收到好几条短信/邮件，不知道哪个是你们",
+      "family": "B"
+    },
+    {
+      "id": "7-14",
+      "name": "抱怨频繁来电",
+      "definition": "不满被多次拨打",
+      "example": "你们都打第三次了！烦不烦",
+      "family": "B"
+    },
+    {
+      "id": "7-15",
+      "name": "信任恢复",
+      "definition": "质疑被解答后接受继续沟通",
+      "example": "哦，好的，明白了",
+      "family": "B"
+    },
+    {
+      "id": "7-16",
+      "name": "挂起确认",
+      "definition": "要求先向HR/官方求证再继续",
+      "example": "我先跟HR确认下再说",
+      "family": "B"
+    },
+    {
+      "id": "7-17",
+      "name": "仍不信任",
+      "definition": "处置后仍拒绝沟通，要求不再联系",
+      "example": "别再打了，我不信",
+      "family": "B"
+    },
+    {
+      "id": "7-18",
+      "name": "硬中断-开车",
+      "definition": "正在驾驶无法分心，零追问立即收线",
+      "example": "我在开车",
+      "family": "C"
+    },
+    {
+      "id": "7-19",
+      "name": "硬中断-急事",
+      "definition": "就医/突发紧急事务",
+      "example": "我在医院，有急事",
+      "family": "C"
+    },
+    {
+      "id": "7-20",
+      "name": "软改约-在忙",
+      "definition": "会议/忙碌中，可尝试压缩或改约",
+      "example": "我在开会，回头吧",
+      "family": "C"
+    },
+    {
+      "id": "7-21",
+      "name": "条件不具备",
+      "definition": "当前设备/环境无法完成填写",
+      "example": "我没在电脑旁，手机填不了",
+      "family": "C"
+    },
+    {
+      "id": "7-22",
+      "name": "信号差",
+      "definition": "通话质量差、断续听不清",
+      "example": "喂？你说什么？听不清",
+      "family": "C"
+    },
+    {
+      "id": "7-23",
+      "name": "排斥电话转异步",
+      "definition": "拒绝电话渠道但办事意愿还在，指定短信/邮件",
+      "example": "别打电话了，发短信给我",
+      "family": "C"
+    },
+    {
+      "id": "7-24",
+      "name": "压缩同意",
+      "definition": "同意\"只说一件事\"的压缩请求",
+      "example": "那你说吧，就一分钟",
+      "family": "C"
+    },
+    {
+      "id": "7-25",
+      "name": "给具体时间",
+      "definition": "直接给出可回拨的明确时点",
+      "example": "明天下午3点吧",
+      "family": "C"
+    },
+    {
+      "id": "7-26",
+      "name": "给相对时间",
+      "definition": "给出需换算的相对时间",
+      "example": "明天上午",
+      "family": "C"
+    },
+    {
+      "id": "7-27",
+      "name": "模糊晚点/弱承诺",
+      "definition": "不给明确时间，敷衍应付（weak\\_commitment）",
+      "example": "晚点再说",
+      "family": "C"
+    },
+    {
+      "id": "7-28",
+      "name": "明确拒绝",
+      "definition": "拒绝继续沟通或办理，要求不再联系",
+      "example": "不用了，别打了",
+      "family": "C"
+    },
+    {
+      "id": "7-29",
+      "name": "在职顾虑",
+      "definition": "怕现单位知晓求职动向",
+      "example": "我还在职，别打我公司电话",
+      "family": "D"
+    },
+    {
+      "id": "7-30",
+      "name": "证明人阻力",
+      "definition": "不愿提供上级/同事联系方式",
+      "example": "我不想给我领导电话",
+      "family": "D"
+    },
+    {
+      "id": "7-31",
+      "name": "隐私顾虑",
+      "definition": "担心个人信息泄露范围",
+      "example": "背调会查我什么？会不会泄露隐私",
+      "family": "D"
+    },
+    {
+      "id": "7-32",
+      "name": "放弃offer",
+      "definition": "已放弃该职位，背调无需继续",
+      "example": "我不去这家公司了",
+      "family": "D"
+    },
+    {
+      "id": "7-33",
+      "name": "要先问HR",
+      "definition": "需先与HR确认背调必要性",
+      "example": "我问问HR这个是不是必须的",
+      "family": "D"
+    },
+    {
+      "id": "7-34",
+      "name": "强烈情绪/投诉",
+      "definition": "情绪激动、威胁投诉",
+      "example": "你们这是骚扰！我要投诉！",
+      "family": "D"
+    },
+    {
+      "id": "7-35",
+      "name": "要求真人",
+      "definition": "拒绝与AI沟通，坚持人工",
+      "example": "让你们真人给我打电话",
+      "family": "D"
+    },
+    {
+      "id": "7-36",
+      "name": "收到未填",
+      "definition": "确认收到通知但尚未完成填写",
+      "example": "收到了，还没填",
+      "family": "E"
+    },
+    {
+      "id": "7-37",
+      "name": "收到已填",
+      "definition": "确认收到且已完成填写",
+      "example": "收到了，我填完了",
+      "family": "E"
+    },
+    {
+      "id": "7-38",
+      "name": "没收到",
+      "definition": "否认收到任何授权通知",
+      "example": "我没收到什么短信啊",
+      "family": "E"
+    },
+    {
+      "id": "7-39",
+      "name": "不确定待找",
+      "definition": "不确定是否收到，需查找确认",
+      "example": "我看看啊……等我找找",
+      "family": "E"
+    },
+    {
+      "id": "7-40",
+      "name": "查找后找到",
+      "definition": "查找后在拦截/垃圾箱/兜底渠道找到",
+      "example": "哦，找到了，在骚扰拦截里",
+      "family": "E"
+    },
+    {
+      "id": "7-41",
+      "name": "查找后没有",
+      "definition": "查找后确认确实没有",
+      "example": "没有，哪都没有",
+      "family": "E"
+    },
+    {
+      "id": "7-42",
+      "name": "忙碌遗忘",
+      "definition": "因忙未及时处理，无对抗情绪",
+      "example": "最近太忙了，忘了这事",
+      "family": "F"
+    },
+    {
+      "id": "7-43",
+      "name": "操作有困难",
+      "definition": "不会操作/链接问题/页面异常",
+      "example": "那个链接我打不开",
+      "family": "F"
+    },
+    {
+      "id": "7-44",
+      "name": "不想填/有顾虑",
+      "definition": "主观不愿填或对授权本身有顾虑",
+      "example": "我不想填",
+      "family": "F"
+    },
+    {
+      "id": "7-45",
+      "name": "有步骤没做",
+      "definition": "完成主体填写但遗漏电子签/人脸",
+      "example": "电子签名？没做啊",
+      "family": "G"
+    },
+    {
+      "id": "7-46",
+      "name": "自称已完成",
+      "definition": "坚称全部完成但后台无记录",
+      "example": "我都弄完了，你们系统问题吧",
+      "family": "G"
+    },
+    {
+      "id": "7-47",
+      "name": "疑似未提交",
+      "definition": "操作完成但可能未点最终提交",
+      "example": "填完了啊，最后一步没注意",
+      "family": "G"
+    },
+    {
+      "id": "7-48",
+      "name": "接受时限承诺",
+      "definition": "同意按档位时间完成",
+      "example": "好的，今天下班前搞定",
+      "family": "H"
+    },
+    {
+      "id": "7-49",
+      "name": "拒绝/犹豫时限",
+      "definition": "嫌档位时间太赶，想改时间",
+      "example": "今天不行，太赶了",
+      "family": "H"
+    },
+    {
+      "id": "7-50",
+      "name": "超时限承诺",
+      "definition": "给出超出闭环时限的时间",
+      "example": "下周吧，我下周才有空",
+      "family": "H"
+    },
+    {
+      "id": "7-51",
+      "name": "人脸识别失败",
+      "definition": "人脸核验步骤无法通过",
+      "example": "到人脸这步总说识别失败",
+      "family": "I"
+    },
+    {
+      "id": "7-52",
+      "name": "要求修改已提交",
+      "definition": "提交后发现错误要求修改",
+      "example": "我名字填错了，能改吗？",
+      "family": "I"
+    },
+    {
+      "id": "7-53",
+      "name": "报告技术故障",
+      "definition": "页面报错/系统异常/链接失效",
+      "example": "页面一直报错",
+      "family": "I"
+    },
+    {
+      "id": "7-54",
+      "name": "填写口径询问",
+      "definition": "询问填写规则与判定标准",
+      "example": "工作经历怎么算一段？",
+      "family": "I"
+    },
+    {
+      "id": "7-55",
+      "name": "无邮箱/拒绝提供",
+      "definition": "无法提供邮箱或不愿提供",
+      "example": "我没有邮箱",
+      "family": "I"
+    },
+    {
+      "id": "7-56",
+      "name": "提供邮箱登记",
+      "definition": "配合提供邮箱接收补发",
+      "example": "发我邮箱吧，[xxx@xx.com](mailto:xxx@xx.com)",
+      "family": "I"
+    },
+    {
+      "id": "7-57",
+      "name": "同意自主寻访",
+      "definition": "informed模式下，同意平台通过公司官方渠道联系其他在职同事核实",
+      "example": "可以没问题",
+      "family": "I"
+    },
+    {
+      "id": "7-58",
+      "name": "自主寻访顾虑（怕在职暴露）",
+      "definition": "同意办背调，但担心自主寻访让在职同事知道自己在外面看机会",
+      "example": "那别人不就知道我要走了吗",
+      "family": "I"
+    },
+    {
+      "id": "7-59",
+      "name": "拒绝自主寻访",
+      "definition": "明确拒绝平台主动寻访，只接受已提供的证明人",
+      "example": "不用找我同事，就用我给的那几个",
+      "family": "I"
+    },
+    {
+      "id": "CTRL-CLARIFY",
+      "name": "请求澄清",
+      "definition": "用户表达完整但含义不足以安全判断，需要追问一个关键信息。",
+      "example": "应该弄了吧",
+      "family": "A"
+    },
+    {
+      "id": "CTRL-UNSUPPORTED",
+      "name": "超出处理范围",
+      "definition": "用户请求不属于当前可执行 SOP，应给出正确渠道并返回主任务。",
+      "example": "帮我改入职日期",
+      "family": "A"
+    },
+    {
+      "id": "CTRL-WAIT",
+      "name": "等待完整话语",
+      "definition": "用户话语明显尚未结束，当前不应做业务判断。",
+      "example": "我那个短信就是……",
+      "family": "A"
+    }
+  ]
+}

@@ -1,0 +1,6923 @@
+schema_version: 1
+notes: 节点上下文由固定node提供，不由预期标签决定；索引/阈值沿用首轮；新增样本均标注而非训练。
+cases:
+- id: node-0000
+  current_node: 3-2
+  text: 您拨错号码啦，这里没有这个人
+  expected:
+  - 7-2
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-2-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 10
+    section: 表7 / 7-A
+    intent_id: 7-2
+- id: node-0001
+  current_node: 3-2
+  text: 打错电话啦
+  expected:
+  - 7-2
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-2-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 10
+    section: 表7 / 7-A
+    intent_id: 7-2
+- id: node-0002
+  current_node: 3-2
+  text: 您刚说您是谁来着
+  expected:
+  - 7-3
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-3-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 11
+    section: 表7 / 7-A
+    intent_id: 7-3
+- id: node-0003
+  current_node: 3-2
+  text: 哪位呀
+  expected:
+  - 7-3
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-3-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 11
+    section: 表7 / 7-A
+    intent_id: 7-3
+- id: node-0004
+  current_node: 3-2
+  text: 您好，智能接听中，请报上您的姓名和联系原因
+  expected:
+  - 7-4
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-4-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 12
+    section: 表7 / 7-A
+    intent_id: 7-4
+- id: node-0005
+  current_node: 3-2
+  text: 请说来电事由
+  expected:
+  - 7-4
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-4-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 12
+    section: 表7 / 7-A
+    intent_id: 7-4
+- id: node-0006
+  current_node: 3-2
+  text: 他手机在我这里，我是他爱人
+  expected:
+  - 7-5
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-5-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 13
+    section: 表7 / 7-A
+    intent_id: 7-5
+- id: node-0007
+  current_node: 3-2
+  text: 我是他家属
+  expected:
+  - 7-5
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-5-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 13
+    section: 表7 / 7-A
+    intent_id: 7-5
+- id: node-0008
+  current_node: 3-2
+  text: 这会儿有空，可以跟您说
+  expected:
+  - 7-6
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-6-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 14
+    section: 表7 / 7-A
+    intent_id: 7-6
+- id: node-0009
+  current_node: 3-2
+  text: 有空您讲
+  expected:
+  - 7-6
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-6-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 14
+    section: 表7 / 7-A
+    intent_id: 7-6
+- id: node-0010
+  current_node: 3-2
+  text: 这会儿实在不便通话
+  expected:
+  - 7-7
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-7-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 15
+    section: 表7 / 7-A
+    intent_id: 7-7
+- id: node-0011
+  current_node: 3-2
+  text: 眼下不便
+  expected:
+  - 7-7
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-7-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 15
+    section: 表7 / 7-A
+    intent_id: 7-7
+- id: node-0012
+  current_node: 3-2
+  text: 你一打来我就想说，授权早弄好了
+  expected:
+  - 7-8
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-8-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 16
+    section: 表7 / 7-A
+    intent_id: 7-8
+- id: node-0013
+  current_node: 3-2
+  text: 早就办完啦
+  expected:
+  - 7-8
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: 7-8-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 16
+    section: 表7 / 7-A
+    intent_id: 7-8
+- id: node-0014
+  current_node: 3-2
+  text: 你打错了
+  expected:
+  - 7-2
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 10
+    section: 表7 / 7-A
+    intent_id: 7-2
+- id: node-0015
+  current_node: 3-2
+  text: 你是谁？
+  expected:
+  - 7-3
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 11
+    section: 表7 / 7-A
+    intent_id: 7-3
+- id: node-0016
+  current_node: 3-2
+  text: 请留下姓名和来电原因
+  expected:
+  - 7-4
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 12
+    section: 表7 / 7-A
+    intent_id: 7-4
+- id: node-0017
+  current_node: 3-2
+  text: 我是他妈妈，他上班去了
+  expected:
+  - 7-5
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 13
+    section: 表7 / 7-A
+    intent_id: 7-5
+- id: node-0018
+  current_node: 3-2
+  text: 方便
+  expected:
+  - 7-6
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 14
+    section: 表7 / 7-A
+    intent_id: 7-6
+- id: node-0019
+  current_node: 3-2
+  text: 现在不方便
+  expected:
+  - 7-7
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 15
+    section: 表7 / 7-A
+    intent_id: 7-7
+- id: node-0020
+  current_node: 3-2
+  text: 我已经填完了啊
+  expected:
+  - 7-8
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 16
+    section: 表7 / 7-A
+    intent_id: 7-8
+- id: node-0021
+  current_node: 3-2
+  text: 现在可以聊，您继续说
+  expected:
+  - 7-6
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id001
+    node: 3-2
+    mapping: workflow_intent_map.yaml
+- id: node-0022
+  current_node: 3-2
+  text: 现在不能聊，请先停一下
+  expected:
+  - 7-7
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+- id: node-0023
+  current_node: 3-2
+  text: 方便不方便我也说不准
+  expected:
+  - 7-6
+  - 7-7
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0024
+  current_node: 3-2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0025
+  current_node: 3-2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0026
+  current_node: 3-2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0027
+  current_node: 3-2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: *id001
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0028
+  current_node: 3-2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0029
+  current_node: 3-2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0030
+  current_node: 3-2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0031
+  current_node: 3-2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0032
+  current_node: 3-2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0033
+  current_node: 3-2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0034
+  current_node: 3-2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0035
+  current_node: 3-2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0036
+  current_node: 3-2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id003
+    file: 催授权流程 v1.1 - 意图.md
+    line: 100
+    section: 表7 / 7-I
+    intent_id: 7-52
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0037
+  current_node: 3-2
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id004
+    file: 催授权流程 v1.1 - 意图.md
+    line: 104
+    section: 表7 / 7-I
+    intent_id: 7-56
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0038
+  current_node: 3-2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id005
+    file: 催授权流程 v1.1 - 意图.md
+    line: 91
+    section: 表7 / 7-H
+    intent_id: 7-48
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0039
+  current_node: 3-2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id006
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0040
+  current_node: 3-2
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 现在方便吗？
+  source: &id007
+    file: 催授权流程 v1.1 - 意图.md
+    line: 101
+    section: 表7 / 7-I
+    intent_id: 7-53
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0041
+  current_node: 4-2
+  text: 我已经拒掉这份录用，不入职了
+  expected: &id008
+  - 7-32
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-32-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0042
+  current_node: 4-2
+  text: 录用我放弃了
+  expected: &id009
+  - 7-32
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-32-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0043
+  current_node: 4-2
+  text: 短信已经收到了，我还没有开始填写
+  expected:
+  - 7-36
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-36-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 64
+    section: 表7 / 7-E
+    intent_id: 7-36
+- id: node-0044
+  current_node: 4-2
+  text: 收到尚未填
+  expected:
+  - 7-36
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-36-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 64
+    section: 表7 / 7-E
+    intent_id: 7-36
+- id: node-0045
+  current_node: 4-2
+  text: 那封邮件我收到就处理了，授权也已经提交了
+  expected:
+  - 7-37
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-37-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 65
+    section: 表7 / 7-E
+    intent_id: 7-37
+- id: node-0046
+  current_node: 4-2
+  text: 收到并办妥了
+  expected:
+  - 7-37
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-37-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 65
+    section: 表7 / 7-E
+    intent_id: 7-37
+- id: node-0047
+  current_node: 4-2
+  text: 我压根没见过你们发的授权通知
+  expected: &id038
+  - 7-38
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-38-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+- id: node-0048
+  current_node: 4-2
+  text: 没见到通知
+  expected: &id039
+  - 7-38
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-38-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+- id: node-0049
+  current_node: 4-2
+  text: 我不确定，您等我打开消息查查看
+  expected:
+  - 7-39
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-39-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 67
+    section: 表7 / 7-E
+    intent_id: 7-39
+- id: node-0050
+  current_node: 4-2
+  text: 让我翻翻看
+  expected:
+  - 7-39
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: 7-39-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 67
+    section: 表7 / 7-E
+    intent_id: 7-39
+- id: node-0051
+  current_node: 4-2
+  text: 收到了，还没填
+  expected:
+  - 7-36
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 64
+    section: 表7 / 7-E
+    intent_id: 7-36
+- id: node-0052
+  current_node: 4-2
+  text: 收到了，我填完了
+  expected:
+  - 7-37
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 65
+    section: 表7 / 7-E
+    intent_id: 7-37
+- id: node-0053
+  current_node: 4-2
+  text: 我没收到什么短信啊
+  expected:
+  - 7-38
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id040
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+- id: node-0054
+  current_node: 4-2
+  text: 我看看啊……等我找找
+  expected:
+  - 7-39
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 67
+    section: 表7 / 7-E
+    intent_id: 7-39
+- id: node-0055
+  current_node: 4-2
+  text: 我不去这家公司了
+  expected:
+  - 7-32
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id010
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0056
+  current_node: 4-2
+  text: 通知是收到的，只是还没有填
+  expected:
+  - 7-36
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: &id002
+    node: 4-2
+    mapping: workflow_intent_map.yaml
+- id: node-0057
+  current_node: 4-2
+  text: 通知根本就没有收到，不是收到没填
+  expected:
+  - 7-38
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+- id: node-0058
+  current_node: 4-2
+  text: 通知收到了，授权也确实办完了
+  expected:
+  - 7-37
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+- id: node-0059
+  current_node: 4-2
+  text: 没有收到那条授权通知
+  expected:
+  - 7-38
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+- id: node-0060
+  current_node: 4-2
+  text: 收到过，好像填过了，又好像还没填
+  expected:
+  - 7-36
+  - 7-37
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0061
+  current_node: 4-2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0062
+  current_node: 4-2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0063
+  current_node: 4-2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0064
+  current_node: 4-2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id002
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0065
+  current_node: 4-2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0066
+  current_node: 4-2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0067
+  current_node: 4-2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0068
+  current_node: 4-2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0069
+  current_node: 4-2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0070
+  current_node: 4-2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0071
+  current_node: 4-2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0072
+  current_node: 4-2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0073
+  current_node: 4-2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0074
+  current_node: 4-2
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0075
+  current_node: 4-2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0076
+  current_node: 4-2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0077
+  current_node: 4-2
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您收到背调授权通知了吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0078
+  current_node: b12-4
+  text: 我已经拒掉这份录用，不入职了
+  expected: *id008
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-32-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0079
+  current_node: b12-4
+  text: 录用我放弃了
+  expected: *id009
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-32-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0080
+  current_node: b12-4
+  text: 刚查了一圈，在被拦截的短信里面发现了
+  expected: &id031
+  - 7-40
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-40-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0081
+  current_node: b12-4
+  text: 拦截里找着了
+  expected: &id032
+  - 7-40
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-40-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0082
+  current_node: b12-4
+  text: 我刚把几个文件夹都翻遍了，确实没找着
+  expected: &id033
+  - 7-41
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-41-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0083
+  current_node: b12-4
+  text: 翻遍也没找到
+  expected: &id034
+  - 7-41
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: 7-41-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0084
+  current_node: b12-4
+  text: 哦，找到了，在骚扰拦截里
+  expected:
+  - 7-40
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id006
+- id: node-0085
+  current_node: b12-4
+  text: 没有，哪都没有
+  expected:
+  - 7-41
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: &id035
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0086
+  current_node: b12-4
+  text: 我不去这家公司了
+  expected:
+  - 7-32
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id010
+- id: node-0087
+  current_node: b12-4
+  text: 查过之后找到了，不用继续找
+  expected:
+  - 7-40
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: &id011
+    node: b12-4
+    mapping: workflow_intent_map.yaml
+- id: node-0088
+  current_node: b12-4
+  text: 查过之后没有找到，确实没有
+  expected:
+  - 7-41
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+- id: node-0089
+  current_node: b12-4
+  text: 已经从垃圾箱找出来了
+  expected:
+  - 7-40
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+- id: node-0090
+  current_node: b12-4
+  text: 连垃圾箱也翻了，还是找不着
+  expected:
+  - 7-41
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+- id: node-0091
+  current_node: b12-4
+  text: 我找到了点东西，但不确定是不是那条
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0092
+  current_node: b12-4
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0093
+  current_node: b12-4
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0094
+  current_node: b12-4
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0095
+  current_node: b12-4
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id011
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0096
+  current_node: b12-4
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-25
+- id: node-0097
+  current_node: b12-4
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-26
+- id: node-0098
+  current_node: b12-4
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-27
+- id: node-0099
+  current_node: b12-4
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-28
+- id: node-0100
+  current_node: b12-4
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-29
+- id: node-0101
+  current_node: b12-4
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-30
+- id: node-0102
+  current_node: b12-4
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-31
+- id: node-0103
+  current_node: b12-4
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source:
+    old_eval_id: contrast-32
+- id: node-0104
+  current_node: b12-4
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0105
+  current_node: b12-4
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0106
+  current_node: b12-4
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0107
+  current_node: b12-4
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截和垃圾邮件箱里有没有？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0108
+  current_node: b14-2
+  text: 前几天一直忙工作，就把授权这事落下了
+  expected:
+  - 7-42
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-42-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 75
+    section: 表7 / 7-F
+    intent_id: 7-42
+- id: node-0109
+  current_node: b14-2
+  text: 忙忘这事了
+  expected:
+  - 7-42
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-42-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 75
+    section: 表7 / 7-F
+    intent_id: 7-42
+- id: node-0110
+  current_node: b14-2
+  text: 我卡在填写操作上，不知道下一步怎么做
+  expected:
+  - 7-43
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-43-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 76
+    section: 表7 / 7-F
+    intent_id: 7-43
+- id: node-0111
+  current_node: b14-2
+  text: 操作不会弄
+  expected:
+  - 7-43
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-43-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 76
+    section: 表7 / 7-F
+    intent_id: 7-43
+- id: node-0112
+  current_node: b14-2
+  text: 我对要交这么多信息不太愿意，心里有顾虑
+  expected:
+  - 7-44
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-44-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 77
+    section: 表7 / 7-F
+    intent_id: 7-44
+- id: node-0113
+  current_node: b14-2
+  text: 不太想授权
+  expected:
+  - 7-44
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: 7-44-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 77
+    section: 表7 / 7-F
+    intent_id: 7-44
+- id: node-0114
+  current_node: b14-2
+  text: 最近太忙了，忘了这事
+  expected:
+  - 7-42
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 75
+    section: 表7 / 7-F
+    intent_id: 7-42
+- id: node-0115
+  current_node: b14-2
+  text: 那个链接我打不开
+  expected:
+  - 7-43
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 76
+    section: 表7 / 7-F
+    intent_id: 7-43
+- id: node-0116
+  current_node: b14-2
+  text: 我不想填
+  expected:
+  - 7-44
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 77
+    section: 表7 / 7-F
+    intent_id: 7-44
+- id: node-0117
+  current_node: b14-2
+  text: 没有别的问题，就是忙忘了
+  expected:
+  - 7-42
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: &id012
+    node: b14-2
+    mapping: workflow_intent_map.yaml
+- id: node-0118
+  current_node: b14-2
+  text: 不是忙忘了，是不知道该怎么操作
+  expected:
+  - 7-43
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+- id: node-0119
+  current_node: b14-2
+  text: 最近又忙，那个页面我也不太会弄
+  expected:
+  - 7-42
+  - 7-43
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0120
+  current_node: b14-2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0121
+  current_node: b14-2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0122
+  current_node: b14-2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0123
+  current_node: b14-2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id012
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0124
+  current_node: b14-2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-25
+- id: node-0125
+  current_node: b14-2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-26
+- id: node-0126
+  current_node: b14-2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-27
+- id: node-0127
+  current_node: b14-2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-28
+- id: node-0128
+  current_node: b14-2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-29
+- id: node-0129
+  current_node: b14-2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-30
+- id: node-0130
+  current_node: b14-2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-31
+- id: node-0131
+  current_node: b14-2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source:
+    old_eval_id: contrast-32
+- id: node-0132
+  current_node: b14-2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0133
+  current_node: b14-2
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0134
+  current_node: b14-2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0135
+  current_node: b14-2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 是最近比较忙？还是对填写有疑问？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0136
+  current_node: 5-2-b-2
+  text: 信息是写了，电子签和人脸那两项我都没做
+  expected:
+  - 7-45
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-45-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 83
+    section: 表7 / 7-G
+    intent_id: 7-45
+- id: node-0137
+  current_node: 5-2-b-2
+  text: 电子签没做
+  expected:
+  - 7-45
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-45-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 83
+    section: 表7 / 7-G
+    intent_id: 7-45
+- id: node-0138
+  current_node: 5-2-b-2
+  text: 您说没完成可我每一步都办妥了，应该是你们系统没更新
+  expected:
+  - 7-46
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-46-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 84
+    section: 表7 / 7-G
+    intent_id: 7-46
+- id: node-0139
+  current_node: 5-2-b-2
+  text: 全做了查系统
+  expected:
+  - 7-46
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-46-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 84
+    section: 表7 / 7-G
+    intent_id: 7-46
+- id: node-0140
+  current_node: 5-2-b-2
+  text: 我不记得末尾有没有按确认提交，也许漏掉了
+  expected:
+  - 7-47
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-47-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 85
+    section: 表7 / 7-G
+    intent_id: 7-47
+- id: node-0141
+  current_node: 5-2-b-2
+  text: 提交好像漏了
+  expected:
+  - 7-47
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: 7-47-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 85
+    section: 表7 / 7-G
+    intent_id: 7-47
+- id: node-0142
+  current_node: 5-2-b-2
+  text: 电子签名？没做啊
+  expected:
+  - 7-45
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 83
+    section: 表7 / 7-G
+    intent_id: 7-45
+- id: node-0143
+  current_node: 5-2-b-2
+  text: 我都弄完了，你们系统问题吧
+  expected:
+  - 7-46
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 84
+    section: 表7 / 7-G
+    intent_id: 7-46
+- id: node-0144
+  current_node: 5-2-b-2
+  text: 填完了啊，最后一步没注意
+  expected:
+  - 7-47
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 85
+    section: 表7 / 7-G
+    intent_id: 7-47
+- id: node-0145
+  current_node: 5-2-b-2
+  text: 签名人脸和最后提交都做完了，一个没漏
+  expected:
+  - 7-46
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: &id013
+    node: 5-2-b-2
+    mapping: workflow_intent_map.yaml
+- id: node-0146
+  current_node: 5-2-b-2
+  text: 签名人脸做了，最后提交可能没点
+  expected:
+  - 7-47
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+- id: node-0147
+  current_node: 5-2-b-2
+  text: 表填了，可电子签名还没有做
+  expected:
+  - 7-45
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+- id: node-0148
+  current_node: 5-2-b-2
+  text: 不是漏了步骤，是你们系统还没有同步
+  expected:
+  - 7-46
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+- id: node-0149
+  current_node: 5-2-b-2
+  text: 做没做完我都记不清了
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0150
+  current_node: 5-2-b-2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0151
+  current_node: 5-2-b-2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0152
+  current_node: 5-2-b-2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0153
+  current_node: 5-2-b-2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id013
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0154
+  current_node: 5-2-b-2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0155
+  current_node: 5-2-b-2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0156
+  current_node: 5-2-b-2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0157
+  current_node: 5-2-b-2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0158
+  current_node: 5-2-b-2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0159
+  current_node: 5-2-b-2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0160
+  current_node: 5-2-b-2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0161
+  current_node: 5-2-b-2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0162
+  current_node: 5-2-b-2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0163
+  current_node: 5-2-b-2
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0164
+  current_node: 5-2-b-2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0165
+  current_node: 5-2-b-2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0166
+  current_node: 5-2-b-2
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 后台还没显示完成，电子签名和人脸识别都做了吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0167
+  current_node: 5-4-c
+  text: 我可以办，但不要电话讲了，用邮件告诉我
+  expected: &id017
+  - 7-23
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-23-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+- id: node-0168
+  current_node: 5-4-c
+  text: 短信通知我吧
+  expected: &id018
+  - 7-23
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-23-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+- id: node-0169
+  current_node: 5-4-c
+  text: 我也说不好什么时候，之后再看看
+  expected: &id021
+  - 7-27
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-27-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+- id: node-0170
+  current_node: 5-4-c
+  text: 到时候再说
+  expected: &id022
+  - 7-27
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-27-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+- id: node-0171
+  current_node: 5-4-c
+  text: 这件事我拒绝继续，请停止打电话
+  expected:
+  - 7-28
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-28-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 46
+    section: 表7 / 7-C
+    intent_id: 7-28
+- id: node-0172
+  current_node: 5-4-c
+  text: 别联系了
+  expected:
+  - 7-28
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-28-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 46
+    section: 表7 / 7-C
+    intent_id: 7-28
+- id: node-0173
+  current_node: 5-4-c
+  text: 您说的截止时间可以，我保证那之前填好
+  expected:
+  - 7-48
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-48-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 91
+    section: 表7 / 7-H
+    intent_id: 7-48
+- id: node-0174
+  current_node: 5-4-c
+  text: 按您说的办完
+  expected:
+  - 7-48
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-48-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 91
+    section: 表7 / 7-H
+    intent_id: 7-48
+- id: node-0175
+  current_node: 5-4-c
+  text: 要我今天就交实在来不及，能不能往后延
+  expected:
+  - 7-49
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-49-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 92
+    section: 表7 / 7-H
+    intent_id: 7-49
+- id: node-0176
+  current_node: 5-4-c
+  text: 这期限太赶
+  expected:
+  - 7-49
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-49-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 92
+    section: 表7 / 7-H
+    intent_id: 7-49
+- id: node-0177
+  current_node: 5-4-c
+  text: 近期都排满了，得等下礼拜我才有时间完成
+  expected:
+  - 7-50
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-50-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 93
+    section: 表7 / 7-H
+    intent_id: 7-50
+- id: node-0178
+  current_node: 5-4-c
+  text: 下星期再完成
+  expected:
+  - 7-50
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: 7-50-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 93
+    section: 表7 / 7-H
+    intent_id: 7-50
+- id: node-0179
+  current_node: 5-4-c
+  text: 好的，今天下班前搞定
+  expected:
+  - 7-48
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id005
+- id: node-0180
+  current_node: 5-4-c
+  text: 今天不行，太赶了
+  expected:
+  - 7-49
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 92
+    section: 表7 / 7-H
+    intent_id: 7-49
+- id: node-0181
+  current_node: 5-4-c
+  text: 下周吧，我下周才有空
+  expected:
+  - 7-50
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 93
+    section: 表7 / 7-H
+    intent_id: 7-50
+- id: node-0182
+  current_node: 5-4-c
+  text: 晚点再说
+  expected:
+  - 7-27
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id023
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+- id: node-0183
+  current_node: 5-4-c
+  text: 别打电话了，发短信给我
+  expected:
+  - 7-23
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id019
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+- id: node-0184
+  current_node: 5-4-c
+  text: 不用了，别打了
+  expected:
+  - 7-28
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 46
+    section: 表7 / 7-C
+    intent_id: 7-28
+- id: node-0185
+  current_node: 5-4-c
+  text: 今天下班以前能完成，我答应
+  expected:
+  - 7-48
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: &id014
+    node: 5-4-c
+    mapping: workflow_intent_map.yaml
+- id: node-0186
+  current_node: 5-4-c
+  text: 今天下班以前不能完成，时间不够
+  expected:
+  - 7-49
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+- id: node-0187
+  current_node: 5-4-c
+  text: 也许能按时，也许来不及，我还不能确定
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0188
+  current_node: 5-4-c
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0189
+  current_node: 5-4-c
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0190
+  current_node: 5-4-c
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0191
+  current_node: 5-4-c
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id014
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0192
+  current_node: 5-4-c
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0193
+  current_node: 5-4-c
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0194
+  current_node: 5-4-c
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0195
+  current_node: 5-4-c
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0196
+  current_node: 5-4-c
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0197
+  current_node: 5-4-c
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0198
+  current_node: 5-4-c
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0199
+  current_node: 5-4-c
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0200
+  current_node: 5-4-c
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0201
+  current_node: 5-4-c
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0202
+  current_node: 5-4-c
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0203
+  current_node: 5-4-c
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 今天下班前完成可以吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0204
+  current_node: a1
+  text: 能提供一个渠道让我查证您是不是官方吗
+  expected:
+  - 7-9
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-9-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 22
+    section: 表7 / 7-B
+    intent_id: 7-9
+- id: node-0205
+  current_node: a1
+  text: 怎么验真伪
+  expected:
+  - 7-9
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-9-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 22
+    section: 表7 / 7-B
+    intent_id: 7-9
+- id: node-0206
+  current_node: a1
+  text: 我没联系过你们，你们从哪儿拿到我的资料的
+  expected:
+  - 7-10
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-10-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 23
+    section: 表7 / 7-B
+    intent_id: 7-10
+- id: node-0207
+  current_node: a1
+  text: 资料哪来的
+  expected:
+  - 7-10
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-10-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 23
+    section: 表7 / 7-B
+    intent_id: 7-10
+- id: node-0208
+  current_node: a1
+  text: 这会不会是冒充招聘的骗局呀
+  expected:
+  - 7-11
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-11-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 24
+    section: 表7 / 7-B
+    intent_id: 7-11
+- id: node-0209
+  current_node: a1
+  text: 怕是骗子
+  expected:
+  - 7-11
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-11-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 24
+    section: 表7 / 7-B
+    intent_id: 7-11
+- id: node-0210
+  current_node: a1
+  text: 这个来电号码看着不像正规座机
+  expected:
+  - 7-12
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-12-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 25
+    section: 表7 / 7-B
+    intent_id: 7-12
+- id: node-0211
+  current_node: a1
+  text: 号码好怪啊
+  expected:
+  - 7-12
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-12-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 25
+    section: 表7 / 7-B
+    intent_id: 7-12
+- id: node-0212
+  current_node: a1
+  text: 手机里背调通知有好几条，我不知道该认哪一条
+  expected:
+  - 7-13
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-13-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 26
+    section: 表7 / 7-B
+    intent_id: 7-13
+- id: node-0213
+  current_node: a1
+  text: 到底是哪封
+  expected:
+  - 7-13
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-13-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 26
+    section: 表7 / 7-B
+    intent_id: 7-13
+- id: node-0214
+  current_node: a1
+  text: 你们今天已经联系好几遍了，太频繁了吧
+  expected:
+  - 7-14
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-14-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 27
+    section: 表7 / 7-B
+    intent_id: 7-14
+- id: node-0215
+  current_node: a1
+  text: 又打过来了
+  expected:
+  - 7-14
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: 7-14-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 27
+    section: 表7 / 7-B
+    intent_id: 7-14
+- id: node-0216
+  current_node: a1
+  text: 你怎么证明你是官方的？
+  expected:
+  - 7-9
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 22
+    section: 表7 / 7-B
+    intent_id: 7-9
+- id: node-0217
+  current_node: a1
+  text: 你们怎么会有我的信息？
+  expected:
+  - 7-10
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 23
+    section: 表7 / 7-B
+    intent_id: 7-10
+- id: node-0218
+  current_node: a1
+  text: 现在诈骗这么多，我怎么信你
+  expected:
+  - 7-11
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 24
+    section: 表7 / 7-B
+    intent_id: 7-11
+- id: node-0219
+  current_node: a1
+  text: 你这号码怎么奇奇怪怪的
+  expected:
+  - 7-12
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 25
+    section: 表7 / 7-B
+    intent_id: 7-12
+- id: node-0220
+  current_node: a1
+  text: 我收到好几条短信/邮件，不知道哪个是你们
+  expected:
+  - 7-13
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 26
+    section: 表7 / 7-B
+    intent_id: 7-13
+- id: node-0221
+  current_node: a1
+  text: 你们都打第三次了！烦不烦
+  expected:
+  - 7-14
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 27
+    section: 表7 / 7-B
+    intent_id: 7-14
+- id: node-0222
+  current_node: a1
+  text: 我想要一种方法核验您的官方身份
+  expected:
+  - 7-9
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: &id015
+    node: a1
+    mapping: workflow_intent_map.yaml
+- id: node-0223
+  current_node: a1
+  text: 我觉得这很可能是一通诈骗电话
+  expected:
+  - 7-11
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+- id: node-0224
+  current_node: a1
+  text: 号码看着怪怪的，会不会是骗子
+  expected:
+  - 7-11
+  - 7-12
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0225
+  current_node: a1
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0226
+  current_node: a1
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0227
+  current_node: a1
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0228
+  current_node: a1
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id015
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0229
+  current_node: a1
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-25
+- id: node-0230
+  current_node: a1
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-26
+- id: node-0231
+  current_node: a1
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-27
+- id: node-0232
+  current_node: a1
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-28
+- id: node-0233
+  current_node: a1
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-29
+- id: node-0234
+  current_node: a1
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-30
+- id: node-0235
+  current_node: a1
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-31
+- id: node-0236
+  current_node: a1
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source:
+    old_eval_id: contrast-32
+- id: node-0237
+  current_node: a1
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0238
+  current_node: a1
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0239
+  current_node: a1
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0240
+  current_node: a1
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0241
+  current_node: a1
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对这次来电有什么疑问？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0242
+  current_node: a1-5
+  text: 这样解释我就放心了，可以继续
+  expected:
+  - 7-15
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-15-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 28
+    section: 表7 / 7-B
+    intent_id: 7-15
+- id: node-0243
+  current_node: a1-5
+  text: 这下放心啦
+  expected:
+  - 7-15
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-15-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 28
+    section: 表7 / 7-B
+    intent_id: 7-15
+- id: node-0244
+  current_node: a1-5
+  text: 等我核实过你们的身份，再接着谈
+  expected:
+  - 7-16
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-16-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 29
+    section: 表7 / 7-B
+    intent_id: 7-16
+- id: node-0245
+  current_node: a1-5
+  text: 先核实真假
+  expected:
+  - 7-16
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-16-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 29
+    section: 表7 / 7-B
+    intent_id: 7-16
+- id: node-0246
+  current_node: a1-5
+  text: 我还是认定你们不可信，以后不要来电了
+  expected:
+  - 7-17
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-17-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 30
+    section: 表7 / 7-B
+    intent_id: 7-17
+- id: node-0247
+  current_node: a1-5
+  text: 不信别打了
+  expected:
+  - 7-17
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: 7-17-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 30
+    section: 表7 / 7-B
+    intent_id: 7-17
+- id: node-0248
+  current_node: a1-5
+  text: 哦，好的，明白了
+  expected:
+  - 7-15
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 28
+    section: 表7 / 7-B
+    intent_id: 7-15
+- id: node-0249
+  current_node: a1-5
+  text: 我先跟HR确认下再说
+  expected:
+  - 7-16
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 29
+    section: 表7 / 7-B
+    intent_id: 7-16
+- id: node-0250
+  current_node: a1-5
+  text: 别再打了，我不信
+  expected:
+  - 7-17
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 30
+    section: 表7 / 7-B
+    intent_id: 7-17
+- id: node-0251
+  current_node: a1-5
+  text: 现在我信了，可以继续说授权
+  expected:
+  - 7-15
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: &id016
+    node: a1-5
+    mapping: workflow_intent_map.yaml
+- id: node-0252
+  current_node: a1-5
+  text: 现在我还没核实，先找HR确认真假
+  expected:
+  - 7-16
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+- id: node-0253
+  current_node: a1-5
+  text: 你解释了也没用，我还是不信，不要再找我
+  expected:
+  - 7-17
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+- id: node-0254
+  current_node: a1-5
+  text: 已经不怀疑了，您继续吧
+  expected:
+  - 7-15
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+- id: node-0255
+  current_node: a1-5
+  text: 您这么说我还是拿不准
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0256
+  current_node: a1-5
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0257
+  current_node: a1-5
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0258
+  current_node: a1-5
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0259
+  current_node: a1-5
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id016
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0260
+  current_node: a1-5
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-25
+- id: node-0261
+  current_node: a1-5
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-26
+- id: node-0262
+  current_node: a1-5
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-27
+- id: node-0263
+  current_node: a1-5
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-28
+- id: node-0264
+  current_node: a1-5
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-29
+- id: node-0265
+  current_node: a1-5
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-30
+- id: node-0266
+  current_node: a1-5
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-31
+- id: node-0267
+  current_node: a1-5
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source:
+    old_eval_id: contrast-32
+- id: node-0268
+  current_node: a1-5
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0269
+  current_node: a1-5
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0270
+  current_node: a1-5
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0271
+  current_node: a1-5
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0272
+  current_node: a1-5
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您可以回拨官方号码核实这次通话。
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0273
+  current_node: a2
+  text: 车还在路上开着，没办法分心听
+  expected:
+  - 7-18
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-18-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 36
+    section: 表7 / 7-C
+    intent_id: 7-18
+- id: node-0274
+  current_node: a2
+  text: 正开着车呢
+  expected:
+  - 7-18
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-18-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 36
+    section: 表7 / 7-C
+    intent_id: 7-18
+- id: node-0275
+  current_node: a2
+  text: 我正在医院处理突发情况，现在顾不上
+  expected:
+  - 7-19
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-19-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 37
+    section: 表7 / 7-C
+    intent_id: 7-19
+- id: node-0276
+  current_node: a2
+  text: 急诊有事
+  expected:
+  - 7-19
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-19-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 37
+    section: 表7 / 7-C
+    intent_id: 7-19
+- id: node-0277
+  current_node: a2
+  text: 领导正在给我们开会，现在没法聊
+  expected:
+  - 7-20
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-20-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 38
+    section: 表7 / 7-C
+    intent_id: 7-20
+- id: node-0278
+  current_node: a2
+  text: 会议还没完
+  expected:
+  - 7-20
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-20-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 38
+    section: 表7 / 7-C
+    intent_id: 7-20
+- id: node-0279
+  current_node: a2
+  text: 手机上操作不了，得等我回去拿电脑
+  expected: &id027
+  - 7-21
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-21-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+- id: node-0280
+  current_node: a2
+  text: 得用电脑填
+  expected: &id028
+  - 7-21
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-21-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+- id: node-0281
+  current_node: a2
+  text: 您那头说话一截一截的，我听不清楚
+  expected:
+  - 7-22
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-22-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 40
+    section: 表7 / 7-C
+    intent_id: 7-22
+- id: node-0282
+  current_node: a2
+  text: 声音断了
+  expected:
+  - 7-22
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-22-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 40
+    section: 表7 / 7-C
+    intent_id: 7-22
+- id: node-0283
+  current_node: a2
+  text: 我可以办，但不要电话讲了，用邮件告诉我
+  expected: *id017
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-23-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+- id: node-0284
+  current_node: a2
+  text: 短信通知我吧
+  expected: *id018
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: 7-23-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 41
+    section: 表7 / 7-C
+    intent_id: 7-23
+- id: node-0285
+  current_node: a2
+  text: 我在开车
+  expected:
+  - 7-18
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 36
+    section: 表7 / 7-C
+    intent_id: 7-18
+- id: node-0286
+  current_node: a2
+  text: 我在医院，有急事
+  expected:
+  - 7-19
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 37
+    section: 表7 / 7-C
+    intent_id: 7-19
+- id: node-0287
+  current_node: a2
+  text: 我在开会，回头吧
+  expected:
+  - 7-20
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 38
+    section: 表7 / 7-C
+    intent_id: 7-20
+- id: node-0288
+  current_node: a2
+  text: 我没在电脑旁，手机填不了
+  expected:
+  - 7-21
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: &id029
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+- id: node-0289
+  current_node: a2
+  text: 喂？你说什么？听不清
+  expected:
+  - 7-22
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 40
+    section: 表7 / 7-C
+    intent_id: 7-22
+- id: node-0290
+  current_node: a2
+  text: 别打电话了，发短信给我
+  expected:
+  - 7-23
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id019
+- id: node-0291
+  current_node: a2
+  text: 我正在驾驶车辆，没法分心接电话
+  expected:
+  - 7-18
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: &id020
+    node: a2
+    mapping: workflow_intent_map.yaml
+- id: node-0292
+  current_node: a2
+  text: 我不是在开车，是正在参加会议
+  expected:
+  - 7-20
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+- id: node-0293
+  current_node: a2
+  text: 既在开车又要赶去医院有急事
+  expected:
+  - 7-18
+  - 7-19
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0294
+  current_node: a2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0295
+  current_node: a2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0296
+  current_node: a2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0297
+  current_node: a2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id020
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0298
+  current_node: a2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-25
+- id: node-0299
+  current_node: a2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-26
+- id: node-0300
+  current_node: a2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-27
+- id: node-0301
+  current_node: a2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-28
+- id: node-0302
+  current_node: a2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-29
+- id: node-0303
+  current_node: a2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-30
+- id: node-0304
+  current_node: a2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-31
+- id: node-0305
+  current_node: a2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source:
+    old_eval_id: contrast-32
+- id: node-0306
+  current_node: a2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0307
+  current_node: a2
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0308
+  current_node: a2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0309
+  current_node: a2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0310
+  current_node: a2
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您现在有什么不方便的情况？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0311
+  current_node: a2-7
+  text: 请在明天下午两点半给我回电
+  expected:
+  - 7-25
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-25-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 43
+    section: 表7 / 7-C
+    intent_id: 7-25
+- id: node-0312
+  current_node: a2-7
+  text: 明日十五点打
+  expected:
+  - 7-25
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-25-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 43
+    section: 表7 / 7-C
+    intent_id: 7-25
+- id: node-0313
+  current_node: a2-7
+  text: 等到后天早上再聊行不行
+  expected:
+  - 7-26
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-26-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 44
+    section: 表7 / 7-C
+    intent_id: 7-26
+- id: node-0314
+  current_node: a2-7
+  text: 隔天上午吧
+  expected:
+  - 7-26
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-26-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 44
+    section: 表7 / 7-C
+    intent_id: 7-26
+- id: node-0315
+  current_node: a2-7
+  text: 我也说不好什么时候，之后再看看
+  expected: *id021
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-27-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+- id: node-0316
+  current_node: a2-7
+  text: 到时候再说
+  expected: *id022
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: 7-27-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 45
+    section: 表7 / 7-C
+    intent_id: 7-27
+- id: node-0317
+  current_node: a2-7
+  text: 明天下午3点吧
+  expected:
+  - 7-25
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 43
+    section: 表7 / 7-C
+    intent_id: 7-25
+- id: node-0318
+  current_node: a2-7
+  text: 明天上午
+  expected:
+  - 7-26
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 44
+    section: 表7 / 7-C
+    intent_id: 7-26
+- id: node-0319
+  current_node: a2-7
+  text: 晚点再说
+  expected:
+  - 7-27
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id023
+- id: node-0320
+  current_node: a2-7
+  text: 明天下午两点整给我电话
+  expected:
+  - 7-25
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: &id024
+    node: a2-7
+    mapping: workflow_intent_map.yaml
+- id: node-0321
+  current_node: a2-7
+  text: 现在说不准几点，再等等看
+  expected:
+  - 7-27
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+- id: node-0322
+  current_node: a2-7
+  text: 下午两三点左右吧
+  expected:
+  - 7-25
+  - 7-26
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0323
+  current_node: a2-7
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0324
+  current_node: a2-7
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0325
+  current_node: a2-7
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0326
+  current_node: a2-7
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id024
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0327
+  current_node: a2-7
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-25
+- id: node-0328
+  current_node: a2-7
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-26
+- id: node-0329
+  current_node: a2-7
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-27
+- id: node-0330
+  current_node: a2-7
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-28
+- id: node-0331
+  current_node: a2-7
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-29
+- id: node-0332
+  current_node: a2-7
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-30
+- id: node-0333
+  current_node: a2-7
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-31
+- id: node-0334
+  current_node: a2-7
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source:
+    old_eval_id: contrast-32
+- id: node-0335
+  current_node: a2-7
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0336
+  current_node: a2-7
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0337
+  current_node: a2-7
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0338
+  current_node: a2-7
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0339
+  current_node: a2-7
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看几点方便我再联系？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0340
+  current_node: a3
+  text: 我还在原公司工作，不想被发现正在找新工作
+  expected:
+  - 7-29
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-29-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 52
+    section: 表7 / 7-D
+    intent_id: 7-29
+- id: node-0341
+  current_node: a3
+  text: 现单位别知道
+  expected:
+  - 7-29
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-29-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 52
+    section: 表7 / 7-D
+    intent_id: 7-29
+- id: node-0342
+  current_node: a3
+  text: 能不能别让我交领导电话号码，我不愿意提供
+  expected:
+  - 7-30
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-30-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 53
+    section: 表7 / 7-D
+    intent_id: 7-30
+- id: node-0343
+  current_node: a3
+  text: 领导号码不给
+  expected:
+  - 7-30
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-30-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 53
+    section: 表7 / 7-D
+    intent_id: 7-30
+- id: node-0344
+  current_node: a3
+  text: 你们拿到个人信息会不会传给无关的人
+  expected:
+  - 7-31
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-31-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 54
+    section: 表7 / 7-D
+    intent_id: 7-31
+- id: node-0345
+  current_node: a3
+  text: 隐私怎么保护
+  expected:
+  - 7-31
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-31-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 54
+    section: 表7 / 7-D
+    intent_id: 7-31
+- id: node-0346
+  current_node: a3
+  text: 我已经拒掉这份录用，不入职了
+  expected: *id008
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-32-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0347
+  current_node: a3
+  text: 录用我放弃了
+  expected: *id009
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-32-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 55
+    section: 表7 / 7-D
+    intent_id: 7-32
+- id: node-0348
+  current_node: a3
+  text: 我得跟招聘那边问清楚，入职到底需不需要做这项调查
+  expected:
+  - 7-33
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-33-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 56
+    section: 表7 / 7-D
+    intent_id: 7-33
+- id: node-0349
+  current_node: a3
+  text: 问问是否必做
+  expected:
+  - 7-33
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: 7-33-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 56
+    section: 表7 / 7-D
+    intent_id: 7-33
+- id: node-0350
+  current_node: a3
+  text: 我还在职，别打我公司电话
+  expected:
+  - 7-29
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 52
+    section: 表7 / 7-D
+    intent_id: 7-29
+- id: node-0351
+  current_node: a3
+  text: 我不想给我领导电话
+  expected:
+  - 7-30
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 53
+    section: 表7 / 7-D
+    intent_id: 7-30
+- id: node-0352
+  current_node: a3
+  text: 背调会查我什么？会不会泄露隐私
+  expected:
+  - 7-31
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 54
+    section: 表7 / 7-D
+    intent_id: 7-31
+- id: node-0353
+  current_node: a3
+  text: 我不去这家公司了
+  expected:
+  - 7-32
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id010
+- id: node-0354
+  current_node: a3
+  text: 我问问HR这个是不是必须的
+  expected:
+  - 7-33
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 56
+    section: 表7 / 7-D
+    intent_id: 7-33
+- id: node-0355
+  current_node: a3
+  text: 还在职，不希望现单位知道我找工作
+  expected:
+  - 7-29
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: &id025
+    node: a3
+    mapping: workflow_intent_map.yaml
+- id: node-0356
+  current_node: a3
+  text: 我已经决定不去入职，这个机会不要了
+  expected:
+  - 7-32
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+- id: node-0357
+  current_node: a3
+  text: 怕现公司知道，也怕资料泄露
+  expected:
+  - 7-29
+  - 7-31
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0358
+  current_node: a3
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0359
+  current_node: a3
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0360
+  current_node: a3
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0361
+  current_node: a3
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id025
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0362
+  current_node: a3
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-25
+- id: node-0363
+  current_node: a3
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-26
+- id: node-0364
+  current_node: a3
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-27
+- id: node-0365
+  current_node: a3
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-28
+- id: node-0366
+  current_node: a3
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-29
+- id: node-0367
+  current_node: a3
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-30
+- id: node-0368
+  current_node: a3
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-31
+- id: node-0369
+  current_node: a3
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source:
+    old_eval_id: contrast-32
+- id: node-0370
+  current_node: a3
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0371
+  current_node: a3
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0372
+  current_node: a3
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0373
+  current_node: a3
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0374
+  current_node: a3
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您对背调授权有什么顾虑？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0375
+  current_node: a3-6-a
+  text: 可以通过公司官方渠道另找在职同事了解情况
+  expected:
+  - 7-57
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-57-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 105
+    section: 表7 / 7-I
+    intent_id: 7-57
+- id: node-0376
+  current_node: a3-6-a
+  text: 找其他同事可以
+  expected:
+  - 7-57
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-57-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 105
+    section: 表7 / 7-I
+    intent_id: 7-57
+- id: node-0377
+  current_node: a3-6-a
+  text: 去问在职同事，他们会发现我在外面面试，我很担心
+  expected:
+  - 7-58
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-58-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 106
+    section: 表7 / 7-I
+    intent_id: 7-58
+- id: node-0378
+  current_node: a3-6-a
+  text: 同事会发现啊
+  expected:
+  - 7-58
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-58-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 106
+    section: 表7 / 7-I
+    intent_id: 7-58
+- id: node-0379
+  current_node: a3-6-a
+  text: 请只用我列的证明人名单，别自行寻访其他员工
+  expected:
+  - 7-59
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-59-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 107
+    section: 表7 / 7-I
+    intent_id: 7-59
+- id: node-0380
+  current_node: a3-6-a
+  text: 仅用我给的人
+  expected:
+  - 7-59
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: 7-59-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 107
+    section: 表7 / 7-I
+    intent_id: 7-59
+- id: node-0381
+  current_node: a3-6-a
+  text: 可以没问题
+  expected:
+  - 7-57
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 105
+    section: 表7 / 7-I
+    intent_id: 7-57
+- id: node-0382
+  current_node: a3-6-a
+  text: 那别人不就知道我要走了吗
+  expected:
+  - 7-58
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 106
+    section: 表7 / 7-I
+    intent_id: 7-58
+- id: node-0383
+  current_node: a3-6-a
+  text: 不用找我同事，就用我给的那几个
+  expected:
+  - 7-59
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 107
+    section: 表7 / 7-I
+    intent_id: 7-59
+- id: node-0384
+  current_node: a3-6-a
+  text: 可以另找同事核实，我同意
+  expected:
+  - 7-57
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: &id026
+    node: a3-6-a
+    mapping: workflow_intent_map.yaml
+- id: node-0385
+  current_node: a3-6-a
+  text: 不可以另找同事，只用我提供的证明人
+  expected:
+  - 7-59
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+- id: node-0386
+  current_node: a3-6-a
+  text: 要不行，要不不行，我再想想
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0387
+  current_node: a3-6-a
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0388
+  current_node: a3-6-a
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0389
+  current_node: a3-6-a
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0390
+  current_node: a3-6-a
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id026
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0391
+  current_node: a3-6-a
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0392
+  current_node: a3-6-a
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0393
+  current_node: a3-6-a
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0394
+  current_node: a3-6-a
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0395
+  current_node: a3-6-a
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0396
+  current_node: a3-6-a
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0397
+  current_node: a3-6-a
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0398
+  current_node: a3-6-a
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0399
+  current_node: a3-6-a
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0400
+  current_node: a3-6-a
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0401
+  current_node: a3-6-a
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0402
+  current_node: a3-6-a
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0403
+  current_node: a3-6-a
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0404
+  current_node: a4
+  text: 手机上操作不了，得等我回去拿电脑
+  expected: *id027
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-21-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+- id: node-0405
+  current_node: a4
+  text: 得用电脑填
+  expected: *id028
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-21-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 39
+    section: 表7 / 7-C
+    intent_id: 7-21
+- id: node-0406
+  current_node: a4
+  text: 刷脸一直过不了
+  expected:
+  - 7-51
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-51-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 99
+    section: 表7 / 7-I
+    intent_id: 7-51
+- id: node-0407
+  current_node: a4
+  text: 人脸又失败了
+  expected:
+  - 7-51
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-51-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 99
+    section: 表7 / 7-I
+    intent_id: 7-51
+- id: node-0408
+  current_node: a4
+  text: 我刚才填错了能不能改
+  expected:
+  - 7-52
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-52-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 100
+    section: 表7 / 7-I
+    intent_id: 7-52
+- id: node-0409
+  current_node: a4
+  text: 写错能改不
+  expected:
+  - 7-52
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-52-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 100
+    section: 表7 / 7-I
+    intent_id: 7-52
+- id: node-0410
+  current_node: a4
+  text: 这个页面打不开
+  expected:
+  - 7-53
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-53-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 101
+    section: 表7 / 7-I
+    intent_id: 7-53
+- id: node-0411
+  current_node: a4
+  text: 网页报错啦
+  expected:
+  - 7-53
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: 7-53-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 101
+    section: 表7 / 7-I
+    intent_id: 7-53
+- id: node-0412
+  current_node: a4
+  text: 到人脸这步总说识别失败
+  expected:
+  - 7-51
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 99
+    section: 表7 / 7-I
+    intent_id: 7-51
+- id: node-0413
+  current_node: a4
+  text: 我没在电脑旁，手机填不了
+  expected:
+  - 7-21
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id029
+- id: node-0414
+  current_node: a4
+  text: 我名字填错了，能改吗？
+  expected:
+  - 7-52
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id003
+- id: node-0415
+  current_node: a4
+  text: 页面一直报错
+  expected:
+  - 7-53
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id007
+- id: node-0416
+  current_node: a4
+  text: 不是网页坏了，是刷脸总失败
+  expected:
+  - 7-51
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: &id030
+    node: a4
+    mapping: workflow_intent_map.yaml
+- id: node-0417
+  current_node: a4
+  text: 还没到刷脸，整个网页就报错打不开
+  expected:
+  - 7-53
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+- id: node-0418
+  current_node: a4
+  text: 人脸失败了，而且资料也写错了
+  expected:
+  - 7-51
+  - 7-52
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0419
+  current_node: a4
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0420
+  current_node: a4
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0421
+  current_node: a4
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0422
+  current_node: a4
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id030
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0423
+  current_node: a4
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-25
+- id: node-0424
+  current_node: a4
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-26
+- id: node-0425
+  current_node: a4
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-27
+- id: node-0426
+  current_node: a4
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-28
+- id: node-0427
+  current_node: a4
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-29
+- id: node-0428
+  current_node: a4
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-30
+- id: node-0429
+  current_node: a4
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-31
+- id: node-0430
+  current_node: a4
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source:
+    old_eval_id: contrast-32
+- id: node-0431
+  current_node: a4
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0432
+  current_node: a4
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0433
+  current_node: a4
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您在操作时遇到了什么问题？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0434
+  current_node: b16-2-a
+  text: 刚查了一圈，在被拦截的短信里面发现了
+  expected: *id031
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: 7-40-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0435
+  current_node: b16-2-a
+  text: 拦截里找着了
+  expected: *id032
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: 7-40-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0436
+  current_node: b16-2-a
+  text: 我刚把几个文件夹都翻遍了，确实没找着
+  expected: *id033
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: 7-41-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0437
+  current_node: b16-2-a
+  text: 翻遍也没找到
+  expected: *id034
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: 7-41-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0438
+  current_node: b16-2-a
+  text: 哦，找到了，在骚扰拦截里
+  expected:
+  - 7-40
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id006
+- id: node-0439
+  current_node: b16-2-a
+  text: 没有，哪都没有
+  expected:
+  - 7-41
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id035
+- id: node-0440
+  current_node: b16-2-a
+  text: 拦截短信里找到了，之前没注意
+  expected:
+  - 7-40
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: &id036
+    node: b16-2-a
+    mapping: workflow_intent_map.yaml
+- id: node-0441
+  current_node: b16-2-a
+  text: 拦截短信里没有，我已经查看了
+  expected:
+  - 7-41
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+- id: node-0442
+  current_node: b16-2-a
+  text: 有一条短信，但我不确定是不是您说的
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0443
+  current_node: b16-2-a
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0444
+  current_node: b16-2-a
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0445
+  current_node: b16-2-a
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0446
+  current_node: b16-2-a
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id036
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0447
+  current_node: b16-2-a
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-25
+- id: node-0448
+  current_node: b16-2-a
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-26
+- id: node-0449
+  current_node: b16-2-a
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-27
+- id: node-0450
+  current_node: b16-2-a
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-28
+- id: node-0451
+  current_node: b16-2-a
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-29
+- id: node-0452
+  current_node: b16-2-a
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-30
+- id: node-0453
+  current_node: b16-2-a
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-31
+- id: node-0454
+  current_node: b16-2-a
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source:
+    old_eval_id: contrast-32
+- id: node-0455
+  current_node: b16-2-a
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0456
+  current_node: b16-2-a
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0457
+  current_node: b16-2-a
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0458
+  current_node: b16-2-a
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下骚扰拦截文件夹里有没有那条短信？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0459
+  current_node: b16-2-b
+  text: 刚查了一圈，在被拦截的短信里面发现了
+  expected: *id031
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: 7-40-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0460
+  current_node: b16-2-b
+  text: 拦截里找着了
+  expected: *id032
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: 7-40-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0461
+  current_node: b16-2-b
+  text: 我刚把几个文件夹都翻遍了，确实没找着
+  expected: *id033
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: 7-41-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0462
+  current_node: b16-2-b
+  text: 翻遍也没找到
+  expected: *id034
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: 7-41-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 69
+    section: 表7 / 7-E
+    intent_id: 7-41
+- id: node-0463
+  current_node: b16-2-b
+  text: 哦，找到了，在骚扰拦截里
+  expected:
+  - 7-40
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id006
+- id: node-0464
+  current_node: b16-2-b
+  text: 没有，哪都没有
+  expected:
+  - 7-41
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id035
+- id: node-0465
+  current_node: b16-2-b
+  text: 垃圾邮件箱里有，已经看见了
+  expected:
+  - 7-40
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: &id037
+    node: b16-2-b
+    mapping: workflow_intent_map.yaml
+- id: node-0466
+  current_node: b16-2-b
+  text: 垃圾邮件箱里也没有，已经查了
+  expected:
+  - 7-41
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+- id: node-0467
+  current_node: b16-2-b
+  text: 有一封邮件，但我不确定是不是您说的
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0468
+  current_node: b16-2-b
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0469
+  current_node: b16-2-b
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0470
+  current_node: b16-2-b
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0471
+  current_node: b16-2-b
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id037
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0472
+  current_node: b16-2-b
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0473
+  current_node: b16-2-b
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0474
+  current_node: b16-2-b
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0475
+  current_node: b16-2-b
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0476
+  current_node: b16-2-b
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0477
+  current_node: b16-2-b
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0478
+  current_node: b16-2-b
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0479
+  current_node: b16-2-b
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0480
+  current_node: b16-2-b
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0481
+  current_node: b16-2-b
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0482
+  current_node: b16-2-b
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0483
+  current_node: b16-2-b
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您看下收件箱和垃圾箱里有这封邮件吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0484
+  current_node: b16-2-c
+  text: 我压根没见过你们发的授权通知
+  expected: *id038
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: 7-38-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+- id: node-0485
+  current_node: b16-2-c
+  text: 没见到通知
+  expected: *id039
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: 7-38-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 66
+    section: 表7 / 7-E
+    intent_id: 7-38
+- id: node-0486
+  current_node: b16-2-c
+  text: 刚查了一圈，在被拦截的短信里面发现了
+  expected: *id031
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: 7-40-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0487
+  current_node: b16-2-c
+  text: 拦截里找着了
+  expected: *id032
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: 7-40-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 68
+    section: 表7 / 7-E
+    intent_id: 7-40
+- id: node-0488
+  current_node: b16-2-c
+  text: 哦，找到了，在骚扰拦截里
+  expected:
+  - 7-40
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id006
+- id: node-0489
+  current_node: b16-2-c
+  text: 我没收到什么短信啊
+  expected:
+  - 7-38
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id040
+- id: node-0490
+  current_node: b16-2-c
+  text: 不带链接的那条看到了
+  expected:
+  - 7-40
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: &id041
+    node: b16-2-c
+    mapping: workflow_intent_map.yaml
+- id: node-0491
+  current_node: b16-2-c
+  text: 不带链接的那条也没收到
+  expected:
+  - 7-38
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+- id: node-0492
+  current_node: b16-2-c
+  text: 好像收到过，又好像不是
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0493
+  current_node: b16-2-c
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0494
+  current_node: b16-2-c
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0495
+  current_node: b16-2-c
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0496
+  current_node: b16-2-c
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id041
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0497
+  current_node: b16-2-c
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0498
+  current_node: b16-2-c
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0499
+  current_node: b16-2-c
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0500
+  current_node: b16-2-c
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0501
+  current_node: b16-2-c
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0502
+  current_node: b16-2-c
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0503
+  current_node: b16-2-c
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0504
+  current_node: b16-2-c
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0505
+  current_node: b16-2-c
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0506
+  current_node: b16-2-c
+  text: 给您邮箱applicant@example.net，请登记
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id004
+  global_intent: 7-56
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0507
+  current_node: b16-2-c
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0508
+  current_node: b16-2-c
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 那一条不带链接的提醒短信，您看到了吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0509
+  current_node: b16-2-e-2
+  text: 没有可以给你们用的电子邮箱
+  expected:
+  - 7-55
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: 7-55-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 103
+    section: 表7 / 7-I
+    intent_id: 7-55
+- id: node-0510
+  current_node: b16-2-e-2
+  text: 邮箱不想给
+  expected:
+  - 7-55
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: 7-55-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 103
+    section: 表7 / 7-I
+    intent_id: 7-55
+- id: node-0511
+  current_node: b16-2-e-2
+  text: 可以登记我的邮箱demo@example.org，通知发那里
+  expected:
+  - 7-56
+  category: paraphrase
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: 7-56-heldout-0
+    file: 催授权流程 v1.1 - 意图.md
+    line: 104
+    section: 表7 / 7-I
+    intent_id: 7-56
+- id: node-0512
+  current_node: b16-2-e-2
+  text: 邮箱demo@example.net
+  expected:
+  - 7-56
+  category: short_spoken
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: 7-56-heldout-1
+    file: 催授权流程 v1.1 - 意图.md
+    line: 104
+    section: 表7 / 7-I
+    intent_id: 7-56
+- id: node-0513
+  current_node: b16-2-e-2
+  text: 我没有邮箱
+  expected:
+  - 7-55
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    file: 催授权流程 v1.1 - 意图.md
+    line: 103
+    section: 表7 / 7-I
+    intent_id: 7-55
+- id: node-0514
+  current_node: b16-2-e-2
+  text: 发我邮箱吧，xxx@xx.com
+  expected:
+  - 7-56
+  category: obvious_source
+  split: source_overlap
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id004
+- id: node-0515
+  current_node: b16-2-e-2
+  text: 可以给邮箱，发到person@example.org吧
+  expected:
+  - 7-56
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: &id042
+    node: b16-2-e-2
+    mapping: workflow_intent_map.yaml
+- id: node-0516
+  current_node: b16-2-e-2
+  text: 不可以，我不愿意提供邮箱
+  expected:
+  - 7-55
+  category: polarity
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+- id: node-0517
+  current_node: b16-2-e-2
+  text: 我想想要不要给邮箱
+  expected: []
+  category: ambiguous
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+  annotation: 多意图集合或不足以得出确定答案；人工评测标注，不是新增产品规则
+- id: node-0518
+  current_node: b16-2-e-2
+  text: 我
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0519
+  current_node: b16-2-e-2
+  text: 那个
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0520
+  current_node: b16-2-e-2
+  text: 呃……
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0521
+  current_node: b16-2-e-2
+  text: ''
+  expected: []
+  category: insufficient
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id042
+  annotation: 要求拒识的实验标注；空文本不表示静默超时
+- id: node-0522
+  current_node: b16-2-e-2
+  text: 明天北京天气怎么样
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-25
+- id: node-0523
+  current_node: b16-2-e-2
+  text: 帮我订一张去上海的机票
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-26
+- id: node-0524
+  current_node: b16-2-e-2
+  text: 来一首周杰伦的歌
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-27
+- id: node-0525
+  current_node: b16-2-e-2
+  text: 这份外卖怎么退款
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-28
+- id: node-0526
+  current_node: b16-2-e-2
+  text: 帮我写一个排序程序
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-29
+- id: node-0527
+  current_node: b16-2-e-2
+  text: 设置早上七点的闹钟
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-30
+- id: node-0528
+  current_node: b16-2-e-2
+  text: 我想查银行卡余额
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-31
+- id: node-0529
+  current_node: b16-2-e-2
+  text: 晚饭吃什么比较好
+  expected: []
+  category: ood
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source:
+    old_eval_id: contrast-32
+- id: node-0530
+  current_node: b16-2-e-2
+  text: 我刚才把身份证号码填错了，可以修改吗？
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id003
+  global_intent: 7-52
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0531
+  current_node: b16-2-e-2
+  text: 我答应在您给的截止时间之前完成授权
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id005
+  global_intent: 7-48
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0532
+  current_node: b16-2-e-2
+  text: 我刚翻了垃圾邮件箱，找到那封授权邮件了
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id006
+  global_intent: 7-40
+  documented_side_route: false
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理
+- id: node-0533
+  current_node: b16-2-e-2
+  text: 整个授权网页报系统错误，根本打不开
+  expected: []
+  category: out_of_node
+  split: heldout
+  context:
+  - role: assistant
+    content: 您方便提供一个常用邮箱吗？
+  source: *id007
+  global_intent: 7-53
+  documented_side_route: true
+  annotation: 局部分类器应拒识；若标记documented_side_route，整通电话仍可由旁路处理

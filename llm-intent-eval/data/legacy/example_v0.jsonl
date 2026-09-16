@@ -1,0 +1,2 @@
+{"case_id":"example_001","group_id":"example_dialogue_001","scene_id":"appointment","stage_id":"confirm_time","history":[{"role":"agent","text":"给您安排明天下午三点，可以吗？"}],"user_text":"下午不行，上午十点左右吧","asr_text":null,"candidates":[{"id":"A1","meaning":"确认当前时间"},{"id":"A2","meaning":"拒绝当前时间但未提供新时间"},{"id":"A3","meaning":"拒绝当前时间并提出新时间"},{"id":"WAIT","meaning":"话语不完整，暂不决策"},{"id":"OTHER","meaning":"不属于以上意图"}],"gold_choice":"A3","gold_slots":{"time":"上午十点左右"},"risk_level":"high","tags":["示例","否定","提出替代方案"],"status":"draft","source_ref":null,"notes":"格式示例，不属于正式测试集"}
+

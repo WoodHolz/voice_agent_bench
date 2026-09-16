@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "status": "draft",
+  "case_count": 73,
+  "base_case_count": 59,
+  "edge_case_count": 14,
+  "case_type_counts": {
+    "local": 61,
+    "multi_intent": 3,
+    "global_interrupt": 3,
+    "jump_ahead": 2,
+    "ambiguous": 3,
+    "asr_noise": 1
+  },
+  "intent_coverage": 62,
+  "review_required": true
+}

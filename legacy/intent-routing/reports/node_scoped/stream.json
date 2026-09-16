@@ -1,0 +1,5617 @@
+{
+  "created_at": "2026-09-09T17:27:02.220975+00:00",
+  "config": {
+    "models": {
+      "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "local_files_only": true,
+      "device": "cpu",
+      "threads": 4,
+      "batch_size": 16,
+      "max_length": 256
+    },
+    "realtime_intent": {
+      "upstream_path": "../../RealtimeIntent",
+      "upstream_commit": "dcd2f502a6711600d76952fe27c816425cc01f06",
+      "top_k": 6,
+      "no_intent_threshold": 0.55
+    },
+    "semantic_router": {
+      "upstream_commit": "d926cfcf8523cc28a468e59535899d16277fe55b",
+      "top_k": 5,
+      "aggregation": "mean",
+      "threshold": 0.65
+    }
+  },
+  "models": {
+    "config": {
+      "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "local_files_only": true,
+      "device": "cpu",
+      "threads": 4,
+      "batch_size": 16,
+      "max_length": 256
+    },
+    "cached_revisions": {
+      "embedding": [
+        "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+      ],
+      "reranker": [
+        "1427fd652930e4ba29e8149678df786c240d8825"
+      ]
+    },
+    "query_cache": false,
+    "transport": "in_process",
+    "normalized_embeddings": true
+  },
+  "map_sha256": "5a7f6295f8c3d3f0d0a17d5515b838428095428afee448f424d9983e6476a3e6",
+  "repeat": 3,
+  "notes": "insufficient标签为人工实验标注；early_wrong_vs_final不等于每个修订假设的语义错误。没有预测状态、提交或动作。",
+  "runs": {
+    "A_global_text": [
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 14.472686016233638,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7250042884754687,
+            "latency_ms": 9.058552997885272,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7523700184760201,
+            "latency_ms": 9.666773024946451,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.9051998336649321,
+            "latency_ms": 10.616962012136355,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-2",
+            "score": 0.7008262523486408,
+            "latency_ms": 16.581623000092804,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 21.517459012102336,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 5,
+        "insufficient_accepts": 4,
+        "insufficient_max_score": 0.9051998336649321
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-6",
+            "score": 0.70382459660503,
+            "latency_ms": 11.24161301413551,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.6667918445365804,
+            "latency_ms": 16.285638994304463,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.030866978922859,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.7785169169595245,
+            "latency_ms": 9.39688298967667,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": true,
+        "stable_correct_from_index": 3,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.70382459660503
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8598293593601467,
+            "latency_ms": 9.757836000062525,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.8955547360474029,
+            "latency_ms": 13.336446980247274,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 17.07793600508012,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9406069894278021,
+            "latency_ms": 9.507123002549633,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 1,
+        "stable_correct_from_chars": 3,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8598293593601467
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 8.984679996501654,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.7494120954862904,
+            "latency_ms": 10.98630900378339,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.9999999999997891,
+            "latency_ms": 20.6840870087035,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-43",
+            "score": 0.7580998996579121,
+            "latency_ms": 10.240147006697953,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8522867984045163,
+            "latency_ms": 9.153201011940837,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-41",
+            "score": 0.7762100897155245,
+            "latency_ms": 8.907570998417214,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 9.302441991167143,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8522867984045163
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-49",
+            "score": 0.8164482619519108,
+            "latency_ms": 9.31022601434961,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.7919296073860322,
+            "latency_ms": 15.143150987569243,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-57",
+            "score": 0.79158676306322,
+            "latency_ms": 10.810387000674382,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.7561111436561041,
+            "latency_ms": 9.37142499606125,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 3,
+        "insufficient_accepts": 3,
+        "insufficient_max_score": 0.8164482619519108
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 8.680804021423683,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-27",
+            "score": 0.8005414478738648,
+            "latency_ms": 29.070837976178154,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 26.275551004800946,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 10.41968000936322,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.8535828779733712
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 10.581114009255543,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 10.701513005187735,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.6827691746307512,
+            "latency_ms": 10.196929972153157,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.7422520795681019,
+            "latency_ms": 11.284204985713586,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 8,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.258773003239185,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.984525997424498,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.033254995709285,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 7.53329397412017,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7250042884754687,
+            "latency_ms": 10.953263990813866,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7523700184760201,
+            "latency_ms": 13.83151300251484,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.9051998336649321,
+            "latency_ms": 15.04518199362792,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-2",
+            "score": 0.7008262523486408,
+            "latency_ms": 9.137481014477089,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.51968299341388,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 5,
+        "insufficient_accepts": 4,
+        "insufficient_max_score": 0.9051998336649321
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-6",
+            "score": 0.70382459660503,
+            "latency_ms": 10.613476013531908,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.6667918445365804,
+            "latency_ms": 17.20911799930036,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.973462001653388,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.7785169169595245,
+            "latency_ms": 9.635935013648123,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": true,
+        "stable_correct_from_index": 3,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.70382459660503
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8598293593601467,
+            "latency_ms": 9.469407988945022,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.8955547360474029,
+            "latency_ms": 10.525814985157922,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 23.73204499599524,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9406069894278021,
+            "latency_ms": 11.337890988215804,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 1,
+        "stable_correct_from_chars": 3,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8598293593601467
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.093328019138426,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.7494120954862904,
+            "latency_ms": 12.12363998638466,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.9999999999997891,
+            "latency_ms": 9.456761996261775,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-43",
+            "score": 0.7580998996579121,
+            "latency_ms": 9.989609010517597,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8522867984045163,
+            "latency_ms": 9.195634018396959,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-41",
+            "score": 0.7762100897155245,
+            "latency_ms": 10.631473996909335,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 10.173943999689072,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8522867984045163
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-49",
+            "score": 0.8164482619519108,
+            "latency_ms": 8.810669998638332,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.7919296073860322,
+            "latency_ms": 9.32271798956208,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-57",
+            "score": 0.79158676306322,
+            "latency_ms": 10.528686980251223,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.7561111436561041,
+            "latency_ms": 14.379038999322802,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 3,
+        "insufficient_accepts": 3,
+        "insufficient_max_score": 0.8164482619519108
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 8.280097012175247,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-27",
+            "score": 0.8005414478738648,
+            "latency_ms": 9.161063004285097,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 10.85072400746867,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 11.433066974859685,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.8535828779733712
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 9.20504701207392,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 10.241145006148145,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.6827691746307512,
+            "latency_ms": 13.564674009103328,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.7422520795681019,
+            "latency_ms": 10.670542978914455,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 8,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 24.048469989793375,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 16.257727984339,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.772239009384066,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 15.0692279858049,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7250042884754687,
+            "latency_ms": 10.581554000964388,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.7523700184760201,
+            "latency_ms": 9.381890995427966,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-37",
+            "score": 0.9051998336649321,
+            "latency_ms": 9.711794991744682,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-2",
+            "score": 0.7008262523486408,
+            "latency_ms": 9.454614017158747,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.033413018798456,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 5,
+        "insufficient_accepts": 4,
+        "insufficient_max_score": 0.9051998336649321
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": "7-6",
+            "score": 0.70382459660503,
+            "latency_ms": 9.996476001106203,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.6667918445365804,
+            "latency_ms": 9.11434498266317,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.957110022194684,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": "7-51",
+            "score": 0.7785169169595245,
+            "latency_ms": 12.262550997547805,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": true,
+        "stable_correct_from_index": 3,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.70382459660503
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8598293593601467,
+            "latency_ms": 16.29678302560933,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.8955547360474029,
+            "latency_ms": 8.93373298458755,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 9.082601987756789,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9406069894278021,
+            "latency_ms": 10.720466001657769,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 1,
+        "stable_correct_from_chars": 3,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8598293593601467
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 19.506384996930137,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.7494120954862904,
+            "latency_ms": 10.382828011643142,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-53",
+            "score": 0.9999999999997891,
+            "latency_ms": 9.371375985210761,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-43",
+            "score": 0.7580998996579121,
+            "latency_ms": 11.217808001674712,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": "7-41",
+            "score": 0.8522867984045163,
+            "latency_ms": 10.324490023776889,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-41",
+            "score": 0.7762100897155245,
+            "latency_ms": 22.81367898103781,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 14.862251991871744,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.8522867984045163
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-49",
+            "score": 0.8164482619519108,
+            "latency_ms": 11.226631992030889,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.7919296073860322,
+            "latency_ms": 9.547165012918413,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-57",
+            "score": 0.79158676306322,
+            "latency_ms": 10.093756020069122,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.7561111436561041,
+            "latency_ms": 12.274173990590498,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 3,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 3,
+        "insufficient_accepts": 3,
+        "insufficient_max_score": 0.8164482619519108
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-27",
+            "score": 0.8535828779733712,
+            "latency_ms": 7.90221500210464,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-27",
+            "score": 0.8005414478738648,
+            "latency_ms": 10.978039994370192,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 9.321639983681962,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 9.745681018102914,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.8535828779733712
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 10.351947013987228,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 14.471861999481916,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.6827691746307512,
+            "latency_ms": 15.968116000294685,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-46",
+            "score": 0.7422520795681019,
+            "latency_ms": 9.72549500875175,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {},
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 8,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 8.955141005571932,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.920772998360917,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 18.328653008211404,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {},
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      }
+    ],
+    "C_node_text": [
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 7.9142489994410425,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.752760990522802,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.597211007028818,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.905432001687586,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.045000010402873,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 27.003077004337683,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.333096005022526,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 13.33305801381357,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.476746985455975,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.561694983858615,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-28",
+            "score": 0.6921747610076613,
+            "latency_ms": 9.069013991393149,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7525097316673377,
+            "latency_ms": 11.584768013563007,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 10.239650000585243,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7905621505904715,
+            "latency_ms": 10.039512999355793,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": true,
+        "stable_correct_from_index": 0,
+        "stable_correct_from_chars": 2,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6921747610076613
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 0,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.785184014821425,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.79685501079075,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.566925989929587,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.24876900576055,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.236052981577814,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.674647765074462,
+            "latency_ms": 10.364154004491866,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 11.358766991179436,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.23562898626551,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.504543003160506,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-40",
+            "score": 0.6635593978252272,
+            "latency_ms": 10.763894009869546,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.668894985225052,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6635593978252272
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-15",
+            "score": 0.6731043906584013,
+            "latency_ms": 10.22854499751702,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.6532410662037427,
+            "latency_ms": 16.295849985908717,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 10.325660987291485,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 13.674813002580777,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6731043906584013
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 13.09199701063335,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 13.880105019779876,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.2076519979164,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.838177007623017,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 0,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.012012004153803,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 18.33889097906649,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.306212992873043,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 7.464444992365316,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.21555599779822,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.549183003604412,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.372800996061414,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.975986002245918,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.561214010929689,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.060371987288818,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 13.189259014325216,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.21425802516751,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.487445990089327,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-28",
+            "score": 0.6921747610076613,
+            "latency_ms": 10.304733994416893,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7525097316673377,
+            "latency_ms": 14.14663199102506,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 22.552276001079008,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7905621505904715,
+            "latency_ms": 11.506732989801094,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": true,
+        "stable_correct_from_index": 0,
+        "stable_correct_from_chars": 2,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6921747610076613
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 1,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.068398998351768,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 16.31071398151107,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.51300999824889,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.630676009692252,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.562993993517011,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.674647765074462,
+            "latency_ms": 13.95553202019073,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 14.485583989880979,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.58076398819685,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.77676799125038,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-40",
+            "score": 0.6635593978252272,
+            "latency_ms": 9.268764988519251,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 15.000784012954682,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6635593978252272
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-15",
+            "score": 0.6731043906584013,
+            "latency_ms": 7.4279060063418,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.6532410662037427,
+            "latency_ms": 10.067519004223868,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 14.105891983490437,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 14.499389013508335,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6731043906584013
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 13.333492010133341,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 9.432869002921507,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.653091983636841,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 16.634280007565394,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 1,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 17.04997301567346,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.621227993397042,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.076818987727165,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "modify",
+        "expected": "7-52",
+        "parts": [
+          "我",
+          "我刚",
+          "我刚才",
+          "我刚才填",
+          "我刚才填错了",
+          "我刚才填错了能改吗"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.29662900348194,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.002132981549948,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 8.81572300568223,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.618277981644496,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填",
+            "index": 3,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.860887025250122,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了",
+            "index": 4,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 14.981045998865739,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我刚才填错了能改吗",
+            "index": 5,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "face",
+        "expected": "7-51",
+        "parts": [
+          "刷",
+          "刷脸",
+          "刷脸一直",
+          "刷脸一直过不了"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.215736004989594,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.158825007034466,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.187575011514127,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直",
+            "index": 2,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.744374012574553,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "刷脸一直过不了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "refuse",
+        "expected": "7-28",
+        "parts": [
+          "不用",
+          "不用了",
+          "不用了别",
+          "不用了别再打了"
+        ],
+        "current_node": "5-4-c",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 6,
+        "rows": [
+          {
+            "intent_id": "7-28",
+            "score": 0.6921747610076613,
+            "latency_ms": 9.990826976718381,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7525097316673377,
+            "latency_ms": 9.34318100917153,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.9254334924328372,
+            "latency_ms": 9.974092012271285,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-28",
+            "score": 0.7905621505904715,
+            "latency_ms": 9.771011013071984,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-4-c",
+              "allowed_intents": [
+                "7-48",
+                "7-49",
+                "7-50",
+                "7-27",
+                "7-23",
+                "7-28"
+              ],
+              "candidate_count": 6,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "不用了别再打了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": true,
+        "stable_correct_from_index": 0,
+        "stable_correct_from_chars": 2,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6921747610076613
+      },
+      {
+        "id": "asr_revision",
+        "expected": "7-53",
+        "parts": [
+          "链接",
+          "链接打得开",
+          "链接打不开",
+          "这个链接打不开一直报错"
+        ],
+        "current_node": "a4",
+        "insufficient_indices": [
+          0
+        ],
+        "source": "previous benchmark.stream.SEQUENCES",
+        "repeat": 2,
+        "candidate_count": 4,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.523399989120662,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.470168995903805,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打得开",
+            "index": 1,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.382504009408876,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "链接打不开",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.621287984075025,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "a4",
+              "allowed_intents": [
+                "7-51",
+                "7-21",
+                "7-52",
+                "7-53"
+              ],
+              "candidate_count": 4,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "这个链接打不开一直报错",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_received",
+        "current_node": "4-2",
+        "expected": "7-38",
+        "parts": [
+          "没",
+          "没收到",
+          "没收到授权通知"
+        ],
+        "insufficient_indices": [
+          0
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 5,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 12.551419989904389,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-36",
+            "score": 0.674647765074462,
+            "latency_ms": 22.087176010245457,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到",
+            "index": 1,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-38",
+            "score": 0.6971053545806604,
+            "latency_ms": 13.773924991255626,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "4-2",
+              "allowed_intents": [
+                "7-36",
+                "7-37",
+                "7-38",
+                "7-39",
+                "7-32"
+              ],
+              "candidate_count": 5,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "没收到授权通知",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 7,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      },
+      {
+        "id": "not_found",
+        "current_node": "b12-4",
+        "expected": "7-41",
+        "parts": [
+          "找",
+          "找了",
+          "找了一圈",
+          "找了一圈没找到"
+        ],
+        "insufficient_indices": [
+          0,
+          1,
+          2
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 19.815984007436782,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.439460001885891,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": "7-40",
+            "score": 0.6635593978252272,
+            "latency_ms": 9.094271023059264,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈",
+            "index": 2,
+            "insufficient": true,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.57847700919956,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "b12-4",
+              "allowed_intents": [
+                "7-40",
+                "7-41",
+                "7-32"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "找了一圈没找到",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          }
+        ],
+        "prediction_changes": 2,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 1,
+        "insufficient_accepts": 1,
+        "insufficient_max_score": 0.6635593978252272
+      },
+      {
+        "id": "verify",
+        "current_node": "a1-5",
+        "expected": "7-16",
+        "parts": [
+          "我",
+          "我先",
+          "我先问HR",
+          "我先问HR确认来电真假"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-15",
+            "score": 0.6731043906584013,
+            "latency_ms": 10.369227005867288,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-15",
+            "score": 0.6532410662037427,
+            "latency_ms": 18.315929017262533,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7972207813606581,
+            "latency_ms": 9.874968993244693,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR",
+            "index": 2,
+            "insufficient": false,
+            "rejected": false,
+            "changed": true
+          },
+          {
+            "intent_id": "7-16",
+            "score": 0.7300292601351182,
+            "latency_ms": 9.94510401505977,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "a1-5",
+              "allowed_intents": [
+                "7-15",
+                "7-16",
+                "7-17"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "我先问HR确认来电真假",
+            "index": 3,
+            "insufficient": false,
+            "rejected": false,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": true,
+        "stable_correct_from_index": 2,
+        "stable_correct_from_chars": 5,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6731043906584013
+      },
+      {
+        "id": "all_done",
+        "current_node": "5-2-b-2",
+        "expected": "7-46",
+        "parts": [
+          "签名",
+          "签名和人脸",
+          "签名和人脸都做了",
+          "签名人脸提交都做完了"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": "7-45",
+            "score": 0.6934468998270713,
+            "latency_ms": 9.172532008960843,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名",
+            "index": 0,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": "7-45",
+            "score": 0.6611150254512355,
+            "latency_ms": 11.079135001637042,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": null,
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸",
+            "index": 1,
+            "insufficient": true,
+            "rejected": false,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.1230339971371,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名和人脸都做了",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": true
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.741092013427988,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "签名人脸提交都做完了",
+            "index": 3,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 1,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 2,
+        "insufficient_accepts": 2,
+        "insufficient_max_score": 0.6934468998270713
+      },
+      {
+        "id": "not_submitted",
+        "current_node": "5-2-b-2",
+        "expected": "7-47",
+        "parts": [
+          "提交",
+          "提交好像",
+          "提交好像没点"
+        ],
+        "insufficient_indices": [
+          0,
+          1
+        ],
+        "source": "针对产品4-2/b12-4/a1-5/5-2-b-2极性分支构造",
+        "repeat": 2,
+        "candidate_count": 3,
+        "rows": [
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 11.819339008070529,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交",
+            "index": 0,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 10.52473101299256,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像",
+            "index": 1,
+            "insufficient": true,
+            "rejected": true,
+            "changed": false
+          },
+          {
+            "intent_id": null,
+            "score": null,
+            "latency_ms": 9.595543990144506,
+            "score_kind": "mean_cosine_of_retrieved_route_examples",
+            "reason": "below_route_threshold",
+            "details": {
+              "current_node": "5-2-b-2",
+              "allowed_intents": [
+                "7-45",
+                "7-46",
+                "7-47"
+              ],
+              "candidate_count": 3,
+              "include_sides": false
+            },
+            "error": null,
+            "partial": "提交好像没点",
+            "index": 2,
+            "insufficient": false,
+            "rejected": true,
+            "changed": false
+          }
+        ],
+        "prediction_changes": 0,
+        "final_correct": false,
+        "stable_correct_from_index": null,
+        "stable_correct_from_chars": null,
+        "early_wrong_vs_final": 0,
+        "insufficient_accepts": 0,
+        "insufficient_max_score": null
+      }
+    ]
+  }
+}

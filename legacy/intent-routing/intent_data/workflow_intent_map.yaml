@@ -1,0 +1,1402 @@
+schema_version: 1
+scope_note: allowed_intents 是本地回应分类集合，不是整通电话全部合法意图。M5旁路另列；合并审计不是新工作流策略。
+source_hashes:
+  催授权流程 v1.1.md: 798dd3540df67133754318ccbb8e2fb4a3aa7b703d460bffb41d3bbcd4372d18
+  催授权产品方案 v1.md: 098b7d80f4078c58797532269844768de61ac855627c38ba06b80de7f6e71ebc
+side_route_source:
+  file: 催授权产品方案 v1.md
+  line: 78
+  quote: 旁路可从任意主流程节点横切进入
+side_groups:
+  a1:
+  - 7-9
+  - 7-10
+  - 7-11
+  - 7-12
+  - 7-13
+  - 7-14
+  - 7-15
+  - 7-16
+  - 7-17
+  a2:
+  - 7-18
+  - 7-19
+  - 7-20
+  - 7-21
+  - 7-22
+  - 7-23
+  - 7-24
+  - 7-25
+  - 7-26
+  - 7-27
+  - 7-28
+  a3:
+  - 7-29
+  - 7-30
+  - 7-31
+  - 7-32
+  - 7-33
+  a4:
+  - 7-21
+  - 7-51
+  - 7-52
+  - 7-53
+  a5:
+  - 7-54
+  a6:
+  - 7-34
+  - 7-35
+  - 7-53
+nodes:
+  3-2:
+    name: 开场回应
+    allowed_intents:
+    - 7-2
+    - 7-3
+    - 7-4
+    - 7-5
+    - 7-6
+    - 7-7
+    - 7-8
+    intent_branches:
+    - intent_id: 7-2
+      branch_ref: 3-2-b
+      all_product_branch_refs: 3-2-b-1、3-2-d-2、b3-2-b
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: ├─ 3-2-b "不是他/你打错了"（7-2）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 10
+        section: 表7 / 7-A
+        intent_id: 7-2
+    - intent_id: 7-3
+      branch_ref: 3-2-g
+      all_product_branch_refs: 3-2-b-2、3-2-g→a1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: ├─ 3-2-g "什么背调/你是谁"（7-3）→a1信任危机→
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 11
+        section: 表7 / 7-A
+        intent_id: 7-3
+    - intent_id: 7-4
+      branch_ref: 3-2-c
+      all_product_branch_refs: 3-2-c→b2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: ├─ 3-2-c 语音助手播报"请留下姓名"（7-4）→b2（语音助手代接）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 12
+        section: 表7 / 7-A
+        intent_id: 7-4
+    - intent_id: 7-5
+      branch_ref: 3-2-d
+      all_product_branch_refs: 3-2-d→b3
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: │ ├─ 3-2-b-1 非本人→3-2-d
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 13
+        section: 表7 / 7-A
+        intent_id: 7-5
+    - intent_id: 7-6
+      branch_ref: 3-2-e
+      all_product_branch_refs: 3-2-e
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: ├─ 3-2-e "方便"（7-6）→进入4 ✅（本人+方便=说具体事的前提条件）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 14
+        section: 表7 / 7-A
+        intent_id: 7-6
+    - intent_id: 7-7
+      branch_ref: 3-2-f
+      all_product_branch_refs: 3-2-f→a2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: ├─ 3-2-f "不方便/开车/开会"（7-7）→a2改约→
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 15
+        section: 表7 / 7-A
+        intent_id: 7-7
+    - intent_id: 7-8
+      branch_ref: 3-2-h
+      all_product_branch_refs: 3-2-h→b15
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 9
+        quote: └─ 3-2-h 直接说进展"已经填了"（7-8）→b15(后台查状态)→进入5-2
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 16
+        section: 表7 / 7-A
+        intent_id: 7-8
+    text_scope: documented local response / classification subtree
+    event_intents:
+    - 7-1
+    previous_assistant: 现在方便吗？
+    prompt_source: 话术5-2
+    main_flow: true
+    side_route_intents: &id001
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+    allowed_including_documented_sides:
+    - 7-2
+    - 7-3
+    - 7-4
+    - 7-5
+    - 7-6
+    - 7-7
+    - 7-8
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  4-2:
+    name: 送达回应
+    allowed_intents:
+    - 7-36
+    - 7-37
+    - 7-38
+    - 7-39
+    - 7-32
+    intent_branches:
+    - intent_id: 7-36
+      branch_ref: 4-2-a
+      all_product_branch_refs: 4-2-a→b14
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 10
+        quote: ├─ 4-2-a 收到未填（7-36）→5-1(归因式软催)
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 64
+        section: 表7 / 7-E
+        intent_id: 7-36
+    - intent_id: 7-37
+      branch_ref: 4-2-b
+      all_product_branch_refs: 4-2-b→b15
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 10
+        quote: ├─ 4-2-b 收到已填（7-37）→5-2(后台状态核对)
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 65
+        section: 表7 / 7-E
+        intent_id: 7-37
+    - intent_id: 7-38
+      branch_ref: 4-2-c
+      all_product_branch_refs: 4-2-c、b16-2-c-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 10
+        quote: ├─ 4-2-c 没收到（7-38）→5-3(渠道排查）
+      - &id008
+        file: 催授权流程 v1.1 - 意图.md
+        line: 66
+        section: 表7 / 7-E
+        intent_id: 7-38
+    - intent_id: 7-39
+      branch_ref: 4-2-d
+      all_product_branch_refs: 4-2-d→b12
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 10
+        quote: ├─ 4-2-d 不确定（7-39）→b12（引导找骚扰+拦截）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 67
+        section: 表7 / 7-E
+        intent_id: 7-39
+    - intent_id: 7-32
+      branch_ref: 4-2-e
+      all_product_branch_refs: a3-4、4-2-d-3、4-2-e、b12-4-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 10
+        quote: └─ 4-2-e 已放弃offer（7-32）→a3-4→终态防在呼
+      - &id002
+        file: 催授权流程 v1.1 - 意图.md
+        line: 55
+        section: 表7 / 7-D
+        intent_id: 7-32
+    text_scope: documented local response / classification subtree
+    event_intents:
+    - 7-1
+    previous_assistant: 您收到背调授权通知了吗？
+    prompt_source: 话术5-36
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-36
+    - 7-37
+    - 7-38
+    - 7-39
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  b12-4:
+    name: 查找结果
+    allowed_intents:
+    - 7-40
+    - 7-41
+    - 7-32
+    intent_branches:
+    - intent_id: 7-40
+      branch_ref: b12-4-a
+      all_product_branch_refs: b12-4-a、4-2-d-1、b16-2-a-1、b16-2-b-1、b16-2-c-1、5-3-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 39
+        quote: ├─ b12-4-a 用户说"找到了"（7-40）→找到了
+      - &id006
+        file: 催授权流程 v1.1 - 意图.md
+        line: 68
+        section: 表7 / 7-E
+        intent_id: 7-40
+    - intent_id: 7-41
+      branch_ref: b12-4-b
+      all_product_branch_refs: b12-4-b、4-2-d-2、b16-2-a-2、b16-2-b-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 39
+        quote: ├─ b12-4-b 用户说"没找到/没看到"（7-41）→没找到
+      - &id007
+        file: 催授权流程 v1.1 - 意图.md
+        line: 69
+        section: 表7 / 7-E
+        intent_id: 7-41
+    - intent_id: 7-32
+      branch_ref: b12-4-c
+      all_product_branch_refs: a3-4、4-2-d-3、4-2-e、b12-4-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 39
+        quote: └─ b12-4-c 用户说"我放弃offer了"（7-32）→放弃offer | 找到了 / 没找到 / 放弃offer | — |
+          — |
+      - *id002
+    text_scope: documented local response / classification subtree
+    event_intents:
+    - 7-1
+    previous_assistant: 您看下骚扰拦截和垃圾邮件箱里有没有？
+    prompt_source: b12-3/话术5-28
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-40
+    - 7-41
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  b14-2:
+    name: 未填归因
+    allowed_intents:
+    - 7-42
+    - 7-43
+    - 7-44
+    intent_branches:
+    - intent_id: 7-42
+      branch_ref: b14-2-a
+      all_product_branch_refs: b14-2-a、5-1-b-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 40
+        quote: ├─ b14-2-a "忙/忘了/回头填"（7-42）→忙/忘了
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 75
+        section: 表7 / 7-F
+        intent_id: 7-42
+    - intent_id: 7-43
+      branch_ref: b14-2-b
+      all_product_branch_refs: b14-2-b、5-1-b-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 40
+        quote: ├─ b14-2-b "不会填/有问题/打不开"（7-43）→有问题
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 76
+        section: 表7 / 7-F
+        intent_id: 7-43
+    - intent_id: 7-44
+      branch_ref: b14-2-c
+      all_product_branch_refs: b14-2-c、5-1-b-3
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 40
+        quote: └─ b14-2-c "不想填/有顾虑/隐私"（7-44）→有顾虑 | 忙/忘了 / 有问题 / 有顾虑 | — | — |
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 77
+        section: 表7 / 7-F
+        intent_id: 7-44
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 是最近比较忙？还是对填写有疑问？
+    prompt_source: b14-1
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-42
+    - 7-43
+    - 7-44
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  5-2-b-2:
+    name: 未完成排查
+    allowed_intents:
+    - 7-45
+    - 7-46
+    - 7-47
+    intent_branches:
+    - intent_id: 7-45
+      branch_ref: 5-2-b-2-a
+      all_product_branch_refs: 5-2-b-2-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: '<span style="color: #FFFFFF;"> ├─ 5-2-b-2-a 有步骤没做（电子签/人脸没做或失败）→话术5-30→5-4(</span>时限承诺阶梯)'
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 83
+        section: 表7 / 7-G
+        intent_id: 7-45
+    - intent_id: 7-46
+      branch_ref: 5-2-b-2-b
+      all_product_branch_refs: 5-2-b-2-b
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: '<span style="color: #FFFFFF;"> ├─ 5-2-b-2-b 自称都完成了→话术5-31→记录反馈工单→</span>`1-4-f跟进外呼（等系统排查后跟进）`'
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 84
+        section: 表7 / 7-G
+        intent_id: 7-46
+    - intent_id: 7-47
+      branch_ref: 5-2-b-2-c
+      all_product_branch_refs: 5-2-b-2-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: '<span style="color: #FFFFFF;"> └─ 5-2-b-2-c 疑似提交没点→话术5-32→5-4(</span>时限承诺阶梯)'
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 85
+        section: 表7 / 7-G
+        intent_id: 7-47
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 后台还没显示完成，电子签名和人脸识别都做了吗？
+    prompt_source: 话术5-29
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-45
+    - 7-46
+    - 7-47
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  5-4-c:
+    name: 时限回应（含文档明确的横切回应）
+    allowed_intents:
+    - 7-48
+    - 7-49
+    - 7-50
+    - 7-27
+    - 7-23
+    - 7-28
+    intent_branches:
+    - intent_id: 7-48
+      branch_ref: 5-4-c-1
+      all_product_branch_refs: 5-4-c-1、b17-3-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: ├─ 5-4-c-1 同意（"好的/可以/行"）→拿到完成承诺→进入6 ✅
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 91
+        section: 表7 / 7-H
+        intent_id: 7-48
+    - intent_id: 7-49
+      branch_ref: 5-4-c-2
+      all_product_branch_refs: 5-4-c-2、b17-3-b
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: └─ 5-4-c-2 拒绝/犹豫（"不行/太赶/再看看"）→a2改约横切
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 92
+        section: 表7 / 7-H
+        intent_id: 7-49
+    - intent_id: 7-50
+      branch_ref: 5-4-c-3
+      all_product_branch_refs: 5-4-c-3
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: ├─ 5-4-c-3 主动给超闭环时限时间（「下周」）→接受＋收窄到具体日→结构化反馈客户决策
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 93
+        section: 表7 / 7-H
+        intent_id: 7-50
+    - intent_id: 7-27
+      branch_ref: 5-4-c-2-c
+      all_product_branch_refs: a2-7-3、a2-7-4、a2-8-b、3-2-f-3、5-4-c-2-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: ├─5-4-c-2-c 弱承诺→weak\_commitment=true→低压重呼
+      - &id004
+        file: 催授权流程 v1.1 - 意图.md
+        line: 45
+        section: 表7 / 7-C
+        intent_id: 7-27
+    - intent_id: 7-23
+      branch_ref: 5-4-c-2-d
+      all_product_branch_refs: a2-5、3-2-f-4、5-4-c-2-d
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: '├─5-4-c-2-d <span style="color: #FFFFFF;">转短信/邮件</span>→b16-2-e换渠道'
+      - &id003
+        file: 催授权流程 v1.1 - 意图.md
+        line: 41
+        section: 表7 / 7-C
+        intent_id: 7-23
+    - intent_id: 7-28
+      branch_ref: 5-4-c-2-e
+      all_product_branch_refs: a2-8-c、3-2-f-5、5-4-c-2-e、3-2-d-3、b3-2-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 11
+        quote: ├─5-4-c-2-e 拒绝→记录→`🚫终态不再重呼`
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 46
+        section: 表7 / 7-C
+        intent_id: 7-28
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 今天下班前完成可以吗？
+    prompt_source: b17-1-a
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-48
+    - 7-49
+    - 7-50
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  a1:
+    name: 信任质疑分类入口
+    allowed_intents:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    intent_branches:
+    - intent_id: 7-9
+      branch_ref: a1-1
+      all_product_branch_refs: a1-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: ├─ a1-1 身份核验请求（7-9）→话术5-4
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 22
+        section: 表7 / 7-B
+        intent_id: 7-9
+    - intent_id: 7-10
+      branch_ref: a1-2-a
+      all_product_branch_refs: a1-2-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: │ ├─ a1-2-a 信息不对称解释（7-10）→话术5-5
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 23
+        section: 表7 / 7-B
+        intent_id: 7-10
+    - intent_id: 7-11
+      branch_ref: a1-2-b
+      all_product_branch_refs: a1-2-b
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: │ ├─ a1-2-b HR背书（7-11）→话术5-6
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 24
+        section: 表7 / 7-B
+        intent_id: 7-11
+    - intent_id: 7-12
+      branch_ref: a1-2-c
+      all_product_branch_refs: a1-2-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: │ └─ a1-2-c 号码奇怪解释（7-12）→话术5-13
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 25
+        section: 表7 / 7-B
+        intent_id: 7-12
+    - intent_id: 7-13
+      branch_ref: a1-3
+      all_product_branch_refs: a1-3（a1-3-a鉴别、a1-3-b澄清）
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: ├─ a1-3 多渠道混淆（7-13）→两步处置
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 26
+        section: 表7 / 7-B
+        intent_id: 7-13
+    - intent_id: 7-14
+      branch_ref: a1-4
+      all_product_branch_refs: a1-4
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: └─ a1-4 抱怨频繁来电（7-14）→话术5-16
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 27
+        section: 表7 / 7-B
+        intent_id: 7-14
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您对这次来电有什么疑问？
+    prompt_source: a1（辅助实验提示，非产品逐字话术）
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+  a1-5:
+    name: 解释后的信任判断
+    allowed_intents:
+    - 7-15
+    - 7-16
+    - 7-17
+    intent_branches:
+    - intent_id: 7-15
+      branch_ref: a1-5-a
+      all_product_branch_refs: a1-5-a、3-2-b-2-1、3-2-g-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: ├─ a1-5-a 信任恢复（7-15，"哦好的/明白了"）→无话术，回主线断点继续
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 28
+        section: 表7 / 7-B
+        intent_id: 7-15
+    - intent_id: 7-16
+      branch_ref: a1-5-b
+      all_product_branch_refs: a1-5-b、3-2-b-2-2、3-2-g-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: ├─ a1-5-b 挂起确认（7-16，"我先跟HR确认下"）→话术5-17→1-4-f跟进外呼
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 29
+        section: 表7 / 7-B
+        intent_id: 7-16
+    - intent_id: 7-17
+      branch_ref: a1-5-c
+      all_product_branch_refs: a1-5-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 22
+        quote: └─ a1-5-c 仍不信任（7-17，"别再打了"）→话术5-7 →🚫终态不再重呼 | 信任恢复→回主线断点继续
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 30
+        section: 表7 / 7-B
+        intent_id: 7-17
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您可以回拨官方号码核实这次通话。
+    prompt_source: 话术5-4
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-15
+    - 7-16
+    - 7-17
+  a2:
+    name: 改约触发原因分类入口
+    allowed_intents:
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    intent_branches:
+    - intent_id: 7-18
+      branch_ref: a2-1
+      all_product_branch_refs: a2-1（开车）
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-1 硬中断（开车/医院/急事）（7-18开车/7-19急事）→话术5-18（开车）/5-19（医院急事）→a2-7时间锚定
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 36
+        section: 表7 / 7-C
+        intent_id: 7-18
+    - intent_id: 7-19
+      branch_ref: a2-1
+      all_product_branch_refs: a2-1（医院急事）
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-1 硬中断（开车/医院/急事）（7-18开车/7-19急事）→话术5-18（开车）/5-19（医院急事）→a2-7时间锚定
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 37
+        section: 表7 / 7-C
+        intent_id: 7-19
+    - intent_id: 7-20
+      branch_ref: a2-2
+      all_product_branch_refs: a2-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-2 软改约（开会/在忙）（7-20）→话术5-20（压缩尝试）→a2-6压缩判断
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 38
+        section: 表7 / 7-C
+        intent_id: 7-20
+    - intent_id: 7-21
+      branch_ref: a2-3
+      all_product_branch_refs: a2-3、a4-2、5-1-b-2-d
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-3 条件不具备（不在电脑旁）（7-21）→话术5-26（讲解法/约时间）→a2-7时间锚定（⚠不回主线，物理上没法当场填）
+      - &id005
+        file: 催授权流程 v1.1 - 意图.md
+        line: 39
+        section: 表7 / 7-C
+        intent_id: 7-21
+    - intent_id: 7-22
+      branch_ref: a2-4
+      all_product_branch_refs: a2-4
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-4 信号差（地铁/卡顿）（7-22）→话术5-22（归因自己+约定重拨）→挂断重拨（重新接通）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 40
+        section: 表7 / 7-C
+        intent_id: 7-22
+    - intent_id: 7-23
+      branch_ref: a2-5
+      all_product_branch_refs: a2-5、3-2-f-4、5-4-c-2-d
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: └─ a2-5 转短信/邮件（排斥电话，再发/补登记）（7-23）→b16-2-e换渠道
+      - *id003
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您现在有什么不方便的情况？
+    prompt_source: a2（辅助实验提示，非产品逐字话术）
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+  a2-7:
+    name: 时间锚定
+    allowed_intents:
+    - 7-25
+    - 7-26
+    - 7-27
+    intent_branches:
+    - intent_id: 7-25
+      branch_ref: a2-7-1
+      all_product_branch_refs: a2-7-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-7-1 对方已给具体时间（7-25）→复述锁定→话术5-23
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 43
+        section: 表7 / 7-C
+        intent_id: 7-25
+    - intent_id: 7-26
+      branch_ref: a2-7-2
+      all_product_branch_refs: a2-7-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-7-2 对方给相对时间（7-26）→换算绝对→话术5-24→换算后→a2-7-1复述锁定
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 44
+        section: 表7 / 7-C
+        intent_id: 7-26
+    - intent_id: 7-27
+      branch_ref: a2-7-3
+      all_product_branch_refs: a2-7-3、a2-7-4、a2-8-b、3-2-f-3、5-4-c-2-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 23
+        quote: ├─ a2-7-3 只说"晚点/回头"（7-27）→时间收窄→话术5-25
+      - *id004
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您看几点方便我再联系？
+    prompt_source: 话术5-8
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-25
+    - 7-26
+    - 7-27
+  a3:
+    name: 意愿阻力分类入口
+    allowed_intents:
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    intent_branches:
+    - intent_id: 7-29
+      branch_ref: a3-1
+      all_product_branch_refs: a3-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: ├─ a3-1 在职顾虑（7-29）：话术5-7（记录反馈收线）→1-4-f跟进外呼
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 52
+        section: 表7 / 7-D
+        intent_id: 7-29
+    - intent_id: 7-30
+      branch_ref: a3-2
+      all_product_branch_refs: a3-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: ├─ a3-2 不愿给上级电话（7-30）：话术5-7→1-4-f跟进外呼
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 53
+        section: 表7 / 7-D
+        intent_id: 7-30
+    - intent_id: 7-31
+      branch_ref: a3-3
+      all_product_branch_refs: a3-3
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: ├─ a3-3 怕泄露（7-31）：话术5-7→1-4-f跟进外呼
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 54
+        section: 表7 / 7-D
+        intent_id: 7-31
+    - intent_id: 7-32
+      branch_ref: a3-4
+      all_product_branch_refs: a3-4、4-2-d-3、4-2-e、b12-4-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: ├─ a3-4 放弃offer（7-32）：话术5-37（止损收线）→🚫终态不再重呼
+      - *id002
+    - intent_id: 7-33
+      branch_ref: a3-5
+      all_product_branch_refs: a3-5
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: ├─ a3-5 要先问HR（7-33）：话术5-17（挂起确认收线，与a1-5-b同源）→1-4-f跟进外呼
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 56
+        section: 表7 / 7-D
+        intent_id: 7-33
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您对背调授权有什么顾虑？
+    prompt_source: a3（辅助实验提示，非产品逐字话术）
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+  a3-6-a:
+    name: 自主寻访同意
+    allowed_intents:
+    - 7-57
+    - 7-58
+    - 7-59
+    intent_branches:
+    - intent_id: 7-57
+      branch_ref: a3-6-a-1
+      all_product_branch_refs: a3-6-a-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: │ ├─ a3-6-a-1 候选人同意（7-57）→记录consent→回主线断点继续
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 105
+        section: 表7 / 7-I
+        intent_id: 7-57
+    - intent_id: 7-58
+      branch_ref: a3-6-a-2
+      all_product_branch_refs: a3-6-a-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: │ ├─ a3-6-a-2 候选人顾虑=怕在职单位知道（7-58）→同a3-1在职顾虑（7-29）链路
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 106
+        section: 表7 / 7-I
+        intent_id: 7-58
+    - intent_id: 7-59
+      branch_ref: a3-6-a-3
+      all_product_branch_refs: a3-6-a-3
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 24
+        quote: │ └─ a3-6-a-3 候选人拒绝（7-59）→记录"仅用已提供证明人"→降级按provided\_only执行→回主线断点继续
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 107
+        section: 表7 / 7-I
+        intent_id: 7-59
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 我们可能通过公司官方渠道联系其他在职同事核实，您可以吗？
+    prompt_source: 话术5-38
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-57
+    - 7-58
+    - 7-59
+  a4:
+    name: 操作问题分类入口
+    allowed_intents:
+    - 7-51
+    - 7-21
+    - 7-52
+    - 7-53
+    intent_branches:
+    - intent_id: 7-51
+      branch_ref: a4-1
+      all_product_branch_refs: a4-1、5-1-b-2-b
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 25
+        quote: 'a4-1 人脸识别失败（7-51）: 第一次指导（话术："复制链接到手机浏览器重开，不行换浏览器"）手机被占用，候选人没法当场操作
+          → a2-7时间锚定（约定到点确认时间，如"半小时后我确认后台"） →a2-8改约结果判断'
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 99
+        section: 表7 / 7-I
+        intent_id: 7-51
+    - intent_id: 7-21
+      branch_ref: a4-2
+      all_product_branch_refs: a2-3、a4-2、5-1-b-2-d
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 25
+        quote: a4-2 只能电脑填（7-21）→话术5-26（先讲重点）→a2-7时间锚定→a2-8改约结果判断
+      - *id005
+    - intent_id: 7-52
+      branch_ref: a4-3
+      all_product_branch_refs: a4-3、5-1-b-2-c、a6-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 25
+        quote: a4-3 已提交能不能改（7-52）
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 100
+        section: 表7 / 7-I
+        intent_id: 7-52
+    - intent_id: 7-53
+      branch_ref: a4-4
+      all_product_branch_refs: a4-4、a6-1
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 25
+        quote: a4-4 技术故障（7-53）：转a6-1技术故障工单→🚫终态
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 101
+        section: 表7 / 7-I
+        intent_id: 7-53
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您在操作时遇到了什么问题？
+    prompt_source: a4（辅助实验提示，非产品逐字话术）
+    main_flow: false
+    side_route_intents: []
+    allowed_including_documented_sides:
+    - 7-21
+    - 7-51
+    - 7-52
+    - 7-53
+  b16-2-a:
+    name: 链接短信查找
+    allowed_intents:
+    - 7-40
+    - 7-41
+    intent_branches:
+    - intent_id: 7-40
+      branch_ref: b16-2-a-1
+      all_product_branch_refs: b12-4-a、4-2-d-1、b16-2-a-1、b16-2-b-1、b16-2-c-1、5-3-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ ├─ b16-2-a-1 找到了（7-40）→话术5-42（指引点开）→拿承诺→b17-1档位话术→主线（终止级联）
+      - *id006
+    - intent_id: 7-41
+      branch_ref: b16-2-a-2
+      all_product_branch_refs: b12-4-b、4-2-d-2、b16-2-a-2、b16-2-b-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ └─ b16-2-a-2 没有（7-41）→配邮件走b16-2-b/没配走b16-2-c
+      - *id007
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您看下骚扰拦截文件夹里有没有那条短信？
+    prompt_source: 话术5-41
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-40
+    - 7-41
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  b16-2-b:
+    name: 邮件查找
+    allowed_intents:
+    - 7-40
+    - 7-41
+    intent_branches:
+    - intent_id: 7-40
+      branch_ref: b16-2-b-1
+      all_product_branch_refs: b12-4-a、4-2-d-1、b16-2-a-1、b16-2-b-1、b16-2-c-1、5-3-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ ├─ b16-2-b-1 找到了（7-40）→话术5-42→拿承诺→b17-1档位话术→主线（终止级联）
+      - *id006
+    - intent_id: 7-41
+      branch_ref: b16-2-b-2
+      all_product_branch_refs: b12-4-b、4-2-d-2、b16-2-a-2、b16-2-b-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ └─ b16-2-b-2 没有（7-41）→b16-2-c
+      - *id007
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您看下收件箱和垃圾箱里有这封邮件吗？
+    prompt_source: 话术5-43
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-40
+    - 7-41
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  b16-2-c:
+    name: 兜底短信查找
+    allowed_intents:
+    - 7-40
+    - 7-38
+    intent_branches:
+    - intent_id: 7-40
+      branch_ref: b16-2-c-1
+      all_product_branch_refs: b12-4-a、4-2-d-1、b16-2-a-1、b16-2-b-1、b16-2-c-1、5-3-a
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ ├─ b16-2-c-1 看到了（7-40）→b16-2-d
+      - *id006
+    - intent_id: 7-38
+      branch_ref: b16-2-c-2
+      all_product_branch_refs: 4-2-c、b16-2-c-2
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: │ └─ b16-2-c-2 没收到（7-38）→话术5-45（当场告知反馈补发）→b16-2-e
+      - *id008
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 那一条不带链接的提醒短信，您看到了吗？
+    prompt_source: 话术5-44
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-38
+    - 7-40
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+  b16-2-e-2:
+    name: 邮箱登记回应
+    allowed_intents:
+    - 7-55
+    - 7-56
+    intent_branches:
+    - intent_id: 7-55
+      branch_ref: b16-2-e-2-b
+      all_product_branch_refs: b16-2-e-2-b/c、5-3-d
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: ├─ b16-2-e-2-b 没邮箱（7-55）→话术5-50（转人工收线）→人工工单→🚫终态
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 103
+        section: 表7 / 7-I
+        intent_id: 7-55
+    - intent_id: 7-56
+      branch_ref: b16-2-e-2-a
+      all_product_branch_refs: b16-2-e-2-a、5-3-c
+      sources:
+      - file: 催授权流程 v1.1.md
+        line: 42
+        quote: ├─ b16-2-e-2-a 给了邮箱（7-56）→话术5-49（问句+复述确认）→拿承诺→b17-1档位话术
+      - file: 催授权流程 v1.1 - 意图.md
+        line: 104
+        section: 表7 / 7-I
+        intent_id: 7-56
+    text_scope: documented local response / classification subtree
+    event_intents: []
+    previous_assistant: 您方便提供一个常用邮箱吗？
+    prompt_source: 话术5-49
+    main_flow: true
+    side_route_intents: *id001
+    allowed_including_documented_sides:
+    - 7-9
+    - 7-10
+    - 7-11
+    - 7-12
+    - 7-13
+    - 7-14
+    - 7-15
+    - 7-16
+    - 7-17
+    - 7-18
+    - 7-19
+    - 7-20
+    - 7-21
+    - 7-22
+    - 7-23
+    - 7-24
+    - 7-25
+    - 7-26
+    - 7-27
+    - 7-28
+    - 7-29
+    - 7-30
+    - 7-31
+    - 7-32
+    - 7-33
+    - 7-34
+    - 7-35
+    - 7-51
+    - 7-52
+    - 7-53
+    - 7-54
+    - 7-55
+    - 7-56
+unmapped_notes:
+- b15、补发状态轮询是后台状态，不是用户意图。
+- a2-6压缩失败、b3本人过来等没有完整独立7-xx标签；不发明映射。
+- 7-57~59保留文档informed方案的测试，文档标注冒烟期暂缓。
+- 不把父节点所有递归子步骤机械当作同一回应集合；映射以所列decision subtree为边界。

@@ -1,0 +1,1512 @@
+{
+  "created_at": "2026-09-09T10:25:59.826367+00:00",
+  "config": {
+    "models": {
+      "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "local_files_only": true,
+      "device": "cpu",
+      "threads": 4,
+      "batch_size": 16,
+      "max_length": 256
+    },
+    "realtime_intent": {
+      "upstream_path": "../../RealtimeIntent",
+      "upstream_commit": "dcd2f502a6711600d76952fe27c816425cc01f06",
+      "top_k": 6,
+      "no_intent_threshold": 0.55
+    },
+    "semantic_router": {
+      "upstream_commit": "d926cfcf8523cc28a468e59535899d16277fe55b",
+      "top_k": 5,
+      "aggregation": "mean",
+      "threshold": 0.65
+    }
+  },
+  "python": "3.11.16 (main, Aug 28 2026, 04:30:30) [GCC 16.2.1 20260810]",
+  "platform": "Linux-7.2.3-arch1-2-x86_64-with-glibc2.44",
+  "cpu": "",
+  "packages": {
+    "semantic-router": "0.2.0.dev1",
+    "sentence-transformers": "6.0.1",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.16.1",
+    "qdrant-client": "1.19.0",
+    "numpy": "2.4.6",
+    "pydantic": "2.13.5",
+    "pyyaml": "6.0.3",
+    "semantic-router-source": {
+      "url": "file:///home/WoodHolz/Desktop/voice-agent-docs/semantic-router",
+      "dir_info": {}
+    }
+  },
+  "source_revisions": {
+    "realtime_intent": "dcd2f502a6711600d76952fe27c816425cc01f06",
+    "semantic_router": "d926cfcf8523cc28a468e59535899d16277fe55b"
+  },
+  "data_sha256": {
+    "intents": "5a5aeda33e75eeb0ea41a4935e2b9fe71ecd029e9840598ac23fb6c5dfc405af",
+    "eval": "20705fb46b3baa977e37701f53572e99d7e69df985ad2c14a28bcff2fd2d8db1"
+  },
+  "seed": 42,
+  "repeat": 1,
+  "independent_eval_cases": 8,
+  "concurrency": 1,
+  "runs": {
+    "semantic_router/context": {
+      "index_init_ms": 2499.2268759961007,
+      "first_detect_ms": 19.803276998572983,
+      "rows": [
+        {
+          "id": "contrast-28-in-conversation",
+          "text": "这份外卖怎么退款",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-37",
+          "score": 0.8625808923106153,
+          "latency_ms": 26.662389995181,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-29-in-conversation",
+          "text": "帮我写一个排序程序",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-37",
+          "score": 0.8950319804377077,
+          "latency_ms": 21.894156001508236,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-31-in-conversation",
+          "text": "我想查银行卡余额",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-37",
+          "score": 0.7926824248599067,
+          "latency_ms": 17.51106600568164,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-32-in-conversation",
+          "text": "晚饭吃什么比较好",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-37",
+          "score": 0.7625294889624382,
+          "latency_ms": 18.702183006098494,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-27-in-conversation",
+          "text": "来一首周杰伦的歌",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-37",
+          "score": 0.8376052950846498,
+          "latency_ms": 34.904406013083644,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-30-in-conversation",
+          "text": "设置早上七点的闹钟",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-26",
+          "score": 0.8155817009949275,
+          "latency_ms": 24.936115005402826,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": null,
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-25-in-conversation",
+          "text": "明天北京天气怎么样",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": null,
+          "score": null,
+          "latency_ms": 29.56625800288748,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": "below_route_threshold",
+          "details": {},
+          "error": null
+        },
+        {
+          "id": "contrast-26-in-conversation",
+          "text": "帮我订一张去上海的机票",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": null,
+          "score": null,
+          "latency_ms": 33.815666000009514,
+          "score_kind": "mean_cosine_of_retrieved_route_examples",
+          "reason": "below_route_threshold",
+          "details": {},
+          "error": null
+        }
+      ],
+      "summary": {
+        "heldout": {
+          "n": 0,
+          "single_label_n": 0,
+          "accuracy": null,
+          "macro_intent_accuracy": null,
+          "no_match_rate": null,
+          "coverage": null,
+          "negative_n": 0,
+          "negative_rejection_rate": null,
+          "negative_false_accept_rate": null,
+          "in_domain_false_rejection_rate": null,
+          "ambiguous_n": 0,
+          "ambiguous_set_hit_rate": null,
+          "ambiguous_rejection_rate": null,
+          "errors": 0,
+          "latency": {
+            "n": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          },
+          "per_intent": {},
+          "confusion_pairs": [],
+          "confusion_cases": []
+        },
+        "by_split": {
+          "challenge": {
+            "n": 8,
+            "single_label_n": 0,
+            "accuracy": null,
+            "macro_intent_accuracy": null,
+            "no_match_rate": 0.25,
+            "coverage": 0.75,
+            "negative_n": 8,
+            "negative_rejection_rate": 0.25,
+            "negative_false_accept_rate": 0.75,
+            "in_domain_false_rejection_rate": null,
+            "ambiguous_n": 0,
+            "ambiguous_set_hit_rate": null,
+            "ambiguous_rejection_rate": null,
+            "errors": 0,
+            "latency": {
+              "n": 8,
+              "p50_ms": 25.799252500291914,
+              "p95_ms": 34.5233470085077,
+              "p99_ms": 34.828194212168455
+            },
+            "per_intent": {},
+            "confusion_pairs": [],
+            "confusion_cases": [
+              {
+                "id": "contrast-28-in-conversation",
+                "text": "这份外卖怎么退款",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8625808923106153,
+                "error": null
+              },
+              {
+                "id": "contrast-29-in-conversation",
+                "text": "帮我写一个排序程序",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8950319804377077,
+                "error": null
+              },
+              {
+                "id": "contrast-31-in-conversation",
+                "text": "我想查银行卡余额",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.7926824248599067,
+                "error": null
+              },
+              {
+                "id": "contrast-32-in-conversation",
+                "text": "晚饭吃什么比较好",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.7625294889624382,
+                "error": null
+              },
+              {
+                "id": "contrast-27-in-conversation",
+                "text": "来一首周杰伦的歌",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8376052950846498,
+                "error": null
+              },
+              {
+                "id": "contrast-30-in-conversation",
+                "text": "设置早上七点的闹钟",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-26",
+                "score": 0.8155817009949275,
+                "error": null
+              }
+            ]
+          }
+        },
+        "by_category": {
+          "ood": {
+            "n": 8,
+            "single_label_n": 0,
+            "accuracy": null,
+            "macro_intent_accuracy": null,
+            "no_match_rate": 0.25,
+            "coverage": 0.75,
+            "negative_n": 8,
+            "negative_rejection_rate": 0.25,
+            "negative_false_accept_rate": 0.75,
+            "in_domain_false_rejection_rate": null,
+            "ambiguous_n": 0,
+            "ambiguous_set_hit_rate": null,
+            "ambiguous_rejection_rate": null,
+            "errors": 0,
+            "latency": {
+              "n": 8,
+              "p50_ms": 25.799252500291914,
+              "p95_ms": 34.5233470085077,
+              "p99_ms": 34.828194212168455
+            },
+            "per_intent": {},
+            "confusion_pairs": [],
+            "confusion_cases": [
+              {
+                "id": "contrast-28-in-conversation",
+                "text": "这份外卖怎么退款",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8625808923106153,
+                "error": null
+              },
+              {
+                "id": "contrast-29-in-conversation",
+                "text": "帮我写一个排序程序",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8950319804377077,
+                "error": null
+              },
+              {
+                "id": "contrast-31-in-conversation",
+                "text": "我想查银行卡余额",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.7926824248599067,
+                "error": null
+              },
+              {
+                "id": "contrast-32-in-conversation",
+                "text": "晚饭吃什么比较好",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.7625294889624382,
+                "error": null
+              },
+              {
+                "id": "contrast-27-in-conversation",
+                "text": "来一首周杰伦的歌",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-37",
+                "score": 0.8376052950846498,
+                "error": null
+              },
+              {
+                "id": "contrast-30-in-conversation",
+                "text": "设置早上七点的闹钟",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-26",
+                "score": 0.8155817009949275,
+                "error": null
+              }
+            ]
+          }
+        },
+        "all_requests": {
+          "n": 8,
+          "single_label_n": 0,
+          "accuracy": null,
+          "macro_intent_accuracy": null,
+          "no_match_rate": 0.25,
+          "coverage": 0.75,
+          "negative_n": 8,
+          "negative_rejection_rate": 0.25,
+          "negative_false_accept_rate": 0.75,
+          "in_domain_false_rejection_rate": null,
+          "ambiguous_n": 0,
+          "ambiguous_set_hit_rate": null,
+          "ambiguous_rejection_rate": null,
+          "errors": 0,
+          "latency": {
+            "n": 8,
+            "p50_ms": 25.799252500291914,
+            "p95_ms": 34.5233470085077,
+            "p99_ms": 34.828194212168455
+          },
+          "per_intent": {},
+          "confusion_pairs": [],
+          "confusion_cases": [
+            {
+              "id": "contrast-28-in-conversation",
+              "text": "这份外卖怎么退款",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-37",
+              "score": 0.8625808923106153,
+              "error": null
+            },
+            {
+              "id": "contrast-29-in-conversation",
+              "text": "帮我写一个排序程序",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-37",
+              "score": 0.8950319804377077,
+              "error": null
+            },
+            {
+              "id": "contrast-31-in-conversation",
+              "text": "我想查银行卡余额",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-37",
+              "score": 0.7926824248599067,
+              "error": null
+            },
+            {
+              "id": "contrast-32-in-conversation",
+              "text": "晚饭吃什么比较好",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-37",
+              "score": 0.7625294889624382,
+              "error": null
+            },
+            {
+              "id": "contrast-27-in-conversation",
+              "text": "来一首周杰伦的歌",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-37",
+              "score": 0.8376052950846498,
+              "error": null
+            },
+            {
+              "id": "contrast-30-in-conversation",
+              "text": "设置早上七点的闹钟",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-26",
+              "score": 0.8155817009949275,
+              "error": null
+            }
+          ]
+        }
+      }
+    },
+    "realtime_intent/context": {
+      "index_init_ms": 2237.702883008751,
+      "first_detect_ms": 171.9855959963752,
+      "rows": [
+        {
+          "id": "contrast-28-in-conversation",
+          "text": "这份外卖怎么退款",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-38",
+          "score": 0.031029198318719864,
+          "latency_ms": 161.15327400621027,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": null,
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "7-38",
+                "score": 0.031029198318719864
+              },
+              {
+                "label": "__no_intent__",
+                "score": 0.012836740352213383
+              },
+              {
+                "label": "7-36",
+                "score": 0.0018912202212959528
+              },
+              {
+                "label": "7-39",
+                "score": 0.0002945285814348608
+              },
+              {
+                "label": "7-37",
+                "score": 0.00020519288955256343
+              },
+              {
+                "label": "7-35",
+                "score": 4.826553413295187e-05
+              },
+              {
+                "label": "7-31",
+                "score": 3.8610887713730335e-05
+              }
+            ],
+            "retrieved_labels": [
+              "7-36",
+              "7-37",
+              "7-39",
+              "7-38",
+              "7-31",
+              "7-35"
+            ],
+            "retrieval_score": 0.7943951920170081
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-29-in-conversation",
+          "text": "帮我写一个排序程序",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": null,
+          "score": null,
+          "latency_ms": 129.9086660001194,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": "upstream_no_match",
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "__no_intent__",
+                "score": 0.0330924391746521
+              },
+              {
+                "label": "7-36",
+                "score": 0.007356654852628708
+              },
+              {
+                "label": "7-39",
+                "score": 0.0018285304540768266
+              },
+              {
+                "label": "7-37",
+                "score": 0.0007192412740550935
+              },
+              {
+                "label": "7-52",
+                "score": 0.0005771403666585684
+              },
+              {
+                "label": "7-8",
+                "score": 0.0003119391039945185
+              },
+              {
+                "label": "7-35",
+                "score": 0.0001597973023308441
+              }
+            ],
+            "retrieved_labels": [
+              "7-37",
+              "7-39",
+              "7-36",
+              "7-8",
+              "7-35",
+              "7-52"
+            ],
+            "retrieval_score": null
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-31-in-conversation",
+          "text": "我想查银行卡余额",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-38",
+          "score": 0.14194484055042267,
+          "latency_ms": 127.52349600486923,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": null,
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "7-38",
+                "score": 0.14194484055042267
+              },
+              {
+                "label": "__no_intent__",
+                "score": 0.03341922536492348
+              },
+              {
+                "label": "7-36",
+                "score": 0.006971684284508228
+              },
+              {
+                "label": "7-39",
+                "score": 0.0016327626071870327
+              },
+              {
+                "label": "7-13",
+                "score": 0.0009959836024791002
+              },
+              {
+                "label": "7-37",
+                "score": 0.0007729314966127276
+              },
+              {
+                "label": "7-10",
+                "score": 7.5916490459349e-05
+              }
+            ],
+            "retrieved_labels": [
+              "7-36",
+              "7-37",
+              "7-39",
+              "7-38",
+              "7-13",
+              "7-10"
+            ],
+            "retrieval_score": 0.7580301908142597
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-32-in-conversation",
+          "text": "晚饭吃什么比较好",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-38",
+          "score": 0.013344244100153446,
+          "latency_ms": 209.49031099735294,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": null,
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "__no_intent__",
+                "score": 0.02021395042538643
+              },
+              {
+                "label": "7-38",
+                "score": 0.013344244100153446
+              },
+              {
+                "label": "7-36",
+                "score": 0.0017178505659103394
+              },
+              {
+                "label": "7-39",
+                "score": 0.0005036657676100731
+              },
+              {
+                "label": "7-37",
+                "score": 0.00046835263492539525
+              },
+              {
+                "label": "7-49",
+                "score": 7.50539984437637e-05
+              },
+              {
+                "label": "7-6",
+                "score": 6.075780402170494e-05
+              }
+            ],
+            "retrieved_labels": [
+              "7-36",
+              "7-37",
+              "7-39",
+              "7-6",
+              "7-38",
+              "7-49"
+            ],
+            "retrieval_score": 0.7245223411488025
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-27-in-conversation",
+          "text": "来一首周杰伦的歌",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": null,
+          "score": null,
+          "latency_ms": 221.6249500052072,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": "upstream_no_match",
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "__no_intent__",
+                "score": 0.016895417124032974
+              },
+              {
+                "label": "7-36",
+                "score": 0.008209791034460068
+              },
+              {
+                "label": "7-37",
+                "score": 0.00128130242228508
+              },
+              {
+                "label": "7-39",
+                "score": 0.00099022570066154
+              },
+              {
+                "label": "7-8",
+                "score": 0.0006516897701658309
+              },
+              {
+                "label": "7-35",
+                "score": 8.406423148699105e-05
+              },
+              {
+                "label": "7-6",
+                "score": 6.888842472108081e-05
+              }
+            ],
+            "retrieved_labels": [
+              "7-39",
+              "7-37",
+              "7-36",
+              "7-35",
+              "7-6",
+              "7-8"
+            ],
+            "retrieval_score": null
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-30-in-conversation",
+          "text": "设置早上七点的闹钟",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-36",
+          "score": 0.016134090721607208,
+          "latency_ms": 260.26872599322814,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": null,
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "__no_intent__",
+                "score": 0.04427831619977951
+              },
+              {
+                "label": "7-36",
+                "score": 0.016134090721607208
+              },
+              {
+                "label": "7-39",
+                "score": 0.003925802186131477
+              },
+              {
+                "label": "7-37",
+                "score": 0.003016541013494134
+              },
+              {
+                "label": "7-48",
+                "score": 0.00045474120997823775
+              },
+              {
+                "label": "7-25",
+                "score": 0.00011839918443001807
+              },
+              {
+                "label": "7-26",
+                "score": 9.756680083228275e-05
+              }
+            ],
+            "retrieved_labels": [
+              "7-26",
+              "7-39",
+              "7-25",
+              "7-36",
+              "7-37",
+              "7-48"
+            ],
+            "retrieval_score": 0.7976055899238421
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-25-in-conversation",
+          "text": "明天北京天气怎么样",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": null,
+          "score": null,
+          "latency_ms": 202.19501700194087,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": "upstream_no_match",
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "__no_intent__",
+                "score": 0.10803726315498352
+              },
+              {
+                "label": "7-36",
+                "score": 0.009746315889060497
+              },
+              {
+                "label": "7-39",
+                "score": 0.002298446372151375
+              },
+              {
+                "label": "7-37",
+                "score": 0.0021003475412726402
+              },
+              {
+                "label": "7-25",
+                "score": 0.00018871395150199533
+              },
+              {
+                "label": "7-26",
+                "score": 0.00017138563271146268
+              },
+              {
+                "label": "7-49",
+                "score": 0.00014805994578637183
+              }
+            ],
+            "retrieved_labels": [
+              "7-26",
+              "7-36",
+              "7-37",
+              "7-39",
+              "7-25",
+              "7-49"
+            ],
+            "retrieval_score": null
+          },
+          "error": null
+        },
+        {
+          "id": "contrast-26-in-conversation",
+          "text": "帮我订一张去上海的机票",
+          "expected": [],
+          "category": "ood",
+          "split": "challenge",
+          "context": [
+            {
+              "role": "assistant",
+              "content": "此前发送的背调授权通知，您收到了吗？"
+            }
+          ],
+          "source": {
+            "file": "催授权流程 v1.1 - 意图.md",
+            "intent_ids": []
+          },
+          "derivation": "原 OOD 样本加话术5-36改写上下文；独立压力诊断，不用于调参",
+          "repeat": 0,
+          "intent_id": "7-38",
+          "score": 0.09172364324331284,
+          "latency_ms": 181.9570490042679,
+          "score_kind": "cross_encoder_sigmoid_relevance",
+          "reason": null,
+          "details": {
+            "rerank_candidates": [
+              {
+                "label": "7-38",
+                "score": 0.09172364324331284
+              },
+              {
+                "label": "__no_intent__",
+                "score": 0.02626955509185791
+              },
+              {
+                "label": "7-36",
+                "score": 0.006433937232941389
+              },
+              {
+                "label": "7-39",
+                "score": 0.0012323439586907625
+              },
+              {
+                "label": "7-37",
+                "score": 0.0006578695611096919
+              },
+              {
+                "label": "7-29",
+                "score": 0.00013221206609159708
+              },
+              {
+                "label": "7-35",
+                "score": 0.00010741253208834678
+              }
+            ],
+            "retrieved_labels": [
+              "7-36",
+              "7-37",
+              "7-39",
+              "7-38",
+              "7-29",
+              "7-35"
+            ],
+            "retrieval_score": 0.5803625015924969
+          },
+          "error": null
+        }
+      ],
+      "summary": {
+        "heldout": {
+          "n": 0,
+          "single_label_n": 0,
+          "accuracy": null,
+          "macro_intent_accuracy": null,
+          "no_match_rate": null,
+          "coverage": null,
+          "negative_n": 0,
+          "negative_rejection_rate": null,
+          "negative_false_accept_rate": null,
+          "in_domain_false_rejection_rate": null,
+          "ambiguous_n": 0,
+          "ambiguous_set_hit_rate": null,
+          "ambiguous_rejection_rate": null,
+          "errors": 0,
+          "latency": {
+            "n": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          },
+          "per_intent": {},
+          "confusion_pairs": [],
+          "confusion_cases": []
+        },
+        "by_split": {
+          "challenge": {
+            "n": 8,
+            "single_label_n": 0,
+            "accuracy": null,
+            "macro_intent_accuracy": null,
+            "no_match_rate": 0.375,
+            "coverage": 0.625,
+            "negative_n": 8,
+            "negative_rejection_rate": 0.375,
+            "negative_false_accept_rate": 0.625,
+            "in_domain_false_rejection_rate": null,
+            "ambiguous_n": 0,
+            "ambiguous_set_hit_rate": null,
+            "ambiguous_rejection_rate": null,
+            "errors": 0,
+            "latency": {
+              "n": 8,
+              "p50_ms": 192.07603300310438,
+              "p95_ms": 246.7434043974208,
+              "p99_ms": 257.5636616740667
+            },
+            "per_intent": {},
+            "confusion_pairs": [],
+            "confusion_cases": [
+              {
+                "id": "contrast-28-in-conversation",
+                "text": "这份外卖怎么退款",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.031029198318719864,
+                "error": null
+              },
+              {
+                "id": "contrast-31-in-conversation",
+                "text": "我想查银行卡余额",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.14194484055042267,
+                "error": null
+              },
+              {
+                "id": "contrast-32-in-conversation",
+                "text": "晚饭吃什么比较好",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.013344244100153446,
+                "error": null
+              },
+              {
+                "id": "contrast-30-in-conversation",
+                "text": "设置早上七点的闹钟",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-36",
+                "score": 0.016134090721607208,
+                "error": null
+              },
+              {
+                "id": "contrast-26-in-conversation",
+                "text": "帮我订一张去上海的机票",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.09172364324331284,
+                "error": null
+              }
+            ]
+          }
+        },
+        "by_category": {
+          "ood": {
+            "n": 8,
+            "single_label_n": 0,
+            "accuracy": null,
+            "macro_intent_accuracy": null,
+            "no_match_rate": 0.375,
+            "coverage": 0.625,
+            "negative_n": 8,
+            "negative_rejection_rate": 0.375,
+            "negative_false_accept_rate": 0.625,
+            "in_domain_false_rejection_rate": null,
+            "ambiguous_n": 0,
+            "ambiguous_set_hit_rate": null,
+            "ambiguous_rejection_rate": null,
+            "errors": 0,
+            "latency": {
+              "n": 8,
+              "p50_ms": 192.07603300310438,
+              "p95_ms": 246.7434043974208,
+              "p99_ms": 257.5636616740667
+            },
+            "per_intent": {},
+            "confusion_pairs": [],
+            "confusion_cases": [
+              {
+                "id": "contrast-28-in-conversation",
+                "text": "这份外卖怎么退款",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.031029198318719864,
+                "error": null
+              },
+              {
+                "id": "contrast-31-in-conversation",
+                "text": "我想查银行卡余额",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.14194484055042267,
+                "error": null
+              },
+              {
+                "id": "contrast-32-in-conversation",
+                "text": "晚饭吃什么比较好",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.013344244100153446,
+                "error": null
+              },
+              {
+                "id": "contrast-30-in-conversation",
+                "text": "设置早上七点的闹钟",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-36",
+                "score": 0.016134090721607208,
+                "error": null
+              },
+              {
+                "id": "contrast-26-in-conversation",
+                "text": "帮我订一张去上海的机票",
+                "context": [
+                  {
+                    "role": "assistant",
+                    "content": "此前发送的背调授权通知，您收到了吗？"
+                  }
+                ],
+                "expected": [],
+                "predicted": "7-38",
+                "score": 0.09172364324331284,
+                "error": null
+              }
+            ]
+          }
+        },
+        "all_requests": {
+          "n": 8,
+          "single_label_n": 0,
+          "accuracy": null,
+          "macro_intent_accuracy": null,
+          "no_match_rate": 0.375,
+          "coverage": 0.625,
+          "negative_n": 8,
+          "negative_rejection_rate": 0.375,
+          "negative_false_accept_rate": 0.625,
+          "in_domain_false_rejection_rate": null,
+          "ambiguous_n": 0,
+          "ambiguous_set_hit_rate": null,
+          "ambiguous_rejection_rate": null,
+          "errors": 0,
+          "latency": {
+            "n": 8,
+            "p50_ms": 192.07603300310438,
+            "p95_ms": 246.7434043974208,
+            "p99_ms": 257.5636616740667
+          },
+          "per_intent": {},
+          "confusion_pairs": [],
+          "confusion_cases": [
+            {
+              "id": "contrast-28-in-conversation",
+              "text": "这份外卖怎么退款",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-38",
+              "score": 0.031029198318719864,
+              "error": null
+            },
+            {
+              "id": "contrast-31-in-conversation",
+              "text": "我想查银行卡余额",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-38",
+              "score": 0.14194484055042267,
+              "error": null
+            },
+            {
+              "id": "contrast-32-in-conversation",
+              "text": "晚饭吃什么比较好",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-38",
+              "score": 0.013344244100153446,
+              "error": null
+            },
+            {
+              "id": "contrast-30-in-conversation",
+              "text": "设置早上七点的闹钟",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-36",
+              "score": 0.016134090721607208,
+              "error": null
+            },
+            {
+              "id": "contrast-26-in-conversation",
+              "text": "帮我订一张去上海的机票",
+              "context": [
+                {
+                  "role": "assistant",
+                  "content": "此前发送的背调授权通知，您收到了吗？"
+                }
+              ],
+              "expected": [],
+              "predicted": "7-38",
+              "score": 0.09172364324331284,
+              "error": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "model_load_ms": 10803.25517601159,
+  "models": {
+    "config": {
+      "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "local_files_only": true,
+      "device": "cpu",
+      "threads": 4,
+      "batch_size": 16,
+      "max_length": 256
+    },
+    "cached_revisions": {
+      "embedding": [
+        "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+      ],
+      "reranker": [
+        "1427fd652930e4ba29e8149678df786c240d8825"
+      ]
+    },
+    "query_cache": false,
+    "transport": "in_process",
+    "normalized_embeddings": true
+  }
+}
