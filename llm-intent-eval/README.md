@@ -12,6 +12,7 @@
 - `prompts/`：统一的模型提示词
 - `schemas/`：测例和模型输出的 JSON Schema
 - `scripts/`：从产品意图文档重建 v0.1 草稿集的脚本
+- `configs/`：本地 vLLM 与云端模型的评测连接配置（不含密钥）
 - `results/`：不同模型和 Prompt 的评测结果
 
 ## v0.1 数据集
@@ -41,6 +42,58 @@
 4. 同一 `group_id` 的原始场景及改写必须进入同一个数据集合，避免泄漏。
 5. 所有模型使用完全相同的数据、候选顺序策略、Prompt 和推理参数。
 6. `test` 是最终盲测集，在模型和 Prompt 定版前不得用于调参。
+
+## 运行模型评测
+
+`scripts/run_eval.py` 通过 OpenAI-compatible Chat Completions API 调用模型，因此本地
+vLLM 和阿里云百炼 Qwen Flash 使用同一套数据、Prompt、解析与基础评分逻辑。当前自动
+统计 JSON 合法率、候选内选择率、SOP 准确率和请求延迟；`detail` 的业务语义仍需人工复核。
+
+以下命令均在 `llm-intent-eval/` 目录中执行：
+
+```bash
+cd llm-intent-eval
+```
+
+先用一条数据检查本地 vLLM：
+
+```bash
+python3 scripts/run_eval.py \
+  --profile configs/vllm-qwen35-4b.json \
+  --limit 1
+```
+
+确认无误后去掉 `--limit 1` 运行全部 73 条。结果分别写入带 UTC 时间戳的目录，包含
+逐条 `results.jsonl` 和汇总 `summary.json`。
+
+运行 Qwen Flash 前配置百炼密钥与所在地域/业务空间对应的 OpenAI-compatible Base URL：
+
+```bash
+export DASHSCOPE_API_KEY='替换为真实密钥'
+export DASHSCOPE_BASE_URL='https://<WorkspaceId>.cn-beijing.maas.aliyuncs.com/compatible-mode/v1'
+
+python3 scripts/run_eval.py \
+  --profile configs/qwen-flash.json \
+  --limit 1
+```
+
+API Key 只能通过环境变量提供，不得写入 profile、结果文件或提交到 Git。不同地域的
+Base URL 不同；使用此前实验的 Qwen Flash 时，可在 profile 中把 `model` 改为当时固定的
+模型快照，避免浮动别名升级后影响可复现性。
+
+只渲染第一条 Prompt、不发出网络请求：
+
+```bash
+python3 scripts/run_eval.py \
+  --profile configs/vllm-qwen35-4b.json \
+  --dry-run
+```
+
+运行基础测试：
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## 旧路线
 

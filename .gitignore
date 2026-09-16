@@ -1,2 +1,10 @@
 /催授权*.md
 /催授权*.pdf
+
+# Python runtime artifacts
+**/__pycache__/
+**/*.py[cod]
+
+# Generated model evaluation runs
+/llm-intent-eval/results/*
+!/llm-intent-eval/results/.gitkeep
